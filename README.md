@@ -7,6 +7,9 @@ https://revosw.github.io/wiremodforall/e2/introduction.html
 
 ## TODO:
 
+* style each guide as their own theme
+* Have approximately the same layout for every guide
+
 ### Include these things for the e2 guide
 
 * #include
