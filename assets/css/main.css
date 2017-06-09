@@ -1,8 +1,16 @@
+/*
+ * Would love to use Sass, but you can't
+ * use grid with sass as of 9th of June 2017
+ * because of namespace collision, specifically
+ * "area" for use in grid-template-area
+*/
 
-/* Change grid size, font size and  */
+
+/* Change grid size and font size */
 @media (max-width: 1499px) {
 	html {
 		--main-width: 7fr;
+		/* Rest is the remaining space to the right of the main area */
 		--rest: 0fr;
 	}
 }
@@ -49,7 +57,7 @@ p {
 	margin: 20px 0;
 }
 
-/*For use in the sidenav*/
+/* For use in the sidenav */
 li a ~ a {
 	font-size: 0.8em;
 	margin-left: 20px;
@@ -57,7 +65,7 @@ li a ~ a {
 }
 
 #grid {
-	/*Change this value to change the top navigation's height*/
+	/* Change this value to change the top navigation's height */
 	--nav-height: 40px;
 
 	display: grid;
@@ -145,6 +153,11 @@ li a ~ a {
 		#content {
 			margin: 100px 40px;
 		}
+			#content img {
+				width: 70%;
+				margin: auto;
+				position: relative;
+			}
 			pre code {
 				font-size: 0.8em;
 			}
