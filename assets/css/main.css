@@ -102,6 +102,7 @@ li a ~ a {
 				text-shadow: 2px 2px 0px rgba(0,0,0,0.2);
 				margin-left: 20px;
 				line-height: 140px;
+				overflow: hidden;
 			}
 				.e2 {
 					background-color: darkred;
