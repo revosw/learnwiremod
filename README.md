@@ -9,6 +9,7 @@ https://revosw.github.io/wiremodforall/e2/introduction.html
 
 * style each guide as their own theme
 * Have approximately the same layout for every guide
+* Change topnav's plain text to cool animations that play when you hover over the topics
 
 ### Include these things for the e2 guide
 

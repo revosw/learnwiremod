@@ -72,7 +72,8 @@ pre[class*="language-"] {
 	color: #d95cdb;
 }
 
-.token.comment {
+.token.blockcomment,
+.token.singlecomment {
 	color: #847e68;
 }
 

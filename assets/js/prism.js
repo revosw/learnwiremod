@@ -553,7 +553,10 @@ Prism.languages.e2 = {
 	'operator': /[-+=*/%]/,
 	
 	//MARGIN OF ERROR - using keywords inside comments breaks comment
-	'comment': /#([^\[].*|\[[\s\S]*?]#)/g,
+	'singlecomment': /#.*/g,
+
+	//??
+	'blockcomment': /#\[[\s\S]*?]#)/g,
 	
 	//DONE
 	'variable': /\b[A-Z]\w*/,
