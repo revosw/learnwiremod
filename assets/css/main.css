@@ -83,7 +83,7 @@ li a ~ a {
 		z-index: 1;
 	}
 		#topnav ul {
-			height: --nav-height;
+			height: var(--nav-height);
 			display: flex;
 			overflow: hidden;
 			/*Height manipulation*/
