@@ -76,20 +76,12 @@ pre[class*="language-"] {
 	color: #847e68;
 }
 
-.token.punctuation {
-	color: #999;
-}
-
 .token.keyword {
 	color: #44a0d6;
 }
 
 .token.variable {
 	color: #13c413;
-}
-
-.token.operator {
-	color: #964646;
 }
 
 .token.string {
@@ -104,6 +96,5 @@ pre[class*="language-"] {
 .token.function {
 	color: #8043db;
 }
-
 
 /* --------------- */

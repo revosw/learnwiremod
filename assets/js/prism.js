@@ -536,40 +536,31 @@ if (typeof global !== 'undefined') {
 ;
 
 Prism.languages.e2 = {
-	
-	// DONE
+
+	/* The order of tokens actually mattered.
+	 * 25 hours of testing and reading, trying to come up with
+	 * regex hacks to exclude keywords from functions,
+	 * make comments greedy and picking up all other tokens,
+	 * all down the drain. And I can only thank myself.
+	 * Prism.js docs for extending prism: http://prismjs.com/extending.html
+	 */
+
+	//Will have highest precedence, ignoring comments, directives, types and all that shit
+	'string': /("|')(\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1/ig,
+
+	'comment': /#([^\[].*|\[[\s\S]*?]#)/,
+
 	'directive': /@(name.*|model.*|inputs|outputs|persist|trigger|autoupdate)/,
-	
-	//DONE
-	'type': /\b(angle|array|bone|complex|entity|matrix[24]?|number|quaternion|ranger|string|table|vector[24]?|wirelink)(?!\()\b/ig,
-	
-	//DONE
-	'keyword': /\b((else)?if|else|for(each)?|while|break|continue|local|switch|case|default|function|return)\b/g,
-	
-	//DONE
-	'punctuation': /[:,&|!]/,
-	
-	//DONE
-	'operator': /[-+=*/%]/,
-	
-	//MARGIN OF ERROR - using keywords inside comments breaks comment
-	'comment': /#([^\[].*|\[[\s\S]*?]#)/g,
-	
-	//DONE
+
+	'type': /\b(angle|array|bone|complex|entity|matrix[24]?|number|quaternion|ranger|string|table|vector[24]?|void|wirelink)(?!\()\b/g,
+
+	'keyword': /\b(if|elseif|else|for(each)?|while|break|continue|local|switch|case|default|function|return)\b/g,
+
+	'function': /\b[a-z]\w*(?=\()/,
+
 	'variable': /\b[A-Z]\w*/,
 
-	//MARGIN OF ERROR - _CONsTANT still sees _CON as valid constant instead of dismissing whole word
-	'constant': /_[A-Z0-9_]+/,
-	
-	//DONE
-	'function': /\b(?!(else)?if|else|for(each)?|while|break|continue|local|switch|case|default|function|return)([a-z]\w*)(?=\()/,
-	
-	//DONE
-	'number': /\b[-+]?[0-9]*\.?[0-9]+\b/,
-	
-	//DONE
-	'string': {
-		pattern: /("|')(\\(?:\r\n|[\s\S])|(?!\1)[^\\\r\n])*\1/ig,
-		greedy: true
-	}
+	'constant': /\b_[A-Z0-9_]+\b/,
+
+	'number': /[-+]?[0-9]*\.?[0-9]+\b/,
 }
