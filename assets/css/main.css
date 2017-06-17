@@ -95,14 +95,13 @@ li a ~ a {
 		}
 			#topnav ul li {
 				flex: 1 1 0;
-				height: 100%;
+				overflow: hidden;
 			}
 			#topnav ul li a {
 				font-family: 'Kumar One', cursive;
 				text-shadow: 2px 2px 0px rgba(0,0,0,0.2);
-				margin-left: 20px;
 				line-height: 140px;
-				overflow: hidden;
+				padding: 5.5vh 100% 1vh 1vw;
 			}
 				.e2 {
 					background-color: darkred;
