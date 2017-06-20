@@ -33,9 +33,9 @@
 	<nav id="sidenav">
 		<ul>
 			<li>
-				<a href="#">Introduction</a>
-				<a href="#">About the course</a>
-				<a href="#">About the presenter</a>
+				<a href="#intro">Introduction</a>
+				<a href="#ac">About the course</a>
+				<a href="#ap">About the presenter</a>
 				<a href="#">Credits</a>
 			</li>
 			<li>
@@ -107,8 +107,8 @@
 
 	<main id="main">
 		<div id="content">
-			<h1>Introduction</h1>
-			<h2>About the course</h2>
+			<h1 id=intro>Introduction</h1>
+			<h2 id=ac>About the course</h2>
 			<p>I welcome you to my tutorial series for all wiremod related. Here we will be exploring Expression 2 in all its glory.</p>
 			<pre><code class="language-e2">@name Find Player By Name
 @model some/model.mdl
@@ -172,7 +172,7 @@ foreach(K,Ply:entity = players())
 }
 </code></pre>
 			
-			<h2>About the presenter</h2>
+			<h2 id=ap>About the presenter</h2>
 			<p>I am Revolution, insert rest of introduction here</p>
 			<h2>Credits</h2>
 			<p>Upcomging list of shoutouts</p>
