@@ -21,10 +21,10 @@
 	<nav id="topnav">
 		<ul>
 			<li class="e2"><a href="#">Expression2</a></li>
-			<li class="starfall"><a href="#">Starfall</a></li>
-			<li class="zcpu"><a href="#">ZCPU</a></li>
-			<li class="spu"><a href="#">SPU</a></li>
-			<li class="gpu"><a href="#">GPU</a></li>
+			<li class="starfall"><a href="../starfall/introduction.html">Starfall</a></li>
+			<li class="zcpu"><a href="../zcpu/introduction.html">ZCPU</a></li>
+			<li class="spu"><a href="../spu/introduction.html">SPU</a></li>
+			<li class="gpu"><a href="../gpu/introduction.html">GPU</a></li>
 			<li class="general"><a href="#">General</a></li>
 			<li class="gates"><a href="#">Gates</a></li>
 		</ul>
@@ -110,72 +110,12 @@
 			<h1>Introduction</h1>
 			<h2>About the course</h2>
 			<p>I welcome you to my tutorial series for all wiremod related. Here we will be exploring Expression 2 in all its glory.</p>
-			<pre><code class="language-e2">@name Find Player By Name
-@model some/model.mdl
-@persist Player:entity Vec:vector4 M:matrix2
-@persist invalid:type Also:invalid
-runOnChat(1)
-
-#Matches when all characters after _ is upper-case, number or _
-_FILE_404
-
-#Discards result if lower case letter is within word boundary
-_CON_sTANT
-
-func() #line of comment
-"#not a comment"
-
-#Can put all sorts of keywords and punctuation without it taking precedence over comments
-#each for while _CONSTANT function number myMain() { return 4 } Var
-
-#[ block
-of
-comment ]#
-#[ in-line comment block ]# 
-if(first()) { 
-    foreach(K,Ply:entity = players()) {
-        holoCreate(K,Ply:pos(),vec(-3,2.5,14.3928138),Ply:angles(),vec(255),"models/hunter/plates/plate16.mdl")
-        holoVisible(K,players(),0)
-        holoVisible(K,owner(),1)
-        holoParent(K,Ply)
-    }
-}
-
-function void printString() {
-	print("kek")
-}
-
-
-switch(owner():lastSaid() & chatClk(owner())) {
-    case "on" & 1,
-        hideChat(1)
-        for(I = 1,players():count()) {
-            holoAlpha(I,0)
-        }
-    break
-    
-    case "off" & 1,
-        hideChat(1)
-        for(I = 1,players():count()){
-            holoAlpha(I,255)
-        }
-    break
-}
-
-
-
-foreach(K,Ply:entity = players())
-{
-    holoPos(K, Ply:pos() + vec(0,0,600) + vec(0,0,cos(curtime()*100)*50))
-    holoAng(K,ang(180,0,0))
-    holoColor(K, hsv2rgb(255,1,1))
-}
-</code></pre>
+			<script>//JESUS was this huge code block neccesary?</script>
 			
 			<h2>About the presenter</h2>
 			<p>I am Revolution, insert rest of introduction here</p>
 			<h2>Credits</h2>
-			<p>Upcomging list of shoutouts</p>
+			<p><em>Epic8009</em><br><em>Revolution</em></p>
 			<img src="../assets/img/editor.png">
 		</div>
 	</main>
