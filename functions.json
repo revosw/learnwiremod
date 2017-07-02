@@ -1,0 +1,19 @@
+[
+  {
+    "name": "print",
+    "takes": ["..."],
+    "returns": ["..."]
+  },
+  {
+    "name": "print",
+    "takes": ["v", "a", "s", "n"],
+    "returns": "s"
+  }
+]
+
+{
+  "print": {
+    "takes": ["..."],
+    "returns":  ["..."]
+  }
+}
