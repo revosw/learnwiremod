@@ -2,14 +2,14 @@
 
 Making this project because I feel determined
 
-https://revosw.github.io/wiremodforall/e2/introduction.html
+http://wiremodforall.com
 
 
 ## TODO:
 
 * style each guide as their own theme
-* Have approximately the same layout for every guide
-* Change topnav's plain text to cool animations that play when you hover over the topics
+* Have the same layout for every guide
+* Change topnav's plain text to cool animations that play when you hover over the topics (maybe 24-frame .apng made in After Effects?)
 
 ### Include these things for the e2 guide
 
@@ -20,7 +20,4 @@ https://revosw.github.io/wiremodforall/e2/introduction.html
 
 ### Things to do outside of the guide
 
-e2 syntax - pull request to highlight.js
-
-//type
-(function\s|\[\d+,|:(?!.*\())+
+e2 syntax - [Pull request](https://github.com/isagalaev/highlight.js/pull/1558) to highlight.js
