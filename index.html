@@ -5,8 +5,80 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Varela+Round');
+
+    
+    body {
+      background: #333
+    }
+    .container {
+      position: absolute;
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+      left: 0;
+      right: 0;
+      top: 10vh;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+    }
+    .item {
+      position: relative;
+      width: 250px;
+      height: 250px;
+      margin: 4%;
+      border-radius: 20px;
+      background: white;
+      text-align: center;
+      line-height: 420px;
+      text-decoration: none;
+      font-family: "Varela Round";
+      font-size: 40px;
+      box-shadow: inset 0 0 10px #000000;
+    }
+    .tile {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 80px;
+      border-radius: 10px;
+      box-shadow: inset 0px 0 50px #000000;
+    }
+    .e2 {
+      background-color: darkred;
+    }
+    .starfall {
+      background-color: rebeccapurple;
+    }
+    .cpu {
+      background-color: #222;
+    }
+    .spu {
+      background-color: #FFA455;
+    }
+    .gpu {
+      background-color: #33AA33;
+    }
+    .general {
+      background-color: skyblue;
+    }
+    .gates {
+      background-color: royalblue;
+    }
+  </style>
 </head>
 <body>
-  <h1>test</h1>
+  <div class="container">
+    <a class="item" href="/e2/introduction.html">Expression2<div class="tile e2"></div></a>
+    <a class="item" href="/starfall/introduction.html">Starfall<div class="tile starfall"></div></a>
+    <a class="item" href="/cpu/introduction.html">CPU<div class="tile cpu"></div></a>
+    <a class="item" href="/gpu/introduction.html">GPU<div class="tile gpu"></div></a>
+    <a class="item" href="/spu/introduction.html">SPU<div class="tile spu"></div></a>
+    <a class="item" href="/general/introduction.html">General<div class="tile general"></div></a>
+    <a class="item" href="/gates/introduction.html">Gates<div class="tile gates"></div></a>
+  </div>
 </body>
 </html>
