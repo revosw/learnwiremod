@@ -3,14 +3,11 @@
 <head>
 	<title>Revolution Teaches - Wiremod for all</title>
 	<link rel="icon" href="../assets/img/favicon.ico" type="image/x-icon">
-	<link href="https://fonts.googleapis.com/css?family=Kumar+One" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="../assets/css/reset.css">
 	<link rel="stylesheet" type="text/css" href="../assets/css/main.css">
 	<link rel="stylesheet" type="text/css" href="../assets/css/default.css">
-	<script type="text/javascript" src="../assets/js/main.js"></script>
 	<script type="text/javascript" src="../assets/js/highlight.pack.js"></script>
+	<script type="text/javascript" src="../assets/js/main.js"></script>
 
 </head>
 <body>
@@ -22,11 +19,11 @@
 		<ul>
 			<li class="e2"><a href="#">Expression 2</a></li>
 			<li class="starfall"><a href="#">Starfall</a></li>
-			<li class="zcpu"><a href="#">Z-CPU</a></li>
+			<li class="cpu"><a href="#">CPU</a></li>
 			<li class="spu"><a href="#">SPU</a></li>
 			<li class="gpu"><a href="#">GPU</a></li>
-			<li class="topic"><a href="#">Topic</a></li>
-			<li class="topic2"><a href="#">Topic</a></li>
+			<li class="general"><a href="#">Topic</a></li>
+			<li class="gates"><a href="#">Topic</a></li>
 		</ul>
 	</nav>
 
@@ -71,37 +68,6 @@
 				<a href="">subtopic of e2</a>
 				<a href="">subtopic of e2</a>
 			</li>
-			<li>
-				<a href="">topic of Z-CPU</a>
-				<a href="">subtopic of Z-CPU</a>
-				<a href="">subtopic of Z-CPU</a>
-				<a href="">subtopic of Z-CPU</a>
-				<a href="">subtopic of Z-CPU</a>
-				<a href="">subtopic of Z-CPU</a>
-				<a href="">subtopic of Z-CPU</a>
-			</li>
-			<li>
-				<a href="">topic of Z-CPU</a>
-				<a href="">subtopic of Z-CPU</a>
-				<a href="">subtopic of Z-CPU</a>
-				<a href="">subtopic of Z-CPU</a>
-			</li>
-			<li>
-				<a href="">topic of Z-CPU</a>
-				<a href="">subtopic of Z-CPU</a>
-				<a href="">subtopic of Z-CPU</a>
-			</li>
-			<li>
-				<a href="">topic of Z-CPU</a>
-				<a href="">subtopic of Z-CPU</a>
-				<a href="">subtopic of Z-CPU</a>
-				<a href="">subtopic of Z-CPU</a>
-				<a href="">subtopic of Z-CPU</a>
-			</li>
-			<li>
-				<a href="">topic of Z-CPU</a>
-				<a href="">subtopic of Z-CPU</a>
-			</li>
 		</ul>
 	</nav>
 
@@ -110,55 +76,31 @@
 			<h1>Introduction</h1>
 			<h2>About the course</h2>
 			<p>I welcome you to my tutorial series for all wiremod related. Here we will be exploring Expression 2 in all its glory.</p>
-			<pre><code class="language-e2">@name Find Player By Name
-@model some/model.mdl
-@persist Player:entity Vec:vector4 M:matrix2
-@persist invalid:type Also:invalid
-runOnChat(1)
+			<pre><code>@name Hello World
+@inputs A B
+@outputs Add Sub Mul Div
+@outputs GreaterThan Highest Lowest
+@outputs Vector:vector
+@persist D
+@trigger all
 
-_CONSTANT
-_CONsTANT
+Add = A + B
+Sub = A - B
+Mul = A * B
+Div = A / B
 
-func() #line of comment
-"#not a comment"
+GreaterThan = A > B
 
-#[ block
-of
-comment ]#
-#[ in-line comment block ]# Dunno if anyone even use in-line block commenting tbh
-if(first()) { 
-    foreach(K,Ply:entity = players()) {
-        holoCreate(K,Ply:pos(),vec(-3,2.5,14.3928138),Ply:angles(),vec(255),"models/hunter/plates/plate16.mdl")
-        holoVisible(K,players(),0)
-        holoVisible(K,owner(),1)
-        holoParent(K,Ply)
-    }
+if(A > B) {
+    Highest = A, Lowest = B
+} else {
+    Highest = B, Lowest = A
 }
 
-switch(owner():lastSaid() & chatClk(owner())) {
-    case "on" & 1,
-        hideChat(1)
-        for(I = 1,players():count()) {
-            holoAlpha(I,0)
-        }
-    break
-    
-    case "off" & 1,
-        hideChat(1)
-        for(I = 1,players():count()){
-            holoAlpha(I,255)
-        }
-    break
-}
+Vector = vec(A, B, 0)
+Vector = Vector + vec(0, 0, A + B)
+Vector = Vector:normalized()
 
-
-
-foreach(K,Ply = players())
-{
-    holoPos(K, Ply:pos() + vec(0,0,600) + vec(0,0,cos(curtime()*100)*50))
-    holoAng(K,ang(180,0,0))
-    holoColor(K, hsv2rgb(255,1,1))
-}
 </code></pre>
 			
 			<h2>About the presenter</h2>
