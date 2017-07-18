@@ -2,7 +2,7 @@
 
 Making this project because I feel determined
 
-http://wiremodforall.com
+https://wiremodforall.com
 
 
 ## TODO:
