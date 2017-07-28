@@ -3,7 +3,7 @@
   "short_name": "Wiremod4All",
   "theme_color": "#2196f3",
   "background_color": "#17c5cb",
-  "display": "minimal-ui",
+  "display": "standalone",
   "orientation": "portrait",
   "Scope": "/",
   "start_url": "/",
