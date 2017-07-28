@@ -1,0 +1,14 @@
+[
+  {
+    "name": "x",
+    "takes": "n",
+    "returns": "n",
+    "deprecated": false
+  },
+  {
+    "name": "vec",
+    "takes": "nnn",
+    "returns": "v",
+    "deprecated": false
+  }
+]

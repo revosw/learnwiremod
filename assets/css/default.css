@@ -21,9 +21,6 @@
 .hljs-directive {
 	color: rgb(240,240,160);
 }
-.hljs-kek {
-	color: rgb(240,240,160);
-}
 .hljs-comment {
 	color: rgb(128,128,128);
 }
@@ -48,6 +45,6 @@
 .hljs-symbol {
 	color: #DDD;
 }
-.hljs-function {
-	color: #000;
-}
+/*.hljs-function {
+	color: rgb(160,160,240);
+}*/
