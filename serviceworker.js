@@ -1,5 +1,5 @@
 // Set a name for the current cache
-var cacheName = 'v1'; 
+var cacheName = 'v2';
 
 // Default files to always cache
 var cacheFiles = [
@@ -82,7 +82,7 @@ self.addEventListener('fetch', function(e) {
 					.then(function(response) {
 
 						if ( !response ) {
-							console.log("[ServiceWorker] No response from fetch ")
+							console.log("[ServiceWorker] No response from fetch")
 							return response;
 						}
 
@@ -109,3 +109,4 @@ self.addEventListener('fetch', function(e) {
 			}) // end caches.match(e.request)
 	); // end e.respondWith
 });
+

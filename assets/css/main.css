@@ -135,7 +135,7 @@ li a ~ a {
 		overflow-y: scroll;
 		max-height: calc(100vh - var(--nav-height));
 		box-shadow: 0 10px 20px rgba(0,0,0,0.3), 0 7px 6px rgba(0,0,0,0.23);
-		background: url("https://image.freepik.com/free-vector/abstract-geometric-background-in-orange-and-yellow-tones_1095-34.jpg") no-repeat;
+		background: linear-gradient(#F2AC2F, #FA4E10);
 		background-size: cover; 
 		color: black;
 		font-family: 'Slabo 27px', serif;
