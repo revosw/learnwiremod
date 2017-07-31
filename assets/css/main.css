@@ -21,7 +21,7 @@
 
 body {
 	color: #ddd;
-	background-color: #5AE;
+	background-color: #2a7793;
 	overflow-y: hidden;
 }
 h1 {
@@ -72,11 +72,11 @@ p {
 			color: #333;
 		}
 		.active {
-			box-shadow: 0 -2px 10px 1px rgba(0,0,0,0.3);
+			box-shadow: 0 -4px 6px 0px rgba(0,0,0,0.3);
 			z-index: 1;
 		}
 		.tutorials {
-			background: linear-gradient(#F2AC2F, #FA4E10);
+			background: linear-gradient(#c47b36, #7a3b22);
 		}
 		.reference {
 			background: linear-gradient(#aaa, #333);
