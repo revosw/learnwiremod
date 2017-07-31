@@ -71,6 +71,12 @@ p {
 			background: #ddd;
 			color: #333;
 		}
+		.tut {
+			background: #b9702b;
+		}
+		.ref {
+			background: #999;
+		}
 		.active {
 			box-shadow: 0 -4px 6px 0px rgba(0,0,0,0.3);
 			z-index: 1;
