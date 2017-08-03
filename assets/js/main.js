@@ -16,7 +16,7 @@ window.onload = function() {
   var tabs = document.querySelectorAll(".tab");
   console.log(tabs)
   var sidenav = document.querySelector("#sidenav");
-  for(tab of tabs) {
+  for(tab of Array.from(tabs)) {
     console.log(tab)
     tab.addEventListener("click", e => {
       if(e.target.classList.toString() === "tab active") return;
