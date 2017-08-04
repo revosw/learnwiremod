@@ -12,7 +12,10 @@
 
 //Run  function  when  the page's content has loaded
 window.onload = function() {
-  console.log("Inside IIFE");
+
+
+
+  /*console.log("Inside IIFE");
   var tabs = document.querySelectorAll(".tab");
   console.log(tabs)
   var sidenav = document.querySelector("#sidenav");
@@ -36,5 +39,5 @@ window.onload = function() {
       sidenav.classList.remove(sidenav.classList.contains("tutorials") ? "reference" : "tutorials");
       sidenav.classList.add(e.target.innerText.toLowerCase());
     });
-  }
+  }*/
 }
