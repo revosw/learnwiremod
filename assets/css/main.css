@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Varela+Round');
 
-/* Change font size based on width of the window */
+/* Managing the break-points of the page based on the window's width */
 @media (max-width: 1499px) {
 	html {
 		font-size: 18px;
@@ -21,6 +21,7 @@
 
 }
 
+/* This is to ensure that if there is too little content filling up the page, you won't look at a webpage that doesn't take the full height of the window */
 html {
 	height: 100vh;
 }
