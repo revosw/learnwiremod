@@ -1,28 +1,35 @@
-@import url('https://fonts.googleapis.com/css?family=Kumar+One');
-@import url('https://fonts.googleapis.com/css?family=Slabo+27px');
 @import url('https://fonts.googleapis.com/css?family=Varela+Round');
-@import "bootstrap-grid.min.css";
 
-/* Change font size based on width of the window */
+/* Managing the break-points of the page based on the window's width */
 @media (max-width: 1499px) {
 	html {
 		font-size: 18px;
 	}
+	--sidenav-width: 100vw;
 }
 @media (min-width: 1500px) {
 	html {
 		font-size: 20px;
 	}
+	--sidenav-width: 250px;
 }
 @media (min-width: 1800px) {
 	html {
-		font-size: 22px;
+		font-size: 21px;
 	}
+	--sidenav-width: 350px;
+
+}
+
+/* This is to ensure that if there is too little content filling up the page, you won't look at a webpage that doesn't take the full height of the window */
+html {
+	height: 100vh;
 }
 
 body {
-	overflow-y: hidden;
+	background: #eee;
 }
+
 h1 {
 	font-size: 4em;
 	color: #097054;
@@ -36,18 +43,16 @@ h2 {
 	font-family: 'Varela Round', sans-serif;
 }
 p {
-	color: black;
+	color: #444;
 	margin: 20px 0;
 }
 
 	#sidenav {
 		position: fixed;
-		display: inline-block;
 		height: 100vh;
-		overflow-y: hidden;
-		width: 350px;
+		width: var(--sidenav-width);
 		box-shadow: 0 10px 20px rgba(0,0,0,0.3), 0 7px 6px rgba(0,0,0,0.23);
-		font-family: 'Slabo 27px', serif;
+		font-family: "Trebuchet MS", serif;
 	}
 		.back {
 			width: 100%;
@@ -57,7 +62,7 @@ p {
 			.back a {
 				color: #333;
 				line-height: 60px;
-				padding-left: 30px;
+				padding: 15px;
 			}
 		.tab {
 			display: inline-block;
@@ -90,7 +95,7 @@ p {
 			position: relative;
 			box-shadow: 0px 2px 8px 4px rgba(0,0,0,0.3);
 			overflow-y: scroll;
-			max-height: calc(100vh - 197px);
+			max-height: calc(100vh - 120px);
 			line-height: 32px;
 		}
 			#sidenav ul li a {
@@ -103,13 +108,8 @@ p {
 				}
 	main {
 		display: inline-block;
-		overflow-y: scroll;
-		height: 100vh;
-		width: 100%;
-		max-width: 1200px;
-		margin-left: 450px;
-		box-shadow: 0 10px 20px rgba(0,0,0,0.3), 0 7px 6px rgba(0,0,0,0.23);
-		background-color: #eee;
+		margin-left: 500px;
+		padding: 100px 30px 0;
 	}
 		#content {
 			margin: 150px 40px;
@@ -120,27 +120,30 @@ p {
 			}
 			pre code {
 				font-size: 0.8em;
+			border-radius: 14px;
+			border:3px solid darkgoldenrod;
+			box-shadow:	0 0 12px 3px rgba(0,0,0,0.5)
 			}
 
 
 ::-webkit-scrollbar {
-  width: 4px;
-  height: 4px;
+  width: 5px;
+  height: 5px;
 }
 ::-webkit-scrollbar-button {
   width: 0px;
   height: 0px;
 }
 ::-webkit-scrollbar-thumb {
-  background: #bcbcbc;
+  background: #ffffff;
   border: 0px none #ffffff;
-  border-radius: 7px;
+  border-radius: 50px;
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #ffffff;
 }
 ::-webkit-scrollbar-thumb:active {
-  background: #000000;
+  background: #ffffff;
 }
 ::-webkit-scrollbar-track {
   background: #666666;

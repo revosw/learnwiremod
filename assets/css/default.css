@@ -1,3 +1,10 @@
+/*
+	This file is for the purpose of highlighting text inside the code blocks.
+	You don't need to edit this file other than the ::selection color, if you
+	find a better color. ::selection is the background color text gets when
+	you click and drag to select it.
+*/
+
 ::selection {
 	background-color: rgba(79, 146, 255,0.3);
 }
