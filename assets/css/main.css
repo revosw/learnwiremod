@@ -1,27 +1,47 @@
 @import url('https://fonts.googleapis.com/css?family=Varela+Round');
 
 /* Managing the break-points of the page based on the window's width */
-@media (max-width: 1499px) {
+@media (max-width: 1199px) {
 	html {
-		font-size: 18px;
+		font-size: 30px;
 	}
-	--sidenav-width: 100vw;
-}
-@media (min-width: 1500px) {
-	html {
-		font-size: 20px;
+	.sidetoggle {
+		right: 0;
 	}
-	--sidenav-width: 250px;
+	#sidenav {
+		left: -430px;
+	}
+
+	main {
+		margin: auto;
+		width: 95%;
+	}
 }
-@media (min-width: 1800px) {
+@media (min-width: 1200px) {
 	html {
 		font-size: 21px;
 	}
-	--sidenav-width: 350px;
-
+	.sidetoggle {
+		left: 0;
+	}
+	main {
+		margin-left: 30%;
+		width: 55%;
+	}
+	#sidenav {
+		z-index: 3;
+		left: 0;
+	}
+	body::before {
+		position: absolute;
+		z-index: 2;
+		width: 100%;
+		height: 100%;
+		content: "";
+	}
 }
 
-/* This is to ensure that if there is too little content filling up the page, you won't look at a webpage that doesn't take the full height of the window */
+/* height: 100vh is to ensure that if there is too little content filling up the page, you won't look at a webpage that doesn't take the full height of the window */
 html {
 	height: 100vh;
 }
@@ -36,6 +56,7 @@ h1 {
 	margin: 30px 50px;
 	font-family: 'Varela Round', sans-serif;
 }
+
 h2 {
 	font-size: 1.5em;
 	color: #097054;
@@ -50,38 +71,39 @@ a {
 	cursor: pointer;
 }
 
+	.sidetoggle {
+		position: fixed;
+		top: 0;
+		font-size: 3em;
+		padding: 0.1em 0.2em;
+		background: #ddd;
+	}
+
 	#sidenav {
 		position: fixed;
 		height: 100vh;
-		width: var(--sidenav-width);
 		box-shadow: 0 10px 20px rgba(0,0,0,0.3), 0 7px 6px rgba(0,0,0,0.23);
 		font-family: "Trebuchet MS", serif;
 	}
 		.back {
 			width: 100%;
-			height: 60px;
+			height: 3em;
 			background: #a78dfc;
 		}
 			.back a {
 				color: #333;
-				line-height: 60px;
+				line-height: 3em;
 				padding: 15px;
 			}
 		.tab {
 			display: inline-block;
 			position: relative;
 			width: 50%;
-			height: 60px;
-			line-height: 60px;
+			height: 3em;
+			line-height: 3em;
 			text-align: center;
 			background: #ddd;
 			color: #333;
-		}
-		.tut {
-			background: #b9702b;
-		}
-		.ref {
-			background: #999;
 		}
 		.active {
 			box-shadow: 0 -4px 6px 0px rgba(0,0,0,0.3);
@@ -98,8 +120,8 @@ a {
 			position: relative;
 			box-shadow: 0px 2px 8px 4px rgba(0,0,0,0.3);
 			overflow-y: scroll;
-			max-height: calc(100vh - 196px);
-			line-height: 32px;
+			max-height: calc(100vh - 8em);
+			line-height: 1.5em;
 		}
 			#sidenav ul li a {
 				color: #ddd;
@@ -109,24 +131,22 @@ a {
 					margin-left: 20px;
 					display: block;
 				}
+
 	main {
-		display: inline-block;
-		margin-left: 500px;
+		display: block;
+		min-width: 600px;
 		padding: 100px 30px 0;
 	}
-		#content {
-			margin: 150px 40px;
+		main img {
+			max-width: 80%;
+			display: block;
+			margin: auto;
 		}
-			#content img {
-				width: 70%;
-				margin: auto;
-			}
-			pre code {
-				font-size: 0.8em;
+		pre code {
 			border-radius: 14px;
 			border:3px solid darkgoldenrod;
 			box-shadow:	0 0 12px 3px rgba(0,0,0,0.5)
-			}
+		}
 
 
 ::-webkit-scrollbar {
