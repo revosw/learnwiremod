@@ -46,6 +46,9 @@ p {
 	color: #444;
 	margin: 20px 0;
 }
+a {
+	cursor: pointer;
+}
 
 	#sidenav {
 		position: fixed;

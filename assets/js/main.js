@@ -20,6 +20,17 @@ window.onload = function() {
       $("#sidenav").toggleClass("tutorials reference");
       $(".tutlist").toggle();
     });
-  });
+
+    $("li > a:first-child").on("click", e => {
+      $.ajax({
+        url: `/e2/${e.target.innerText.replace(/ /g,"-").toLowerCase()}.html`,
+        success: data => {
+          $("main").html(data)
+          //Initialize highlighting for code blocks when changing page
+          $("code").html(hljs.highlightAuto($("code").text()).value)
+        }
+      })
+    })
+  })
 
 };
