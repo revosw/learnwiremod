@@ -33,7 +33,7 @@ window.onload = function() {
       "main",
       pages,
       function(){$("code").html(hljs.highlightAuto($("code").text()).value);},
-      `pages/introduction.html`,
+      `introduction`,
       function(){$("code").html(hljs.highlightAuto($("code").text()).value);},
     );
 
