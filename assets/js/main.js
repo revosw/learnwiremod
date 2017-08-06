@@ -12,18 +12,15 @@
 
 //Run  function  when  the page's content has loaded
 window.onload = function() {
-
-  $("#sidenav").load("assets/includes/sidenav.html", () => {
+  importer.load("#sidenav","sidenav.html", () => {
 
     // Object for use in importer.initialize()
-    var pages = {}
+    var pages = {};
     for(page of $("#sidenav ul a:first-child")) {
-      var pageName = page.innerText.replace(/ /g,"-").toLowerCase()
-      var topic = location.pathname.replace(".html","")
+      var pageName = page.innerText.replace(/ /g,"-").toLowerCase();
 
-      pages[pageName] = `${topic.slice(1)}/${pageName}.html`
+      pages[pageName] = `pages/${pageName}.html`;
     }
-    console.log(pages)
 
     $(".tab").on("click", e => {
       if ( $(e.target).hasClass("active") ) return;
@@ -36,26 +33,23 @@ window.onload = function() {
       "main",
       pages,
       function(){$("code").html(hljs.highlightAuto($("code").text()).value);},
-      "introduction",
+      `pages/introduction.html`,
       function(){$("code").html(hljs.highlightAuto($("code").text()).value);},
     );
 
     $("#sidenav ul a:first-child").on("click", e => {
-      // Get the name of the current page, either e2, gates, cpu etc...
-      var topic = location.pathname.replace(".html","");
-
-      // The page with the html to load inside the e2 directory. All lower-cased, spaces changed to hyphens
+      // The page with the html to load inside the pages directory. All lower-cased, spaces changed to hyphens
       var pageName = e.target.innerText.replace(/ /g,"-").toLowerCase();
 
       importer.load(
         "main",
-        `${topic}/${pageName}.html`,
+        `pages/${pageName}.html`,
         // Initialize highlighting for code blocks at initial load and when changing page
         function(){$("code").html(hljs.highlightAuto($("code").text()).value)},
         `${pageName}`
       );
 
-    })
+    });
 
     // Have to reset the sidenav to show it when expanding the window, and hide at mobile
     // setTimeout is for performance purposes. Instead of checking every time event is fired,
@@ -63,18 +57,18 @@ window.onload = function() {
     $(window).on("resize", () => {
       setTimeout( () => {
         $("#sidenav")[0].style.left = checkBreakpoint();
-      },100)
-    })
+      },100);
+    });
 
     function checkBreakpoint() {
       return window.innerWidth < 1200 ? "-430px" : "0px";
     }
 
     $(".sidetoggle").on("click", () => {
-      var toggle = $("#sidenav")[0].style.left == "0px" ? "-430px" : "0px"
-      $("#sidenav").animate({ left: toggle })
-      $("body::before").animate({ background: "rgba(0,0,0,0.6)" })
-    })
+      var toggle = $("#sidenav")[0].style.left == "0px" ? "-430px" : "0px";
+      $("#sidenav").animate({ left: toggle });
+      $("body::before").animate({ background: "rgba(0,0,0,0.6)" });
+    });
 
-  })
+  });
 };
