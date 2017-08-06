@@ -15,17 +15,11 @@
 	</head>
 	<body>
 		<div class="sidetoggle">&#9776;</div>
+		
+		<!-- <nav> is served through importer.js' function "importer.load()", executed in main.js -->
 		<nav id="sidenav" class="tutorials"></nav>
-		<main>
-			<h1 id="introduction">Introduction</h1>
-			<h2 id="about">About the course</h2>
-			<p>I welcome you to the tutorial series for all wiremod related. Here we will be exploring Expression 2 in all its glory.</p>
-			<pre><code>mov eax, ebx
-			</code></pre>
-			<h2 id="credits">Credits</h2>
-			<p>Upcomging list of shoutouts</p>
-			<img src="assets/img/editor.png">
-			<a class="next">The editor</a>
-		</main>
+
+		<!-- import.js first serves <main> through importer.initialize(), then importer.load() when a link is clicked from the sidenav -->
+		<main></main>
 	</body>
 </html>

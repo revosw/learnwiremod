@@ -15,41 +15,11 @@
 	</head>
 	<body>
 		<div class="sidetoggle">&#9776;</div>
+		
+		<!-- <nav> is served through importer.js' function "importer.load()", executed in main.js -->
 		<nav id="sidenav" class="tutorials"></nav>
-		<main>
-			<h1 id="introduction">Introduction</h1>
-			<h2 id="about">About the course</h2>
-			<p>I welcome you to the tutorial series for all wiremod related. Here we will be exploring Expression 2 in all its glory.</p>
-			<pre><code>
-@name Hello World
-@inputs A B
-@outputs Add Sub Mul Div
-@outputs GreaterThan Highest Lowest
-@outputs Vector:vector
-@persist D
-@trigger all
 
-Add = A + B
-Sub = A - B
-Mul = A * B
-Div = A / B
-
-GreaterThan = A > B
-
-if(A > B) {
-Highest = A, Lowest = B
-} else {
-Highest = B, Lowest = A
-}
-
-Vector = vec(A, B, 0)
-Vector = Vector + vec(0, 0, A + B)
-Vector = Vector:normalized()
-			</code></pre>
-			<h2 id="credits">Credits</h2>
-			<p>Upcomging list of shoutouts</p>
-			<img src="img/editor.png">
-			<a class="next">The editor</a>
-		</main>
+		<!-- import.js first serves <main> through importer.initialize(), then importer.load() when a link is clicked from the sidenav -->
+		<main></main>
 	</body>
 </html>
