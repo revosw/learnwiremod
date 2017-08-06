@@ -7,9 +7,7 @@ https://wiremodforall.com
 
 ## TODO:
 
-* style each guide as their own theme
 * Have the same layout for every guide
-* Change topnav's plain text to cool animations that play when you hover over the topics (maybe 24-frame .apng made in After Effects?)
 
 ### Include these things for the e2 guide
 
