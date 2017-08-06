@@ -21,7 +21,7 @@ window.onload = function() {
       var pageName = page.innerText.replace(/ /g,"-").toLowerCase()
       var topic = location.pathname.replace(".html","")
 
-      pages[pageName] = `/${topic}/${pageName}.html`
+      pages[pageName] = `${topic}/${pageName}.html`
       
     }
     console.log(pages)
