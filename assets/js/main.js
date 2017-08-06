@@ -13,9 +13,15 @@
 //Run  function  when  the page's content has loaded
 window.onload = function() {
 
-  $("h1").on("click", () => console.log("clickedd"))
-
   $("#sidenav").load("/assets/includes/sidenav.html", () => {
+
+    // Object of pages to use with importer.initialize()
+    var pages = {}
+    for(page of $("#sidenav ul a:first-child")) {
+      var pageName = page.innerText.replace(/ /g,"-").toLowerCase()
+      pages[pageName] = `${pageName}.html`
+    }
+
     $(".tab").on("click", e => {
       if ( $(e.target).hasClass("active") ) return;
       $(".tab").toggleClass("active");
@@ -23,32 +29,47 @@ window.onload = function() {
       $(".tutlist").toggle();
     });
 
-    $("li > a:first-child").on("click", e => {
-      $.ajax({
-        url: `${location.pathname.replace(".html","")}/${e.target.innerText.replace(/ /g,"-").toLowerCase()}.html`,
-        success: data => {
-          $("main").html(data)
+    importer.initialize(
+      "main",
+      {
+        "introduction": "introduction.html",
+        "the-editor": "the-editor.html"
+      },
+      function(){$("code").html(hljs.highlightAuto($("code").text()).value);}
+    );
 
-          
-          //Initialize highlighting for code blocks when changing page
-          $("code").html(hljs.highlightAuto($("code").text()).value)
-        }
-      })
+    $("#sidenav ul a:first-child").on("click", e => {
+
+      console.log(e.target.innerText.replace(/ /g,"-").toLowerCase());
+      // The page with the html to load inside the e2 directory. All lower-cased, spaces changed to hyphens
+      var pageName = e.target.innerText.replace(/ /g,"-").toLowerCase();
+
+      importer.load(
+        "main",
+        `${pageName}.html`,
+        // Initialize highlighting for code blocks at initial load and when changing page
+        function(){$("code").html(hljs.highlightAuto($("code").text()).value)},
+        `${pageName}`
+      );
+
     })
 
-    //Have to reset the sidenav to show it when expanding the window
+    // Have to reset the sidenav to show it when expanding the window, and hide at mobile
+    // setTimeout is for performance purposes. Instead of checking every time event is fired,
+    // it checks once every 100ms
     $(window).on("resize", () => {
-      if (window.innerWidth < 1200)
-        $("#sidenav")[0].style.left = "-430px";
-      else
-        $("#sidenav")[0].style.left = "0px";
+      setTimeout( () => {
+        $("#sidenav")[0].style.left = checkBreakpoint();
+      },100)
     })
+
+    function checkBreakpoint() {
+      return window.innerWidth < 1200 ? "-430px" : "0px";
+    }
 
     $(".sidetoggle").on("click", () => {
       var toggle = $("#sidenav")[0].style.left == "0px" ? "-430px" : "0px"
       $("#sidenav").animate({ left: toggle })
-
-      console.log(togg)
       $("body::before").animate({ background: "rgba(0,0,0,0.6)" })
     })
 
