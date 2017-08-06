@@ -36,7 +36,8 @@ window.onload = function() {
       "main",
       pages,
       function(){$("code").html(hljs.highlightAuto($("code").text()).value);},
-      "e2/introduction.html"
+      "introduction",
+      function(){$("code").html(hljs.highlightAuto($("code").text()).value);},
     );
 
     $("#sidenav ul a:first-child").on("click", e => {
