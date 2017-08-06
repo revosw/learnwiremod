@@ -13,7 +13,7 @@
 //Run  function  when  the page's content has loaded
 window.onload = function() {
 
-  $("#sidenav").load("/assets/includes/sidenav.html", () => {
+  $("#sidenav").load("assets/includes/sidenav.html", () => {
 
     // Object for use in importer.initialize()
     var pages = {}
