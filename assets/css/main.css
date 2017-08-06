@@ -6,7 +6,7 @@
 		font-size: 30px;
 	}
 	.sidetoggle {
-		right: 0;
+		display: none;
 	}
 	#sidenav {
 		left: -430px;
