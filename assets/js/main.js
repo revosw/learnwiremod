@@ -36,9 +36,17 @@ window.onload = function() {
       })
     })
 
-    $(".sidetoggle").on("click", e => {
-      var togg = $("#sidenav")[0].style.left == "0px" ? "-430px" : "0px"
-      $("#sidenav").animate({ left: togg })
+    //Have to reset the sidenav to show it when expanding the window
+    $(window).on("resize", () => {
+      if (window.innerWidth < 1200)
+        $("#sidenav")[0].style.left = "-430px";
+      else
+        $("#sidenav")[0].style.left = "0px";
+    })
+
+    $(".sidetoggle").on("click", () => {
+      var toggle = $("#sidenav")[0].style.left == "0px" ? "-430px" : "0px"
+      $("#sidenav").animate({ left: toggle })
 
       console.log(togg)
       $("body::before").animate({ background: "rgba(0,0,0,0.6)" })
