@@ -15,12 +15,16 @@ window.onload = function() {
 
   $("#sidenav").load("/assets/includes/sidenav.html", () => {
 
-    // Object of pages to use with importer.initialize()
+    // Object for use in importer.initialize()
     var pages = {}
     for(page of $("#sidenav ul a:first-child")) {
       var pageName = page.innerText.replace(/ /g,"-").toLowerCase()
-      pages[pageName] = `${pageName}.html`
+      var topic = location.pathname.replace(".html","")
+
+      pages[pageName] = `/${topic}/${pageName}.html`
+      
     }
+    console.log(pages)
 
     $(".tab").on("click", e => {
       if ( $(e.target).hasClass("active") ) return;
@@ -31,22 +35,21 @@ window.onload = function() {
 
     importer.initialize(
       "main",
-      {
-        "introduction": "introduction.html",
-        "the-editor": "the-editor.html"
-      },
-      function(){$("code").html(hljs.highlightAuto($("code").text()).value);}
+      pages,
+      function(){$("code").html(hljs.highlightAuto($("code").text()).value);},
+      "/e2/introduction.html"
     );
 
     $("#sidenav ul a:first-child").on("click", e => {
+      // Get the name of the current page, either e2, gates, cpu etc...
+      var topic = location.pathname.replace(".html","");
 
-      console.log(e.target.innerText.replace(/ /g,"-").toLowerCase());
       // The page with the html to load inside the e2 directory. All lower-cased, spaces changed to hyphens
       var pageName = e.target.innerText.replace(/ /g,"-").toLowerCase();
 
       importer.load(
         "main",
-        `${pageName}.html`,
+        `${topic}/${pageName}.html`,
         // Initialize highlighting for code blocks at initial load and when changing page
         function(){$("code").html(hljs.highlightAuto($("code").text()).value)},
         `${pageName}`
@@ -72,7 +75,6 @@ window.onload = function() {
       $("#sidenav").animate({ left: toggle })
       $("body::before").animate({ background: "rgba(0,0,0,0.6)" })
     })
-
 
   })
 };
