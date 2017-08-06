@@ -84,7 +84,7 @@ var importer = (function() {
 			history.pushState(state, "importer.state", current_url );
 		}
 
-		$.get( url, function(data) {
+		$.get( url, /*{"_": $.now()},*/ function(data) {
 			elem.html( data );
 			if (callback) {callback(elemstr,url,pagename);}
 		});
