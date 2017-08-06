@@ -4,11 +4,11 @@ Making this project because I feel determined
 
 https://wiremodforall.com
 
-##Contributing
+## Contributing
 
 
 
-## TODO:
+## TODO
 
 * Have the same layout for every guide
 
