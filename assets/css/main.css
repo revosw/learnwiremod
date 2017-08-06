@@ -6,7 +6,8 @@
 		font-size: 30px;
 	}
 	.sidetoggle {
-		display: none;
+		display: block;
+		right: 0;
 	}
 	#sidenav {
 		left: -430px;
@@ -22,7 +23,7 @@
 		font-size: 21px;
 	}
 	.sidetoggle {
-		left: 0;
+		display: none;
 	}
 	main {
 		margin-left: 30%;
