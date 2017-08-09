@@ -10,13 +10,17 @@
 }
 
 .hljs {
-  display: block;
-  overflow-x: auto;
+	display: block;
   padding: 0.5em;
-  color: rgb(160,160,240);
-	background: #323232;
-	font-family: "courier new";
-	font-size: 0.8em;
+	border:2px solid goldenrod;
+	border-radius: 14px;
+	box-shadow:	0 0 12px 3px rgba(0,0,0,0.5);
+}
+
+.hljs-inline {
+	display: inline-block;
+	padding: 0 2px;
+	border-radius: 4px;
 }
 
 .hljs-ppcommand {
