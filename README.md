@@ -2,8 +2,6 @@
 
 Making this project because I feel determined
 
-https://wiremodforall.com
-
 ## Contributing
 
 
