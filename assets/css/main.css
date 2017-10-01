@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Varela+Round');
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400');
 
 /* Managing the break-points of the page based on the window's width */
 @media (max-width: 1199px) {
@@ -7,7 +7,6 @@
 	}
 	.sidetoggle {
 		display: block;
-		right: 0;
 	}
 	#sidenav {
 		left: -430px;
@@ -26,48 +25,53 @@
 		display: none;
 	}
 	main {
-		margin-left: 30%;
 		width: 55%;
+		margin: 80px 0 0 10%;
 	}
 	#sidenav {
 		z-index: 3;
 		left: 0;
-	}
-	body::before {
-		position: absolute;
-		z-index: 2;
-		width: 100%;
-		height: 100%;
-		content: "";
 	}
 }
 
 /* height: 100vh is to ensure that if there is too little content filling up the page, you won't look at a webpage that doesn't take the full height of the window */
 html {
 	height: 100vh;
+	box-sizing: border-box;
+}
+*, ::after, ::before {
+	box-sizing: inherit;
 }
 
 body {
 	background: #eee;
+	overflow-x: hidden;
+	display: flex;
+	font-family: "Raleway";
 }
 
 h1 {
-	font-size: 4em;
-	color: #097054;
-	margin: 30px 50px;
-	font-family: 'Varela Round', sans-serif;
+	font-size: 5em;
+	text-align: right;
+	color: #ddd;
+	margin: 30px 0 70px 0;
+	text-shadow: 2px 2px 2px #222;
+	transform: rotateZ(4deg);
+	font-family: inherit, sans-serif;
+	font-weight: 300;
 }
 
 h2 {
-	font-size: 1.5em;
-	color: #097054;
+	font-size: 2em;
+	color: #5078ba;
 	margin: 30px 20px;
-	font-family: 'Varela Round', sans-serif;
+	font-family: inherit, sans-serif;
 }
 p {
 	color: #444;
 	margin: 20px 0;
 	line-height: 1.3em;
+	font-family: Arial;
 }
 a {
 	cursor: pointer;
@@ -85,60 +89,71 @@ table {
 		border-bottom: 2px solid #888;
 	}
 
+	header {
+		position: absolute;
+		top: -160px;
+		background-color: #1f71f4;
+		transform: rotateZ(4deg);
+		width: 120vw;
+		height: 400px;
+		z-index: -1;
+	}
+
 	.sidetoggle {
 		position: fixed;
 		top: 0;
+		right: 0;
 		font-size: 3em;
 		padding: 0.1em 0.2em;
 		background: #ddd;
 	}
 
 	#sidenav {
-		position: fixed;
-		height: 100vh;
-		box-shadow: 0 10px 20px rgba(0,0,0,0.3), 0 7px 6px rgba(0,0,0,0.23);
-		font-family: "Trebuchet MS", serif;
+		color: #092c63;
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		margin-top: 30px;
+		width: 320px;
+		font-family: inherit, serif;
 	}
-		.back {
-			width: 100%;
-			height: 3em;
-			background: #a78dfc;
-		}
-			.back a {
-				color: #333;
-				line-height: 3em;
-				padding: 15px;
-			}
-		.tab {
-			display: inline-block;
+		.button {
 			position: relative;
-			width: 50%;
-			height: 3em;
-			line-height: 3em;
+			border-radius: 14px;
+			box-shadow: 3px 3px 0px 2px #333;
+			background: #4f92ff;
+			margin-bottom: 100px;
+			margin-left: 30px;
 			text-align: center;
-			background: #ddd;
-			color: #333;
 		}
-		.active {
-			box-shadow: 0 -4px 6px 0px rgba(0,0,0,0.3);
-			z-index: 1;
+		.back {
+			width: 100px;
+			height: 100px;
+
 		}
-		.tutorials {
-			background: linear-gradient(#c47b36, #7a3b22);
+		.next {
+			font-size: 1.5em;
+			padding: 5px;
 		}
-		.reference {
-			background: linear-gradient(#999, #333);
+		.next img {
+			height: 30px;
+			transform: rotateZ(180deg);
 		}
+		.tab {
+			border-bottom: 2px solid #092c63;
+			width: 6.5em;
+			margin: 40px 0 0 30px;
+			font-size: 1.5em;
+			letter-spacing: 2px;
+			text-transform: uppercase;
+		}
+
 		#sidenav ul {
 			padding: 40px 40px;
-			position: relative;
-			box-shadow: 0px 2px 8px 4px rgba(0,0,0,0.3);
-			overflow-y: scroll;
-			max-height: calc(100vh - 8em);
 			line-height: 1.5em;
 		}
 			#sidenav ul li a {
-				color: #ddd;
+				color: inherit;
 			}
 				li a:not(:first-child) {
 					font-size: 0.8em;
@@ -147,13 +162,11 @@ table {
 				}
 
 	main {
-		display: block;
+		display: inline-block;
 		min-width: 600px;
-		padding: 100px 30px 0;
 	}
 		main img {
 			max-width: 80%;
-			display: block;
 			margin: auto;
 		}
 		code {
