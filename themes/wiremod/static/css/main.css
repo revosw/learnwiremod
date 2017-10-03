@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400');
+
+/* Managing the break-points of the page based on the window's width */
+@media (max-width: 1199px) {
+	html {
+		font-size: 30px;
+	}
+	.sidetoggle {
+		display: block;
+	}
+	#sidenav {
+		left: -430px;
+	}
+
+	main {
+		margin: auto;
+		width: 95%;
+	}
+}
+@media (min-width: 1200px) {
+	html {
+		font-size: 21px;
+	}
+	.sidetoggle {
+		display: none;
+	}
+	main {
+		width: 55%;
+		margin: 80px 0 0 10%;
+	}
+	#sidenav {
+		z-index: 3;
+		left: 0;
+	}
+}
+
+/* height: 100vh is to ensure that if there is too little content filling up the page, you won't look at a webpage that doesn't take the full height of the window */
+html {
+	height: 100vh;
+	box-sizing: border-box;
+}
+*, ::after, ::before {
+	box-sizing: inherit;
+}
+
+body {
+	background: #eee;
+	overflow-x: hidden;
+	display: flex;
+	font-family: "Raleway";
+}
+
+h1 {
+	font-size: 5em;
+	text-align: right;
+	color: #ddd;
+	margin: 30px 0 70px 0;
+	text-shadow: 2px 2px 2px #222;
+	transform: rotateZ(4deg);
+	font-family: inherit, sans-serif;
+	font-weight: 300;
+}
+
+h2 {
+	font-size: 2em;
+	color: #5078ba;
+	margin: 30px 20px;
+	font-family: inherit, sans-serif;
+}
+p {
+	color: #444;
+	margin: 20px 0;
+	line-height: 1.3em;
+	font-family: Arial;
+}
+a {
+	cursor: pointer;
+}
+table {
+	border-collapse: collapse;
+	font-family: "Trebuchet MS";
+	font-size: 0.8em;
+}
+	thead {
+		background: #ccc;
+	}
+	td, th {
+		padding: 14px 4px;
+		border-bottom: 2px solid #888;
+	}
+
+	header {
+		position: absolute;
+		top: -160px;
+		background-color: #1f71f4;
+		transform: rotateZ(4deg);
+		width: 120vw;
+		height: 400px;
+		z-index: -1;
+	}
+
+	.sidetoggle {
+		position: fixed;
+		top: 0;
+		right: 0;
+		font-size: 3em;
+		padding: 0.1em 0.2em;
+		background: #ddd;
+	}
+
+	#sidenav {
+		color: #092c63;
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		margin-top: 30px;
+		width: 320px;
+		font-family: inherit, serif;
+	}
+		.button {
+			position: relative;
+			border-radius: 14px;
+			box-shadow: 3px 3px 0px 2px #333;
+			background: #4f92ff;
+			margin-bottom: 100px;
+			margin-left: 30px;
+			text-align: center;
+		}
+		.back {
+			width: 100px;
+			height: 100px;
+
+		}
+		.next {
+			font-size: 1.5em;
+			padding: 5px;
+		}
+		.next img {
+			height: 30px;
+			transform: rotateZ(180deg);
+		}
+		.tab {
+			border-bottom: 2px solid #092c63;
+			width: 6.5em;
+			margin: 40px 0 0 30px;
+			font-size: 1.5em;
+			letter-spacing: 2px;
+			text-transform: uppercase;
+		}
+
+		#sidenav ul {
+			padding: 40px 40px;
+			line-height: 1.5em;
+		}
+			#sidenav ul li a {
+				color: inherit;
+			}
+				li a:not(:first-child) {
+					font-size: 0.8em;
+					margin-left: 20px;
+					display: block;
+				}
+
+	main {
+		display: inline-block;
+		min-width: 600px;
+	}
+		main img {
+			max-width: 80%;
+			margin: auto;
+		}
+		code {
+			font-size: 0.8em;
+			font-family: "courier new";
+			color: rgb(160,160,240);
+			background: #323232;
+		}
+		.quiz {
+			display: block;
+			max-width: inherit;
+			margin: auto;
+			background: #fff;
+			border-top: lime;
+		}
+			.question {
+				background: #B26B31;
+			}
+
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-button {
+  width: 20px;
+  height: 20px;
+}
+::-webkit-scrollbar-thumb {
+  background: #ffffff;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ffffff;
+}
+::-webkit-scrollbar-thumb:active {
+  background: #ffffff;
+}
+::-webkit-scrollbar-track {
+  background: #666666;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-track:hover {
+  background: #666666;
+}
+::-webkit-scrollbar-track:active {
+  background: #333333;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}

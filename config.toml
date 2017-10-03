@@ -1,0 +1,6 @@
+baseURL = "http://wiremodforall.com/"
+languageCode = "en-us"
+title = "Wiremod for all"
+theme = "wiremod"
+archetypeDir = "themes/wiremod/archetypes"
+publishDir = "docs"
