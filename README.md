@@ -10,4 +10,4 @@ Contributions aren't yet open. Check the prerequisities
 ## Prerequisities for contributing
 The website is, as mentioned at the top, under construction. This is what I have yet to add to the template:
 * Syntax highlighting (e2, cpu, gpu, starfall...)
-* Dynamic sidenav content (fetch all pages and the pages' <h2> content within same directory)
+* Dynamic sidenav content (fetch all pages and the pages' subheading content within same directory)
