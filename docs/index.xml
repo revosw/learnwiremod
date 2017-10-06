@@ -11,15 +11,59 @@
     
     
     <item>
+      <title>Hello World</title>
+      <link>http://wiremodforall.com/e2/hello-world.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiremodforall.com/e2/hello-world.html</guid>
+      <description>So now we got far Let&amp;rsquo;s get</description>
+    </item>
+    
+    <item>
+      <title>Hello World</title>
+      <link>http://wiremodforall.com/starfall/hello-world.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiremodforall.com/starfall/hello-world.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Index</title>
+      <link>http://wiremodforall.com/starfall/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiremodforall.com/starfall/</guid>
+      <description>qdqdqqdqd</description>
+    </item>
+    
+    <item>
       <title>Introduction</title>
       <link>http://wiremodforall.com/e2/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://wiremodforall.com/e2/</guid>
-      <description> Heading Now
-We
- This is a very long line that will still be quoted properly when it wraps. Oh boy let&amp;rsquo;s keep writing to make sure this is long enough to actually wrap for everyone. Oh, you can put Markdown into a blockquote.
- @input A:number</description>
+      <description> Heading @inputs A:number hljs e2 @inputs A:number 
+So as you can see
+qwdddqdqdqd </description>
+    </item>
+    
+    <item>
+      <title>Next Step</title>
+      <link>http://wiremodforall.com/starfall/next-step.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiremodforall.com/starfall/next-step.html</guid>
+      <description>qdq dqdqd qd qd dq</description>
+    </item>
+    
+    <item>
+      <title>The Editor</title>
+      <link>http://wiremodforall.com/e2/the-editor.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiremodforall.com/e2/the-editor.html</guid>
+      <description>asd asd asd asd</description>
     </item>
     
   </channel>

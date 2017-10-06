@@ -3,22 +3,37 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://wiremodforall.com/categories/</loc>
+    <loc>http://wiremodforall.com/e2.html</loc>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://wiremodforall.com/e2/hello-world.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiremodforall.com/starfall/hello-world.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiremodforall.com/starfall/</loc>
   </url>
   
   <url>
     <loc>http://wiremodforall.com/e2/</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiremodforall.com/starfall/next-step.html</loc>
+  </url>
+  
+  <url>
+    <loc>http://wiremodforall.com/starfall.html</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://wiremodforall.com/e2/</loc>
-  </url>
-  
-  <url>
-    <loc>http://wiremodforall.com/tags/</loc>
-    <priority>0</priority>
+    <loc>http://wiremodforall.com/e2/the-editor.html</loc>
   </url>
   
   <url>

@@ -4,3 +4,5 @@ title = "Wiremod for all"
 theme = "wiremod"
 archetypeDir = "themes/wiremod/archetypes"
 publishDir = "docs"
+disableKinds = ["taxonomyTerm"]
+uglyURLs = "true"
