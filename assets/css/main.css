@@ -92,7 +92,6 @@ table {
 	header {
 		position: absolute;
 		top: -160px;
-		background-color: #1f71f4;
 		transform: rotateZ(4deg);
 		width: 120vw;
 		height: 400px;
