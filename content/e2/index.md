@@ -1,6 +1,6 @@
 ---
 title: "Introduction"
-a: "a"
+highlightlanguage: "gmod_wi"
 headerColor: "darkred"
 buttonColor: "#ed3b38"
 ---
@@ -8,7 +8,8 @@ buttonColor: "#ed3b38"
 ## About the course
 I welcome you to the tutorial series for all wiremod related. Here we will be exploring Expression 2 in all its glory.
 
-{{< codeblock e2 >}}@name Hello World
+{{< codeblock lua >}}
+@name Hello World
 @inputs A B
 @outputs Add Sub Mul Div
 @outputs GreaterThan Highest Lowest

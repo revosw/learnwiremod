@@ -1,9 +1,12 @@
 ---
 title: "The Editor"
+highlightlanguage: "gmod_wire_e2"
 headerColor: "darkred"
 buttonColor: "#ed3b38"
 ---
-asd
-asd
-asd
-asd
+## Buttons
+button          |functionality
+----------------|------------:
+qwe             |
+DD              |FF
+fsfsfsf         |gs

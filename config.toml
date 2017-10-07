@@ -6,3 +6,4 @@ archetypeDir = "themes/wiremod/archetypes"
 publishDir = "docs"
 disableKinds = ["taxonomyTerm"]
 uglyURLs = "true"
+buildDrafts = "false"

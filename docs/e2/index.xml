@@ -16,7 +16,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://wiremodforall.com/e2/hello-world.html</guid>
-      <description>So now we got far Let&amp;rsquo;s get</description>
+      <description> Our first program @autoupdateVar = table(array(1,2,3,4,-5)) </description>
     </item>
     
     <item>
@@ -25,9 +25,17 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://wiremodforall.com/e2/</guid>
-      <description> Heading @inputs A:number hljs e2 @inputs A:number 
-So as you can see
-qwdddqdqdqd </description>
+      <description>About the course I welcome you to the tutorial series for all wiremod related. Here we will be exploring Expression 2 in all its glory.
+@name Hello World@inputs A B@outputs Add Sub Mul Div@outputs GreaterThan Highest Lowest@outputs Vector:vector@persist D@trigger allAdd = A + BSub = A - BMul = A * BDiv = A / BGreaterThan = A  Bif(A  B) {Highest = A, Lowest = B} else {Highest = B, Lowest = A}Vector = vec(A, B, 0)Vector = Vector + vec(0, 0, A + B)Vector = Vector:normalized() Credits Upcoming list of shoutouts</description>
+    </item>
+    
+    <item>
+      <title>Project Rng</title>
+      <link>http://wiremodforall.com/e2/project-rng.html</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://wiremodforall.com/e2/project-rng.html</guid>
+      <description></description>
     </item>
     
     <item>
@@ -36,7 +44,7 @@ qwdddqdqdqd </description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://wiremodforall.com/e2/the-editor.html</guid>
-      <description>asd asd asd asd</description>
+      <description> Buttons    button functionality     qwe    DD FF   fsfsfsf gs    </description>
     </item>
     
   </channel>

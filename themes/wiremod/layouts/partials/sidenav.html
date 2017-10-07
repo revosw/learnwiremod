@@ -1,40 +1,12 @@
 <nav id="sidenav">
     <a class="button back" style="background-color: {{.Params.buttonColor}}" href="/"><img src="/img/arrow.png"></a>
     <div class="tab">Tutorials</div>
-    {{$topic := findRE "[^/]+" .RelPermalink}}
+    {{$topic := index (findRE "[^/]+" .RelPermalink) 0}}
         <!-- The same as .Site.RegularPages "Section" [e2] -->
-    <ul class="tutorials">{{ range (where .Site.RegularPages "Section" $topic[0]) }}
+    <ul class="tutorials">{{ range (where .Site.RegularPages "Section" $topic) }}
         <li>
-            <a href="{{.RelPermalink}}">{{.RelPermalink}}</a>
+            <a href="{{.RelPermalink}}">{{ .Title }}</a>
         </li>{{ end }}
-        <li>
-            <a>{{$topic}}</a>
-            <a>About the course</a>
-            <a>Credits</a>
-        </li>
-        <li>
-            <a>The editor</a>
-            <a>Buttons</a>
-            <a>Keyboard shortcuts</a>
-            <a>Configuring colors</a>
-        </li>
-        <li>
-            <a>Hello World</a>
-            <a>Arithmetics</a>
-            <a>Our first function</a>
-            <a>Input and output</a>
-        </li>
-        <li>
-            <a>More types</a>
-            <a>string and number methods</a>
-        </li>
-        <li>
-            <a>Project RNG</a>
-            <a>Setting static numbers</a>
-            <a>Number randomizer</a>
-            <a>Interval</a>
-            <a>subtopic of e2</a>
-        </li>
     </ul>
     <div class="tab">Reference</div>
     <ul class="reference">
