@@ -6,10 +6,83 @@
     <description>Recent content on Wiremod for all</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 09 Oct 2017 16:49:53 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 09 Oct 2017 17:24:20 +0200</lastBuildDate>
     
 	<atom:link href="https://wiremodforall.com/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Project Rng</title>
+      <link>https://wiremodforall.com/e2/tutorials/project-rng.html</link>
+      <pubDate>Mon, 09 Oct 2017 17:24:20 +0200</pubDate>
+      
+      <guid>https://wiremodforall.com/e2/tutorials/project-rng.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hello World</title>
+      <link>https://wiremodforall.com/starfall/tutorials/hello-world.html</link>
+      <pubDate>Mon, 09 Oct 2017 17:23:50 +0200</pubDate>
+      
+      <guid>https://wiremodforall.com/starfall/tutorials/hello-world.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Introduction</title>
+      <link>https://wiremodforall.com/starfall/tutorials/</link>
+      <pubDate>Mon, 09 Oct 2017 17:23:50 +0200</pubDate>
+      
+      <guid>https://wiremodforall.com/starfall/tutorials/</guid>
+      <description>qdqdqqdqd q dq dq dq d</description>
+    </item>
+    
+    <item>
+      <title>Next Step</title>
+      <link>https://wiremodforall.com/starfall/tutorials/next-step.html</link>
+      <pubDate>Mon, 09 Oct 2017 17:23:50 +0200</pubDate>
+      
+      <guid>https://wiremodforall.com/starfall/tutorials/next-step.html</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The Editor</title>
+      <link>https://wiremodforall.com/e2/tutorials/the-editor.html</link>
+      <pubDate>Mon, 09 Oct 2017 17:23:50 +0200</pubDate>
+      
+      <guid>https://wiremodforall.com/e2/tutorials/the-editor.html</guid>
+      <description> Buttons    button functionality     qwe    DD FF   fsfsfsf gs    </description>
+    </item>
+    
+    <item>
+      <title>Hello World</title>
+      <link>https://wiremodforall.com/e2/tutorials/hello-world.html</link>
+      <pubDate>Mon, 09 Oct 2017 17:23:20 +0200</pubDate>
+      
+      <guid>https://wiremodforall.com/e2/tutorials/hello-world.html</guid>
+      <description> Our first program @autoupdateVar = table(array(1,2,3,4,-5)) </description>
+    </item>
+    
+    <item>
+      <title>Introduction</title>
+      <link>https://wiremodforall.com/e2/tutorials/</link>
+      <pubDate>Mon, 09 Oct 2017 17:23:20 +0200</pubDate>
+      
+      <guid>https://wiremodforall.com/e2/tutorials/</guid>
+      <description>About the course I welcome you to the tutorial series for all wiremod related. Here we will be exploring Expression 2 in all its glory.
+@name Hello World@inputs A B@outputs Add Sub Mul Div@outputs GreaterThan Highest Lowest@outputs Vector:vector@persist D@trigger allAdd = A + BSub = A - BMul = A * BDiv = A / BGreaterThan = A  Bif(A  B) {Highest = A, Lowest = B} else {Highest = B, Lowest = A}Vector = vec(A, B, 0)Vector = Vector + vec(0, 0, A + B)Vector = Vector:normalized() Credits Upcoming list of shoutouts</description>
+    </item>
+    
+    <item>
+      <title>Next Step</title>
+      <link>https://wiremodforall.com/e2/tutorials/next-step.html</link>
+      <pubDate>Mon, 09 Oct 2017 17:23:20 +0200</pubDate>
+      
+      <guid>https://wiremodforall.com/e2/tutorials/next-step.html</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>Datatypes</title>
@@ -45,79 +118,6 @@
       
       <guid>https://wiremodforall.com/e2/reference/directives.html</guid>
       <description></description>
-    </item>
-    
-    <item>
-      <title>Hello World</title>
-      <link>https://wiremodforall.com/e2/tutorials/hello-world.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://wiremodforall.com/e2/tutorials/hello-world.html</guid>
-      <description> Our first program @autoupdateVar = table(array(1,2,3,4,-5)) </description>
-    </item>
-    
-    <item>
-      <title>Hello World</title>
-      <link>https://wiremodforall.com/starfall/tutorials/hello-world.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://wiremodforall.com/starfall/tutorials/hello-world.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Introduction</title>
-      <link>https://wiremodforall.com/e2/tutorials/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://wiremodforall.com/e2/tutorials/</guid>
-      <description>About the course I welcome you to the tutorial series for all wiremod related. Here we will be exploring Expression 2 in all its glory.
-@name Hello World@inputs A B@outputs Add Sub Mul Div@outputs GreaterThan Highest Lowest@outputs Vector:vector@persist D@trigger allAdd = A + BSub = A - BMul = A * BDiv = A / BGreaterThan = A  Bif(A  B) {Highest = A, Lowest = B} else {Highest = B, Lowest = A}Vector = vec(A, B, 0)Vector = Vector + vec(0, 0, A + B)Vector = Vector:normalized() Credits Upcoming list of shoutouts</description>
-    </item>
-    
-    <item>
-      <title>Introduction</title>
-      <link>https://wiremodforall.com/starfall/tutorials/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://wiremodforall.com/starfall/tutorials/</guid>
-      <description>qdqdqqdqd q dq dq dq d</description>
-    </item>
-    
-    <item>
-      <title>Next Step</title>
-      <link>https://wiremodforall.com/e2/tutorials/next-step.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://wiremodforall.com/e2/tutorials/next-step.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Next Step</title>
-      <link>https://wiremodforall.com/starfall/tutorials/next-step.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://wiremodforall.com/starfall/tutorials/next-step.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Project Rng</title>
-      <link>https://wiremodforall.com/e2/tutorials/project-rng.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://wiremodforall.com/e2/tutorials/project-rng.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>The Editor</title>
-      <link>https://wiremodforall.com/e2/tutorials/the-editor.html</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://wiremodforall.com/e2/tutorials/the-editor.html</guid>
-      <description> Buttons    button functionality     qwe    DD FF   fsfsfsf gs    </description>
     </item>
     
   </channel>

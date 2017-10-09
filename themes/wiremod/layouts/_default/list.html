@@ -20,7 +20,7 @@
   <main>
     <h1>{{.Title}}</h1>
     {{.Content}}
-    {{ range (where .Pages "kind" "list" }}
+    {{ range (where .Pages "Kind" "list") }}
       {{.Title}}
     {{ end }}
   </main>
