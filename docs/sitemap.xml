@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://wiremodforall.com/starfall/tutorials/</loc>
+    <lastmod>2017-10-09T23:22:56+02:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://wiremodforall.com/gpu/tutorials/</loc>
     <lastmod>2017-10-09T23:04:47+02:00</lastmod>
   </url>
@@ -38,17 +43,12 @@
   </url>
   
   <url>
-    <loc>https://wiremodforall.com/starfall/tutorials/</loc>
-    <lastmod>2017-10-09T17:23:50+02:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://wiremodforall.com/starfall/tutorials/next-step.html</loc>
-    <lastmod>2017-10-09T17:23:50+02:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://wiremodforall.com/e2/tutorials/the-editor.html</loc>
+    <lastmod>2017-10-09T17:23:50+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wiremodforall.com/starfall/tutorials/the-editor.html</loc>
     <lastmod>2017-10-09T17:23:50+02:00</lastmod>
   </url>
   
@@ -125,13 +125,13 @@
   
   <url>
     <loc>https://wiremodforall.com/starfall.html</loc>
-    <lastmod>2017-10-09T17:23:50+02:00</lastmod>
+    <lastmod>2017-10-09T23:22:56+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://wiremodforall.com/</loc>
-    <lastmod>2017-10-09T23:04:47+02:00</lastmod>
+    <lastmod>2017-10-09T23:22:56+02:00</lastmod>
     <priority>0</priority>
   </url>
   
