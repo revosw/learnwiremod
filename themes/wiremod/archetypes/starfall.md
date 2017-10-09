@@ -5,7 +5,7 @@ menu:
   tutorials:
     parent: "starfall"
     weight: FILL IN WEIGHT
-    identifier: "{{ shuffle (slice "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k") }}"
+    identifier: "{{ delimit (shuffle (slice "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k")) "" }}"
 headerColor: "rebeccapurple"
 buttonColor: "#b564f5"
 ---
