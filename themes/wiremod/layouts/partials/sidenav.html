@@ -2,49 +2,28 @@
     <a class="button back" style="background-color: {{.Params.buttonColor}}" href="/"><img src="/img/arrow.png"></a>
     <div class="tab">Tutorials</div>
     {{$topic := index (findRE "[^/]+" .RelPermalink) 0}}
-        <!-- The same as .Site.RegularPages "Section" [e2] -->
-    <ul class="tutorials">{{ range (where .Site.RegularPages "Section" $topic) }}
+    <ul class="tutorials">
+        {{ range .Site.Menus.tutorials }}
+        {{- range .Children -}}
+        {{- if eq .Parent $topic -}}
         <li>
-            <a href="{{.RelPermalink}}">{{ .Title }}</a>
-        </li>{{ end }}
+            <a href="{{.URL}}">{{ .Name }}</a>
+        </li>
+        {{- end -}}
+        {{- end -}}
+        {{ end }}
     </ul>
     <div class="tab">Reference</div>
     <ul class="reference">
+        {{ range .Site.Menus.reference }}
+        
+        {{- range .Children -}}
+        {{- if eq .Parent $topic -}}
         <li>
-            <a>Datatypes</a>
-            <a>Angle</a>
-            <a>Array</a>
-            <a>Bone</a>
-            <a>Complex</a>
-            <a>Effect</a>
-            <a>Entity</a>
-            <a>gTable</a>
-            <a>Matrix</a>
-            <a>Number</a>
-            <a>Quaternion</a>
-            <a>Ranger</a>
-            <a>Table</a>
-            <a>Vector</a>
-            <a>Void</a>
-            <a>Wirelink</a>
+            <a href="{{.URL}}">{{ .Name }}</a>
         </li>
-        <li>
-            <a>Functions</a>
-        </li>
-        <li>
-            <a>Constants</a>
-            <a>_PI</a>
-            <a>_E</a>
-        </li>
-        <li>
-            <a>Directives</a>
-            <a>@name</a>
-            <a>@model</a>
-            <a>@inputs</a>
-            <a>@outputs</a>
-            <a>@persist</a>
-            <a>@trigger</a>
-            <a>@autoupdate</a>
-        </li>
+        {{- end -}}
+        {{- end -}}
+        {{ end }}
     </ul>
 </nav>

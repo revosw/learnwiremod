@@ -1,7 +1,13 @@
 ---
 title: "Hello World"
+date: "2017-10-09T17:23:20+02:00"
+menu:
+  tutorials:
+    parent: "e2"
+    weight: 30
+    identifier: "cbgehfakijd"
 headerColor: "darkred"
-buttonColor: "#ed3b38"
+buttonColor: "#d61b18"
 ---
 ## Our first program
 

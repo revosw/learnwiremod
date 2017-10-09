@@ -1,10 +1,14 @@
 ---
 title: "Introduction"
-highlightlanguage: "gmod_wi"
+date: "2017-10-09T17:23:20+02:00"
+menu:
+  tutorials:
+    parent: "e2"
+    weight: 10
+    identifier: "dfgkahbjcie"
 headerColor: "darkred"
-buttonColor: "#ed3b38"
+buttonColor: "#d61b18"
 ---
-
 ## About the course
 I welcome you to the tutorial series for all wiremod related. Here we will be exploring Expression 2 in all its glory.
 

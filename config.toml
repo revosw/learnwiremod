@@ -1,4 +1,4 @@
-baseURL = "http://wiremodforall.com/"
+baseURL = "https://wiremodforall.com/"
 languageCode = "en-us"
 title = "Wiremod for all"
 theme = "wiremod"

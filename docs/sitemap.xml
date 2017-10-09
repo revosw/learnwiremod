@@ -3,45 +3,71 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://wiremodforall.com/e2.html</loc>
+    <loc>https://wiremodforall.com/e2/reference/datatypes.html</loc>
+    <lastmod>2017-10-09T16:49:53+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wiremodforall.com/e2/reference/constants.html</loc>
+    <lastmod>2017-10-09T16:49:37+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wiremodforall.com/e2/reference/functions.html</loc>
+    <lastmod>2017-10-09T16:49:22+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wiremodforall.com/e2/reference/directives.html</loc>
+    <lastmod>2017-10-09T16:47:52+02:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://wiremodforall.com/e2.html</loc>
+    <lastmod>2017-10-09T16:49:53+02:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://wiremodforall.com/e2/hello-world.html</loc>
+    <loc>https://wiremodforall.com/e2/tutorials/hello-world.html</loc>
   </url>
   
   <url>
-    <loc>http://wiremodforall.com/starfall/hello-world.html</loc>
+    <loc>https://wiremodforall.com/starfall/tutorials/hello-world.html</loc>
   </url>
   
   <url>
-    <loc>http://wiremodforall.com/starfall/</loc>
+    <loc>https://wiremodforall.com/e2/tutorials/</loc>
   </url>
   
   <url>
-    <loc>http://wiremodforall.com/e2/</loc>
+    <loc>https://wiremodforall.com/starfall/tutorials/</loc>
   </url>
   
   <url>
-    <loc>http://wiremodforall.com/starfall/next-step.html</loc>
+    <loc>https://wiremodforall.com/e2/tutorials/next-step.html</loc>
   </url>
   
   <url>
-    <loc>http://wiremodforall.com/e2/project-rng.html</loc>
+    <loc>https://wiremodforall.com/starfall/tutorials/next-step.html</loc>
   </url>
   
   <url>
-    <loc>http://wiremodforall.com/starfall.html</loc>
+    <loc>https://wiremodforall.com/e2/tutorials/project-rng.html</loc>
+  </url>
+  
+  <url>
+    <loc>https://wiremodforall.com/starfall.html</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>http://wiremodforall.com/e2/the-editor.html</loc>
+    <loc>https://wiremodforall.com/e2/tutorials/the-editor.html</loc>
   </url>
   
   <url>
-    <loc>http://wiremodforall.com/</loc>
+    <loc>https://wiremodforall.com/</loc>
+    <lastmod>2017-10-09T16:49:53+02:00</lastmod>
     <priority>0</priority>
   </url>
   

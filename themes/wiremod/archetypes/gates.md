@@ -3,9 +3,9 @@ title: "{{ replace .TranslationBaseName "-" " " | title }}"
 date: "{{ .Date }}"
 menu:
   tutorials:
-    parent: "starfall"
+    parent: "gates"
     weight: FILL IN WEIGHT
     identifier: "{{ shuffle (slice "a" "b" "c" "d" "e" "f" "g" "h" "i" "j" "k") }}"
-headerColor: "rebeccapurple"
-buttonColor: "#b564f5"
+headerColor: "darkred"
+buttonColor: "#d61b18"
 ---

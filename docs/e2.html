@@ -15,14 +15,41 @@
   <title>Wiremod for all | Expression 2</title>
 </head>
 <body>
-  <header style="background: {{.Params.headerColor}}"></header>
-  {{partial "sidenav.html" .}}
+  <header style="background: "></header>
+  <nav id="sidenav">
+    <a class="button back" style="background-color: " href="/"><img src="/img/arrow.png"></a>
+    <div class="tab">Tutorials</div>
+    
+    <ul class="tutorials">
+        
+    </ul>
+    <div class="tab">Reference</div>
+    <ul class="reference">
+        
+    </ul>
+</nav>
   <main>
-    <h1>{{.Title}}</h1>
-    {{.Content}}
-    {{ range (where .Pages "kind" "list" }}
-      {{.Title}}
-    {{ end }}
+    <h1>E2s</h1>
+    
+    
+      Datatypes
+    
+      Constants
+    
+      Functions
+    
+      Directives
+    
+      Hello World
+    
+      Introduction
+    
+      Next Step
+    
+      Project Rng
+    
+      The Editor
+    
   </main>
 
 </body>
