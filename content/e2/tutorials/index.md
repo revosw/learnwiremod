@@ -12,7 +12,7 @@ buttonColor: "#d61b18"
 ## About the course
 I welcome you to the tutorial series for all wiremod related. Here we will be exploring Expression 2 in all its glory.
 
-{{< codeblock lua >}}
+{{< codeblock gmod_wire_e2 >}}
 @name Hello World
 @inputs A B
 @outputs Add Sub Mul Div

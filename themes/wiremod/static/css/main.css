@@ -1,36 +1,65 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:300,400');
 
 /* Managing the break-points of the page based on the window's width */
-@media (max-width: 1199px) {
-	html {
-		font-size: 30px;
-	}
-	.sidetoggle {
-		display: block;
-	}
-	#sidenav {
-		left: -430px;
-	}
 
-	main {
-		margin: auto;
-		width: 95%;
+html {
+	font-size: 21px;
+}
+@media (max-width: 700px) {
+	html {
+		font-size: 12px;
 	}
 }
-@media (min-width: 1200px) {
-	html {
-		font-size: 21px;
+
+body {
+	display: flex;
+}
+@media (max-width: 1199px) {
+	body {
+		display: block;
 	}
-	.sidetoggle {
-		display: none;
-	}
+}
+
+main {
+	flex: 0 1 auto;
+	margin: 80px 0 0 10%;
+	width: 55%;
+}
+@media (max-width: 1199px) {
 	main {
-		width: 55%;
-		margin: 80px 0 0 10%;
+		margin: 80px auto 0 auto;
+		position: relative;
+		width: 100%;
+		padding: 8px;
 	}
+}
+
+#sidenav {
+	z-index: 3;
+	left: 0;
+	top: 0;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+}
+@media (max-width: 1199px) {
 	#sidenav {
-		z-index: 3;
-		left: 0;
+		height: 100vh;
+		left: -430px;
+		position: fixed;
+		background: #EEE;
+		z-index: 1;
+		overflow-y: scroll;
+	}
+}
+
+.sidetoggle {
+	display: none;
+}
+@media (max-width: 1199px) {
+	.sidetoggle {
+		display: block;
+		z-index: 1;
 	}
 }
 
@@ -46,40 +75,36 @@ html {
 body {
 	background: #eee;
 	overflow-x: hidden;
-	display: flex;
 	font-family: "Raleway";
 }
 
 h1 {
-	font-size: 5em;
+	font-size: 5rem;
 	text-align: right;
 	color: #ddd;
-	margin: 30px 0 70px 0;
+	margin: calc(3vw - 20px) 0 70px 0;
 	text-shadow: 2px 2px 2px #222;
 	transform: rotateZ(4deg);
-	font-family: inherit, sans-serif;
+	font-family: inherit;
 	font-weight: 300;
 }
 
 h2 {
-	font-size: 2em;
+	font-size: 2rem;
 	color: #5078ba;
 	margin: 30px 20px;
-	font-family: inherit, sans-serif;
+	font-family: inherit;
 }
 p {
 	color: #444;
 	margin: 20px 0;
-	line-height: 1.3em;
+	line-height: 1.3rem;
 	font-family: Arial;
-}
-a {
-	cursor: pointer;
 }
 table {
 	border-collapse: collapse;
 	font-family: "Trebuchet MS";
-	font-size: 0.8em;
+	font-size: 0.8rem;
 }
 	thead {
 		background: #ccc;
@@ -91,31 +116,29 @@ table {
 
 	header {
 		position: absolute;
-		top: -160px;
+		top: calc(4vw - 230px);
 		background-color: #1f71f4;
 		transform: rotateZ(4deg);
-		width: 120vw;
+		width: 130vw;
 		height: 400px;
 		z-index: -1;
 	}
 
 	.sidetoggle {
 		position: fixed;
-		top: 0;
-		right: 0;
-		font-size: 3em;
-		padding: 0.1em 0.2em;
+		top: 3px;
+		right: 3px;
+		font-size: 4rem;
+		line-height: 70px;
+		padding: 0 10px;
 		background: #ddd;
 	}
 
 	#sidenav {
 		color: #092c63;
-		position: relative;
-		display: flex;
-		flex-direction: column;
-		margin-top: 30px;
+		padding-top: 30px;
 		width: 320px;
-		font-family: inherit, serif;
+		font-family: inherit;
 	}
 		.button {
 			position: relative;
@@ -132,7 +155,7 @@ table {
 
 		}
 		.next {
-			font-size: 1.5em;
+			font-size: 1.5rem;
 			padding: 5px;
 		}
 		.next img {
@@ -143,34 +166,30 @@ table {
 			border-bottom: 2px solid #092c63;
 			width: 6.5em;
 			margin: 40px 0 0 30px;
-			font-size: 1.5em;
+			font-size: 1.5rem;
 			letter-spacing: 2px;
 			text-transform: uppercase;
 		}
 
 		#sidenav ul {
 			padding: 40px 40px;
-			line-height: 1.5em;
+			line-height: 1.5rem;
 		}
 			#sidenav ul li a {
 				color: inherit;
 			}
 				li a:not(:first-child) {
-					font-size: 0.8em;
+					font-size: 0.8rem;
 					margin-left: 20px;
 					display: block;
 				}
 
-	main {
-		display: inline-block;
-		min-width: 600px;
-	}
 		main img {
 			max-width: 80%;
 			margin: auto;
 		}
 		code {
-			font-size: 0.8em;
+			font-size: 0.8rem;
 			font-family: "courier new";
 			color: rgb(160,160,240);
 			background: #323232;

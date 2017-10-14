@@ -37,4 +37,9 @@ window.onload = function() {
 
     $("#sidenav").animate({ left: toggle });
   });
+
+  // It's nice when you can just click anywhere outside of the sidenav to hide it
+  $("main").click( () => {
+    if ($("#sidenav")[0].style.left == "0px") $("#sidenav").animate({ left: "-430px" });
+  })
 }
