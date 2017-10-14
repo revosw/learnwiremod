@@ -15,14 +15,17 @@
     <title>Wiremod for all | Expression 2</title>
 </head>
 <body>
-    <header style="background: {{.Params.headerColor}}"></header>
+    <svg class="header" xmlns="http://www.w3.org/2000/svg" width="1920" height="300">
+        <polygon fill="{{.Params.headerColor}}" points="0,0 1920,0 1920,300 0,150"/>
+    </svg>
+    <!-- <header style="background: {{.Params.headerColor}}"></header> -->
     {{partial "sidenav.html" .}}
     <div class="sidetoggle">&#8801;</div>
     <main>
         <h1>{{.Title}}</h1>
         {{.Content}}
     </main>
-
+    
 </body>
 </html>
 

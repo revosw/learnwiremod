@@ -22,12 +22,12 @@ body {
 
 main {
 	flex: 0 1 auto;
-	margin: 80px 0 0 10%;
+	margin: 0 0 0 10%;
 	width: 55%;
 }
 @media (max-width: 1199px) {
 	main {
-		margin: 80px auto 0 auto;
+		margin: 0;
 		position: relative;
 		width: 100%;
 		padding: 8px;
@@ -82,7 +82,7 @@ h1 {
 	font-size: 5rem;
 	text-align: right;
 	color: #ddd;
-	margin: calc(3vw - 20px) 0 70px 0;
+	margin: calc(3vw - -42px) 0 70px 0;
 	text-shadow: 2px 2px 2px #222;
 	transform: rotateZ(4deg);
 	font-family: inherit;
@@ -114,18 +114,13 @@ table {
 		border-bottom: 2px solid #888;
 	}
 
-	header {
+	.header {
 		position: absolute;
-		top: calc(4vw - 230px);
-		background-color: #1f71f4;
-		transform: rotateZ(4deg);
-		width: 130vw;
-		height: 400px;
 		z-index: -1;
 	}
 
 	.sidetoggle {
-		position: fixed;
+		position: absolute;
 		top: 3px;
 		right: 3px;
 		font-size: 4rem;

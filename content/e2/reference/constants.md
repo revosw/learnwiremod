@@ -6,6 +6,7 @@ menu:
     parent: "e2"
     weight: FILL IN WEIGHT
     identifier: "cgjfiedbkah"
+highlightLanguage: "gmod_wire_e2"
 headerColor: "darkred"
 buttonColor: "#d61b18"
 ---

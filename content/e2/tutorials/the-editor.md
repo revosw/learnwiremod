@@ -6,6 +6,7 @@ menu:
     parent: "e2"
     weight: 20
     identifier: "jacfekbhdgi"
+highlightLanguage: "gmod_wire_e2"
 headerColor: "darkred"
 buttonColor: "#d61b18"
 ---
