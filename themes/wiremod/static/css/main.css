@@ -74,8 +74,11 @@ html {
 
 body {
 	background: #eee;
-	overflow-x: hidden;
 	font-family: "Raleway";
+}
+
+article {
+	overflow-x: hidden;
 }
 
 h1 {
