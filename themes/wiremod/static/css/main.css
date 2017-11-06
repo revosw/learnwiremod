@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway:300,400');
+@import url("quiz.css");
 
 /* Managing the break-points of the page based on the window's width */
 
@@ -189,17 +190,13 @@ table {
 			color: rgb(160,160,240);
 			background: #323232;
 		}
-		.quiz {
-			display: block;
-			max-width: inherit;
-			margin: auto;
-			background: #fff;
-			border-top: lime;
+		pre code {
+			max-height: 500px;
+			overflow-y: scroll;
 		}
-			.question {
-				background: #B26B31;
-			}
-
+		.spacer {
+			height: 200px;
+		}
 
 ::-webkit-scrollbar {
   width: 5px;

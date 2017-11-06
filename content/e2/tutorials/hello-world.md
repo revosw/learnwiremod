@@ -12,10 +12,12 @@ buttonColor: "#d61b18"
 ---
 ## Our first program
 
-{{< codeblock e2 >}}
+{{< codeblock >}}
 @autoupdate
 
 Var = table(
   array(1,2,3,4,-5)
 )
 {{< /codeblock >}}
+
+{{< quiz >}}

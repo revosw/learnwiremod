@@ -11,8 +11,6 @@ headerColor: "darkred"
 buttonColor: "#d61b18"
 ---
 ## Buttons
-button          |functionality
-----------------|------------:
-qwe             |
-DD              |FF
-fsfsfsf         |gs
+<table>
+  <td>kek</td>
+</table>
