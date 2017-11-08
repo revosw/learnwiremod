@@ -38,8 +38,15 @@ window.onload = function() {
     $("#sidenav").animate({ left: toggle });
   });
 
-  // It's nice when you can just click anywhere outside of the sidenav to hide it
+  // It's nice when you can just click anywhere outside of the sidenav to hide it when viewing
+  // the page on mobile
   $("main").click( () => {
-    if ($("#sidenav")[0].style.left == "0px") $("#sidenav").animate({ left: "-430px" });
+    if (window.innerWidth <= 1200) $("#sidenav").animate({ left: "-430px" });
   })
+
+  // The quiz module will be present on many of the pages
+  var quiz = document.querySelector(`section.quiz`)
+  if (quiz) {
+    
+  }
 }

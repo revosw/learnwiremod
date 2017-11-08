@@ -89,7 +89,7 @@
       <pubDate>Mon, 09 Oct 2017 17:23:50 +0200</pubDate>
       
       <guid>https://wiremodforall.com/e2/tutorials/the-editor.html</guid>
-      <description> Buttons    button functionality     qwe    DD FF   fsfsfsf gs    </description>
+      <description> Buttons  kek  </description>
     </item>
     
     <item>
@@ -107,7 +107,7 @@
       <pubDate>Mon, 09 Oct 2017 17:23:20 +0200</pubDate>
       
       <guid>https://wiremodforall.com/e2/tutorials/hello-world.html</guid>
-      <description> Our first program @autoupdateVar = table(array(1,2,3,4,-5)) </description>
+      <description> Our first program @autoupdateVar = table(array(1,2,3,4,-5)) This section&#39;s quizInsert a question here, preferrably with an answer@persist AOption 2Option 3Option 4Submit@name Hello World@inputs A B@outputs Add Sub Mul Div@outputs GreaterThan Highest Lowest Additive Subtractive@outputs Vector:vector@persist D@trigger allAdd = A + BSub = A - BMul = A * BDiv = A / BGreaterThan = A  Bif(A  B) {Highest = A, Lowest = B} else {Highest = B, Lowest = A}Vector = vec(A, B, 0)Vector = Vector + vec(0, 0, A + B)Vector = Vector:normalized()Progress </description>
     </item>
     
     <item>
@@ -117,7 +117,7 @@
       
       <guid>https://wiremodforall.com/e2/tutorials/</guid>
       <description>About the course I welcome you to the tutorial series for all wiremod related. Here we will be exploring Expression 2 in all its glory.
-@name Hello World@inputs A B@outputs Add Sub Mul Div@outputs GreaterThan Highest Lowest@outputs Vector:vector@persist D@trigger allAdd = A + BSub = A - BMul = A * BDiv = A / BGreaterThan = A  Bif(A  B) {Highest = A, Lowest = B} else {Highest = B, Lowest = A}Vector = vec(A, B, 0)Vector = Vector + vec(0, 0, A + B)Vector = Vector:normalized() Credits Upcoming list of shoutouts</description>
+@name Hello World@inputs A B@outputs Add Sub Mul Div@outputs GreaterThan Highest Lowest@outputs Vector:vector@persist D@trigger allAdd = A + BSub = A - BMul = A * BDiv = A / BGreaterThan = A  Bif(A  B) {Highest = A, Lowest = B} else {Highest = B, Lowest = A}Vector = vec(A, B, 0)Vector = Vector + vec(0, 0, A + B)Vector = Vector:normalized()@name Hello World@inputs A B@outputs Add Sub Mul Div@outputs GreaterThan Highest Lowest@outputs Vector:vector@persist D@trigger allAdd = A + BSub = A - BMul = A * BDiv = A / BGreaterThan = A  Bif(A  B) {Highest = A, Lowest = B} else {Highest = B, Lowest = A}Vector = vec(A, B, 0)Vector = Vector + vec(0, 0, A + B)Vector = Vector:normalized() Some Inline code</description>
     </item>
     
     <item>
