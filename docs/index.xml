@@ -107,7 +107,7 @@
       <pubDate>Mon, 09 Oct 2017 17:23:20 +0200</pubDate>
       
       <guid>https://wiremodforall.com/e2/tutorials/hello-world.html</guid>
-      <description> Our first program @autoupdateVar = table(array(1,2,3,4,-5)) This section&#39;s quizInsert a question here, preferrably with an answer@persist AOption 2Option 3Option 4Submit@name Hello World@inputs A B@outputs Add Sub Mul Div@outputs GreaterThan Highest Lowest Additive Subtractive@outputs Vector:vector@persist D@trigger allAdd = A + BSub = A - BMul = A * BDiv = A / BGreaterThan = A  Bif(A  B) {Highest = A, Lowest = B} else {Highest = B, Lowest = A}Vector = vec(A, B, 0)Vector = Vector + vec(0, 0, A + B)Vector = Vector:normalized()Progress </description>
+      <description> Our first program @autoupdateVar = table(array(1,2,3,4,-5)) This section&#39;s quizInsert a question here, preferrably with an answer@persist AOption 2Option 3Option 4Submit@name Hello World@inputs A B@outputs Add Sub Mul Div@outputs GreaterThan Highest Lowest Overflow Overflow Overflow Overflow Overflow Overflow@outputs Vector:vector@persist D@trigger allAdd = A + BSub = A - BMul = A * BDiv = A / BGreaterThan = A  Bif(A  B) {Highest = A, Lowest = B} else {Highest = B, Lowest = A}Vector = vec(A, B, 0)Vector = Vector + vec(0, 0, A + B)Vector = Vector:normalized()Progress </description>
     </item>
     
     <item>
