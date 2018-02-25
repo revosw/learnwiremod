@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="/css/materialize.min.css" media="screen,projection" />
+  <link type="text/css" rel="stylesheet" href="/css/main.css" />
+
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WFA - Homepage</title>
+</head>
+
+<body id="topics" class="grey darken-4">
+  <nav class="grey darken-3">
+    <div class="container">
+      <div class="nav-wrapper">
+        <a href="/" class="brand-logo">Wiremod For All</a>
+        <a href="#" data-activates="mobile-nav" class="button-collapse">
+          <i class="material-icons">menu</i>
+        </a>
+        <ul class="right hide-on-med-and-down">
+          <li>
+            <a href="#topics">Topics</a>
+          </li>
+          <li>
+            <a href="#about">About</a>
+          </li>
+          <li>
+            <a target="_blank" href="https://discord.me/wiremod">
+              <i class="fab fa-discord fa-2x" style="color: #7289DA;margin-top:17px;"></i>
+            </a>
+          </li>
+          <li>
+            <a target="_blank" href="https://github.com/revosw/wiremodforall">
+              <i class="fab fa-github fa-2x" style="margin-top:16px;"></i>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <ul class="side-nav" id="mobile-nav">
+    <li>
+      <a href="#home">Home</a>
+    </li>
+    <li>
+      <a href="#search">Search</a>
+    </li>
+    <li>
+      <a href="#popular">Popular Places</a>
+    </li>
+    <li>
+      <a href="#gallery">Gallery</a>
+    </li>
+    <li>
+      <a href="#contact">Contact</a>
+    </li>
+  </ul>
+
+  <!-- Section: Topics -->
+  <section class="section section-topics">
+    <div class="container">
+      <div class="row">
+        <div class="col s12">
+          <div class="card">
+            <div class="card-image">
+              <a href="/e2/index.html">
+                <img src="/img/e2.png" class="responsive-img" alt="">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m4">
+          <div class="card">
+            <div class="card-image">
+              <a href="/starfall/index.html">
+                <img src="/img/starfall.png" class="responsive-img" alt="">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m4">
+          <div class="card">
+            <div class="card-image">
+              <a href="/cpu/index.html">
+                <img src="/img/cpu.png" class="responsive-img" alt="">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m4">
+          <div class="card">
+            <div class="card-image">
+              <a href="/gpu/index.html">
+                <img src="/img/gpu.png" class="responsive-img" alt="">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m4">
+          <div class="card">
+            <div class="card-image">
+              <a href="/spu/index.html">
+                <img src="/img/spu.png" class="responsive-img" alt="">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m4">
+          <div class="card">
+            <div class="card-image">
+              <a href="/gates/index.html">
+                <img src="/img/gates.png" class="responsive-img" alt="">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m4">
+          <div class="card">
+            <div class="card-image">
+              <a href="/tools/index.html">
+                <img src="/img/tools.png" class="responsive-img" alt="">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section: About -->
+  <section class="section section-about blue lighten-3">
+    <div class="container">
+      <h4>Wiremod For All</h4>
+      <h2>An indie startup</h2>
+    </div>
+  </section>
+
+
+  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
+  <!--Import jQuery before materialize.js-->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/js/materialize.min.js"></script>
+  <script>
+    $(document).on("ready", function () {
+      // Custom JS & jQuery here
+      $(".button-collapse").sideNav();
+
+      // $(".slider").slider({
+      //   indicators: false,
+      //   height: 500,
+      //   transition: 500,
+      //   interval: 6000
+      // });
+
+      // Init Scrollspy
+      $(".scrollspy").scrollSpy();
+    })
+  </script>
+</body>
+
+</html>

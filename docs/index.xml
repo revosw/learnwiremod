@@ -1,169 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Wiremod for all</title>
-    <link>https://wiremodforall.com/</link>
-    <description>Recent content on Wiremod for all</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Mon, 09 Oct 2017 23:22:56 +0200</lastBuildDate>
-    
-	<atom:link href="https://wiremodforall.com/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Introduction</title>
-      <link>https://wiremodforall.com/starfall/tutorials/</link>
-      <pubDate>Mon, 09 Oct 2017 23:22:56 +0200</pubDate>
-      
-      <guid>https://wiremodforall.com/starfall/tutorials/</guid>
-      <description> ,. </description>
-    </item>
-    
-    <item>
-      <title>Introduction</title>
-      <link>https://wiremodforall.com/gpu/tutorials/</link>
-      <pubDate>Mon, 09 Oct 2017 23:04:47 +0200</pubDate>
-      
-      <guid>https://wiremodforall.com/gpu/tutorials/</guid>
-      <description> Even more content </description>
-    </item>
-    
-    <item>
-      <title>Introduction</title>
-      <link>https://wiremodforall.com/general/tutorials/</link>
-      <pubDate>Mon, 09 Oct 2017 23:04:00 +0200</pubDate>
-      
-      <guid>https://wiremodforall.com/general/tutorials/</guid>
-      <description> More content </description>
-    </item>
-    
-    <item>
-      <title>Introduction</title>
-      <link>https://wiremodforall.com/gates/tutorials/</link>
-      <pubDate>Mon, 09 Oct 2017 23:01:25 +0200</pubDate>
-      
-      <guid>https://wiremodforall.com/gates/tutorials/</guid>
-      <description> Content? </description>
-    </item>
-    
-    <item>
-      <title>Introduction</title>
-      <link>https://wiremodforall.com/spu/tutorials/</link>
-      <pubDate>Mon, 09 Oct 2017 22:55:03 +0200</pubDate>
-      
-      <guid>https://wiremodforall.com/spu/tutorials/</guid>
-      <description> . </description>
-    </item>
-    
-    <item>
-      <title>Introduction</title>
-      <link>https://wiremodforall.com/cpu/tutorials/</link>
-      <pubDate>Mon, 09 Oct 2017 22:45:48 +0200</pubDate>
-      
-      <guid>https://wiremodforall.com/cpu/tutorials/</guid>
-      <description> Some content </description>
-    </item>
-    
-    <item>
-      <title>Project Rng</title>
-      <link>https://wiremodforall.com/e2/tutorials/project-rng.html</link>
-      <pubDate>Mon, 09 Oct 2017 17:24:20 +0200</pubDate>
-      
-      <guid>https://wiremodforall.com/e2/tutorials/project-rng.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Hello World</title>
-      <link>https://wiremodforall.com/starfall/tutorials/hello-world.html</link>
-      <pubDate>Mon, 09 Oct 2017 17:23:50 +0200</pubDate>
-      
-      <guid>https://wiremodforall.com/starfall/tutorials/hello-world.html</guid>
-      <description> ,. </description>
-    </item>
-    
-    <item>
-      <title>The Editor</title>
-      <link>https://wiremodforall.com/e2/tutorials/the-editor.html</link>
-      <pubDate>Mon, 09 Oct 2017 17:23:50 +0200</pubDate>
-      
-      <guid>https://wiremodforall.com/e2/tutorials/the-editor.html</guid>
-      <description> Buttons  kek  </description>
-    </item>
-    
-    <item>
-      <title>The Editor</title>
-      <link>https://wiremodforall.com/starfall/tutorials/the-editor.html</link>
-      <pubDate>Mon, 09 Oct 2017 17:23:50 +0200</pubDate>
-      
-      <guid>https://wiremodforall.com/starfall/tutorials/the-editor.html</guid>
-      <description> qdd </description>
-    </item>
-    
-    <item>
-      <title>Hello World</title>
-      <link>https://wiremodforall.com/e2/tutorials/hello-world.html</link>
-      <pubDate>Mon, 09 Oct 2017 17:23:20 +0200</pubDate>
-      
-      <guid>https://wiremodforall.com/e2/tutorials/hello-world.html</guid>
-      <description> Our first program @autoupdateVar = table(array(1,2,3,4,-5)) This section&#39;s quizInsert a question here, preferrably with an answer@persist AOption 2Option 3Option 4Submit@name Hello World@inputs A B@outputs Add Sub Mul Div@outputs GreaterThan Highest Lowest Overflow Overflow Overflow Overflow Overflow Overflow@outputs Vector:vector@persist D@trigger allAdd = A + BSub = A - BMul = A * BDiv = A / BGreaterThan = A  Bif(A  B) {Highest = A, Lowest = B} else {Highest = B, Lowest = A}Vector = vec(A, B, 0)Vector = Vector + vec(0, 0, A + B)Vector = Vector:normalized()Progress </description>
-    </item>
-    
-    <item>
-      <title>Introduction</title>
-      <link>https://wiremodforall.com/e2/tutorials/</link>
-      <pubDate>Mon, 09 Oct 2017 17:23:20 +0200</pubDate>
-      
-      <guid>https://wiremodforall.com/e2/tutorials/</guid>
-      <description>About the course I welcome you to the tutorial series for all wiremod related. Here we will be exploring Expression 2 in all its glory.
-@name Hello World@inputs A B@outputs Add Sub Mul Div@outputs GreaterThan Highest Lowest@outputs Vector:vector@persist D@trigger allAdd = A + BSub = A - BMul = A * BDiv = A / BGreaterThan = A  Bif(A  B) {Highest = A, Lowest = B} else {Highest = B, Lowest = A}Vector = vec(A, B, 0)Vector = Vector + vec(0, 0, A + B)Vector = Vector:normalized()@name Hello World@inputs A B@outputs Add Sub Mul Div@outputs GreaterThan Highest Lowest@outputs Vector:vector@persist D@trigger allAdd = A + BSub = A - BMul = A * BDiv = A / BGreaterThan = A  Bif(A  B) {Highest = A, Lowest = B} else {Highest = B, Lowest = A}Vector = vec(A, B, 0)Vector = Vector + vec(0, 0, A + B)Vector = Vector:normalized() Some Inline code</description>
-    </item>
-    
-    <item>
-      <title>Next Step</title>
-      <link>https://wiremodforall.com/e2/tutorials/next-step.html</link>
-      <pubDate>Mon, 09 Oct 2017 17:23:20 +0200</pubDate>
-      
-      <guid>https://wiremodforall.com/e2/tutorials/next-step.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Datatypes</title>
-      <link>https://wiremodforall.com/e2/reference/datatypes.html</link>
-      <pubDate>Mon, 09 Oct 2017 16:49:53 +0200</pubDate>
-      
-      <guid>https://wiremodforall.com/e2/reference/datatypes.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Constants</title>
-      <link>https://wiremodforall.com/e2/reference/constants.html</link>
-      <pubDate>Mon, 09 Oct 2017 16:49:37 +0200</pubDate>
-      
-      <guid>https://wiremodforall.com/e2/reference/constants.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Functions</title>
-      <link>https://wiremodforall.com/e2/reference/functions.html</link>
-      <pubDate>Mon, 09 Oct 2017 16:49:22 +0200</pubDate>
-      
-      <guid>https://wiremodforall.com/e2/reference/functions.html</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Directives</title>
-      <link>https://wiremodforall.com/e2/reference/directives.html</link>
-      <pubDate>Mon, 09 Oct 2017 16:47:52 +0200</pubDate>
-      
-      <guid>https://wiremodforall.com/e2/reference/directives.html</guid>
-      <description></description>
-    </item>
-    
-  </channel>
-</rss>

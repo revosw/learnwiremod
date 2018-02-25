@@ -1,9 +1,0 @@
-baseURL = "https://wiremodforall.com/"
-languageCode = "en-us"
-title = "Wiremod for all"
-theme = "wiremod"
-archetypeDir = "themes/wiremod/archetypes"
-publishDir = "docs"
-disableKinds = ["taxonomyTerm"]
-uglyURLs = "true"
-buildDrafts = "false"
