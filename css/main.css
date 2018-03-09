@@ -1,3 +1,65 @@
 nav a {
   max-height: 64px;
 }
+
+.main-header {
+  min-height: 240px;
+  padding-left: 300px;
+  position: relative;
+}
+
+.side-nav .collapsible-header,
+.side-nav.fixed .collapsible-header {
+  padding-left: 32px !important;
+}
+
+.collapsible-body li > a {
+  padding-left: 40px !important;
+  font-weight: normal !important;
+}
+
+.section-topic {
+  margin-top: 300px;
+}
+
+main {
+  padding-left: 300px;
+}
+
+pre {
+  margin: 0 !important;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+::-webkit-scrollbar-button {
+  width: 20px;
+  height: 20px;
+}
+::-webkit-scrollbar-thumb {
+  background: #d0d0d0;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #d0d0d0;
+}
+::-webkit-scrollbar-thumb:active {
+  background: #d0d0d0;
+}
+::-webkit-scrollbar-track {
+  background: #666666;
+  border: 0px none #ffffff;
+  border-radius: 50px;
+}
+::-webkit-scrollbar-track:hover {
+  background: #666666;
+}
+::-webkit-scrollbar-track:active {
+  background: #333333;
+}
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
