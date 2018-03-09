@@ -1,11 +1,20 @@
-nav a {
-  max-height: 64px;
+.main-header {
+  min-height: 120px;
+  padding-left: 300px;
 }
 
-.main-header {
-  min-height: 240px;
-  padding-left: 300px;
-  position: relative;
+.top-nav {
+  height: 120px;
+}
+
+.page-title {
+  font-size: 60px;
+}
+
+@media screen and (max-width: 992px) {
+  .main-header {
+    padding-left: 0px;
+  }
 }
 
 .side-nav .collapsible-header,
@@ -26,8 +35,23 @@ main {
   padding-left: 300px;
 }
 
+@media screen and (max-width: 992px) {
+  main {
+    padding-left: 0px !important;
+  }
+}
+
+.card-content {
+  padding: 12px !important;
+}
+
 pre {
   margin: 0 !important;
+}
+
+.overflow-fix {
+  overflow: scroll;
+  max-height: 250px;
 }
 
 ::-webkit-scrollbar {
