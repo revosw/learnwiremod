@@ -13,7 +13,7 @@
   <title>WFA - Homepage</title>
 </head>
 
-<body id="topics" class="grey darken-4 scrollspy">
+<body id="topics" class="scrollspy">
   <div class="navbar-fixed">
     <nav class="grey darken-3">
       <div class="container">
@@ -46,21 +46,21 @@
     <li>
       <a target="_blank" href="https://github.com/revosw/wiremodforall">
         <div class="valign-wrapper black-text">
-          <i class="fab fa-github fa-2x" style="margin-right:14px;"></i>WFA Docs
+          <img src="/assets/img/brand/github.png" style="margin-right:14px;"></img>WFA Docs
         </div>
       </a>
     </li>
     <li>
       <a target="_blank" href="https://github.com/wiremod/wire">
         <div class="valign-wrapper black-text">
-          <i class="fab fa-github fa-2x" style="margin-right:14px;"></i>Wiremod Github
+          <img src="/assets/img/brand/github.png" style="margin-right:14px;"></img>Wiremod Github
         </div>
       </a>
     </li>
     <li>
       <a target="_blank" href="https://discord.me/wiremod">
         <div class="valign-wrapper black-text">
-          <i class="fab fa-discord fa-2x" style="color: #7289DA;margin-right:16px;"></i> Wiremod Discord
+          <img src="/assets/img/brand/discord.png" style="margin-right:14px;"></img> Wiremod Discord
         </div>
       </a>
     </li>
@@ -108,14 +108,14 @@
     <li>
       <a class="waves-effect" target="_blank" href="https://discord.me/wiremod">
         <div class="valign-wrapper">
-          <i class="fab fa-discord fa-2x" style="color: #7289DA;margin-right:32px;"></i>Wiremod Discord
+          <img src="/assets/img/brand/discord.png" style="margin-right:14px;"></img>Wiremod Discord
         </div>
       </a>
     </li>
   </ul>
 
   <!-- Section: Topics -->
-  <section class="section section-topics">
+  <section class="section section-topics grey darken-4">
     <div class="container">
       <div class="row">
         <div class="col s12">
@@ -186,34 +186,29 @@
   </section>
 
   <!-- Section: About -->
-  <section id="about" class="section section-about blue lighten-3 scrollspy">
+  <section id="about" class="section section-about scrollspy">
     <div class="container">
-      <h4>Wiremod For All</h4>
-      <h2>An indie startup</h2>
+      <h4>About Wiremod For All</h4>
+      <h2>What?</h2>
+      <p>Wiremod For All is a website that aims to guide you through all the different parts of Wiremod.</p>
+      <h2>Why?</h2>
+      <p>The reason I launched this site is because most parts of Wiremod have been black boxes with little to no information
+        as to how to use things for years. I want to change this, and make everyone familiar with everything in Wiremod.</p>
+      <h2>How?</h2>
+      <p>This site is hosted via
+        <a href="https://github.com/revosw/wiremodforall">Github Pages</a>. It uses the
+        <a href="http://materializecss.com/">Materializecss</a> design framework, and
+        <a href="https://highlightjs.org/">highlight.js</a> syntax highlighting.</p>
+      <h2>Who?</h2>
+      You can find me on
+      <a href="http://steamcommunity.com/id/revodoucheon/">Steam</a>. There are currently no other contributors.
     </div>
   </section>
 
-
-  <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
   <!--Import jQuery before materialize.js-->
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
   <script type="text/javascript" src="/assets/js/materialize.min.js"></script>
-  <script>
-    $(document).ready(function () {
-      // Custom JS & jQuery here
-      $(".button-collapse").sideNav();
-
-      // $(".slider").slider({
-      //   indicators: false,
-      //   height: 500,
-      //   transition: 500,
-      //   interval: 6000
-      // });
-
-      // Init Scrollspy
-      $(".scrollspy").scrollSpy();
-    })
-  </script>
+  <script src="/assets/js/main.js"></script>
 </body>
 
 </html>

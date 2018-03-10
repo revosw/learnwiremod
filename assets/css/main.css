@@ -55,10 +55,16 @@ pre {
 .indicator-item.active {
   background: rgb(255, 0, 0, 1) !important;
 }
+.correct {
+  color: green;
+}
+.wrong {
+  color: red;
+}
 
 .overflow-fix {
   overflow: scroll;
-  max-height: 250px;
+  max-height: 310px;
 }
 
 ::-webkit-scrollbar {
