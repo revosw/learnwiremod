@@ -49,6 +49,13 @@ pre {
   margin: 0 !important;
 }
 
+.indicator-item {
+  background: rgb(255, 0, 0, 0.5) !important;
+}
+.indicator-item.active {
+  background: rgb(255, 0, 0, 1) !important;
+}
+
 .overflow-fix {
   overflow: scroll;
   max-height: 250px;
