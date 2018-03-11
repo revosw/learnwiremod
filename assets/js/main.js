@@ -63,11 +63,23 @@ $(document).ready(function() {
 
     // Check if all entries in array are true and output result
     if (answers.every(answer => answer === true)) {
-      $(".correct").show();
-      $(".wrong").hide();
+      $(e.target)
+        .closest(".col")
+        .find(".correct")
+        .show();
+      $(e.target)
+        .closest(".col")
+        .find(".wrong")
+        .hide();
     } else {
-      $(".correct").hide();
-      $(".wrong").show();
+      $(e.target)
+        .closest(".col")
+        .find(".correct")
+        .hide();
+      $(e.target)
+        .closest(".col")
+        .find(".wrong")
+        .show();
     }
   });
 });

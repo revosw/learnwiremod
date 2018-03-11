@@ -56,15 +56,15 @@ pre {
   background: rgb(255, 0, 0, 1) !important;
 }
 .correct {
-  color: green;
+  color: #4caf50;
 }
 .wrong {
-  color: red;
+  color: #f44336;
 }
 
 .overflow-fix {
   overflow: scroll;
-  max-height: 310px;
+  height: 280px;
 }
 
 ::-webkit-scrollbar {
