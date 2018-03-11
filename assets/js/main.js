@@ -22,10 +22,12 @@ $(document).ready(function() {
   $(".button-collapse").sideNav();
 
   // Init Carousel
-  $(".carousel.carousel-slider").carousel({
-    fullWidth: true,
-    indicators: true
-  });
+  $(".carousel.carousel-slider")
+    .carousel({
+      fullWidth: true,
+      indicators: true
+    })
+    .off("mousedown");
 
   // Init Scrollspy
   $(".scrollspy").scrollSpy();

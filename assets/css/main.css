@@ -47,6 +47,7 @@ main {
 
 pre {
   margin: 0 !important;
+  overflow: unset !important;
 }
 
 .indicator-item {
@@ -64,7 +65,7 @@ pre {
 
 .overflow-fix {
   overflow: scroll;
-  height: 280px;
+  height: 240px;
 }
 
 ::-webkit-scrollbar {
