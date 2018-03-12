@@ -38,6 +38,7 @@ $(document).ready(function() {
   $(".wrong, .correct").hide();
 
   $("button[type=submit]").click(e => {
+    // Prevent default submit behavior, which is to navigate to another site
     e.preventDefault();
 
     var answers = [];

@@ -35,6 +35,10 @@ main {
   padding-left: 300px;
 }
 
+blockquote {
+  background: #f9f9f9;
+}
+
 @media screen and (max-width: 992px) {
   main {
     padding-left: 0px !important;
@@ -50,6 +54,9 @@ pre {
   overflow: unset !important;
 }
 
+.carousel:last-of-type {
+  margin-bottom: 200px;
+}
 .indicator-item {
   background: rgb(255, 0, 0, 0.5) !important;
 }
@@ -65,7 +72,7 @@ pre {
 
 .overflow-fix {
   overflow: scroll;
-  height: 240px;
+  height: 245px;
 }
 
 ::-webkit-scrollbar {

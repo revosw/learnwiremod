@@ -10,7 +10,7 @@
 	<link type="text/css" rel="stylesheet" href="/assets/css/main.css" />
 	<!--Let browser know website is optimized for mobile-->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Expression 2 - Introduction</title>
+	<title>Expression 2 - The Editor</title>
 </head>
 
 <body>
@@ -22,7 +22,7 @@
 					<a href="#" data-activates="nav-mobile" class="button-collapse top-nav full hide-on-large-only">
 						<i class="material-icons">menu</i>
 					</a>
-					<a class="page-title center">Introduction</a>
+					<a class="page-title center">Tool overview</a>
 				</div>
 			</div>
 		</nav>
@@ -49,11 +49,11 @@
 							<li>
 								<a href="what-is-e2.html">What is Expression 2?</a>
 							</li>
-							<li>
-								<a href="tool-overview.html">Tool overview</a>
-							</li>
 							<li class="active">
-								<a class="active" href="#!">Hello world</a>
+								<a class="active" href="#!">Tool overview</a>
+							</li>
+							<li>
+								<a href="hello-world.html">Hello world</a>
 							</li>
 						</ul>
 					</div>
@@ -107,22 +107,167 @@
 		<div class="container">
 			<div class="row">
 				<div class="col s12 m9 l10">
-					<section id="ohman" class="section scrollspy">
+					<section id="menu" class="section scrollspy">
+						<h2>Finding it in the menu
+						</h2>
 
-						<h2>The wait is over</h2>
+						<p>Open up the spawn menu with Q, and have a look at the Wire tab. Under
+							<strong>Chips, Gates</strong> you'll find Expression 2.</p>
 
-						<p>Finally we are going to start learning the actual language. But I think it was important that I first taught you how
-							to use the tool to its full extent. From now on, all we're going to see is code.</p>
-						<p>It is a convention in programming that the first thing a new programmer learns is how to output the string "Hello World!"
-							to a console (or in our case, the chat). "But wait," you say. String?</p>
+						<figure>
+							<img src="/assets/img/e2-basics/spawnmenu.png" alt="">
+							<figcaption>You can change size and model of the chip, and open and create files and folders</figcaption>
+						</figure>
 
-						<blockquote class="flow-text">
-							String - any text, numbers or other characters or symbols delimited by quotation marks
-						</blockquote>
+						<figure>
+							<img src="/assets/img/e2-basics/chips.png" alt="">
+							<figcaption>The sizes and models of the Expression 2 chip</figcaption>
+						</figure>
 
-						<code class="hljs-inline gmod_wire_e2">"Hello World!"</code> is a string.
-						<code class="hljs-inline gmod_wire_e2">"#123"</code> is a string. Why? Because it is
-						<em>delimited by</em>, or contained within, a set of quotation marks.
+						<p>You can create, open, copy, rename and delete files. Folders are different, you can create them but
+							<strong>not</strong> rename, nor delete them.
+							<a href="https://github.com/wiremod/wire/issues/1598">Issue on Github</a>
+						</p>
+
+						<figure>
+							<img src="/assets/img/e2-basics/fileoption.png" alt="">
+							<figcaption></figcaption>
+						</figure>
+					</section>
+
+					<section id="overview" class="section scrollspy">
+						<h2>Editor overview
+						</h2>
+
+						<p>When you select the tool and right click outside of the spawn menu, you'll open the editor. Optionally, you can click
+							the button on the bottom of the tool's spawn menu and open the editor there, but I have personally never used that
+							button.
+						</p>
+
+						<figure>
+							<img src="/assets/img/e2-basics/editor.png" alt="">
+							<figcaption>We're greeted by a comment upon opening the editor (2018, colorized)</figcaption>
+						</figure>
+					</section>
+
+					<section id="buttons" class="section scrollspy">
+						<h4>Button legend</h4>
+						<table>
+							<thead>
+								<tr>
+									<td>Icon</td>
+									<td>Explanation</td>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										<img src="/assets/img/e2-basics/editorbutton0.png" alt="">
+									</td>
+									<td>Debug bar - Green when there are no errors. Turns red and shows an error if there are any</td>
+								</tr>
+								<tr>
+									<tr>
+										<td>
+											<img src="/assets/img/e2-basics/editorbutton1.png" alt="">
+										</td>
+										<td>Update the contents of the file explorer</td>
+									</tr>
+									<tr>
+										<tr>
+											<td>
+												<img src="/assets/img/e2-basics/editorbutton2.png" alt="">
+											</td>
+											<td>Expand or retract file explorer</td>
+										</tr>
+										<tr>
+											<td>
+												<img src="/assets/img/e2-basics/editorbutton3.png" alt="">
+											</td>
+											<td>Save currently open file</td>
+										</tr>
+										<tr>
+											<td>
+												<img src="/assets/img/e2-basics/editorbutton4.png" alt="">
+											</td>
+											<td>Open new tab</td>
+										</tr>
+										<tr>
+											<td>
+												<img src="/assets/img/e2-basics/editorbutton5.png" alt="">
+											</td>
+											<td>Close current tab</td>
+										</tr>
+										<tr>
+											<td>
+												<img src="/assets/img/e2-basics/editorbutton6.png" alt="">
+											</td>
+											<td>Refresh current file - this button is only ever used if you work on the files outside of Garry's mod</td>
+										</tr>
+										<tr>
+											<td>
+												<img src="/assets/img/e2-basics/editorbutton7.png" alt="">
+											</td>
+											<td>Browse the available sounds from Garry's Mod or other mounted games</td>
+										</tr>
+										<tr>
+											<td>
+												<img src="/assets/img/e2-basics/editorbutton8.png" alt="">
+											</td>
+											<td>Browse all available Expression 2 functions</td>
+										</tr>
+										<tr>
+											<td>
+												<img src="/assets/img/e2-basics/editorbutton9.png" alt="">
+											</td>
+											<td>Save current file as</td>
+										</tr>
+										<tr>
+											<td>
+												<img src="/assets/img/e2-basics/editorbutton10.png" alt="">
+											</td>
+											<td>Save current file and exit the editor</td>
+										</tr>
+										<tr>
+											<td>
+												<img src="/assets/img/e2-basics/editorbutton11.png" alt="">
+											</td>
+											<td>Open editor settings</td>
+										</tr>
+										<tr>
+											<td>
+												<img src="/assets/img/e2-basics/editorbutton12.png" alt="">
+											</td>
+											<td>Show credits</td>
+										</tr>
+										<tr>
+											<td>
+												<img src="/assets/img/e2-basics/editorbutton13.png" alt="">
+											</td>
+											<td>Close editor</td>
+										</tr>
+							</tbody>
+						</table>
+					</section>
+
+					<section id="settings" class="section scrollspy">
+						<h4>Settings</h4>
+						<p>Syntax colors and font selection in the Editor tab is self explanatory - so what I'll instead do is come with cool
+							color scheme recommendations.</p>
+
+						<p>&lt;insert color scheme recommendations here sometime in the future&gt;</p>
+
+						<figure>
+							<img src="/assets/img/e2-basics/settings-editor.png" alt="">
+						</figure>
+
+						<table>
+							<thead>
+								<tr>
+									<td></td>
+								</tr>
+							</thead>
+						</table>
 					</section>
 
 					<!-- Section: Quiz -->
@@ -214,7 +359,7 @@ Vector = Vector:normalized()</code></pre>
 											Did you just type "Yeah" instead of "yeah"?
 										</p>
 										<p class="correct">
-											I think we're ready to move on to the next chapter
+											What about that last question?
 										</p>
 									</div>
 								</div>
@@ -233,27 +378,28 @@ Vector = Vector:normalized()</code></pre>
 									</div>
 									<div class="col s12 m4 pull-m4">
 										<form>
-											<div class="input-field">
-												<input type="checkbox" id="4" data-answer />
-												<label for="4">Wiremod discord</label>
-											</div>
-											<div class="input-field">
-												<input type="checkbox" id="4" data-answer />
-												<label for="4">Wiremod discord</label>
-											</div>
-											<div class="input-field">
-												<input type="checkbox" id="4" data-answer />
-												<label for="4">Wiremod discord</label>
-											</div>
 											<p>
-												<button class="btn" type="submit">are we ready?</button>
+												<input type="checkbox" id="4" data-answer />
+												<label for="4">Wiremod discord</label>
+											</p>
+											<p>
+												<input type="checkbox" id="5" data-answer />
+												<label for="5">Wiremod reddit</label>
+											</p>
+											<p>
+												<input type="checkbox" id="6" />
+												<label for="6">Wiremod forums</label>
+											</p>
+											<p>
+												<button class="btn" type="submit">Don't forget to subscribe</button>
 											</p>
 										</form>
 										<p class="wrong">
-											Did you just type "Yeah" instead of "yeah"?
+											The
+											<a href="">Wiremod forums</a> are read-only, so you can't ask for help there. You can however browse for fun.
 										</p>
 										<p class="correct">
-											I think we're ready to move on to the next chapter
+											You know exactly what to do when you need help. I think we're ready to move on to the basics.
 										</p>
 									</div>
 								</div>
@@ -268,13 +414,16 @@ Vector = Vector:normalized()</code></pre>
 						<div style="height: 1px;">
 							<ul class="section table-of-contents pinned">
 								<li>
-									<a href="#welcome">Welcome</a>
+									<a href="#menu">Finding it in the menu</a>
 								</li>
 								<li>
-									<a href="#progression">Course progression</a>
+									<a href="#overview">Editor overview</a>
 								</li>
 								<li>
-									<a href="#content">Course contents</a>
+									<a href="#buttons">Buttons</a>
+								</li>
+								<li>
+									<a href="#settings">Settings</a>
 								</li>
 								<li>
 									<a href="#quiz">Quiz</a>
