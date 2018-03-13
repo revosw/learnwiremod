@@ -10,7 +10,7 @@
 	<link type="text/css" rel="stylesheet" href="/assets/css/main.css" />
 	<!--Let browser know website is optimized for mobile-->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Expression 2 - Introduction</title>
+	<title>Expression 2 - Hello World</title>
 </head>
 
 <body>
@@ -22,7 +22,7 @@
 					<a href="#" data-activates="nav-mobile" class="button-collapse top-nav full hide-on-large-only">
 						<i class="material-icons">menu</i>
 					</a>
-					<a class="page-title center">Introduction</a>
+					<a class="page-title center">Hello World</a>
 				</div>
 			</div>
 		</nav>
@@ -54,6 +54,9 @@
 							</li>
 							<li class="active">
 								<a class="active" href="#!">Hello world</a>
+							</li>
+							<li>
+								<a href="first-functions.html">First functions</a>
 							</li>
 						</ul>
 					</div>
@@ -107,22 +110,39 @@
 		<div class="container">
 			<div class="row">
 				<div class="col s12 m9 l10">
-					<section id="ohman" class="section scrollspy">
+					<section id="finally" class="section scrollspy">
 
 						<h2>The wait is over</h2>
 
 						<p>Finally we are going to start learning the actual language. But I think it was important that I first taught you how
-							to use the tool to its full extent. From now on, all we're going to see is code.</p>
+							to use the tool to its full extent. From now on, most of what we're going to see is code.</p>
+
 						<p>It is a convention in programming that the first thing a new programmer learns is how to output the string "Hello World!"
 							to a console (or in our case, the chat). "But wait," you say. String?</p>
 
 						<blockquote class="flow-text">
-							String - any text, numbers or other characters or symbols delimited by quotation marks
+							String - any* text, numbers or other characters or symbols delimited by quotation marks
 						</blockquote>
 
-						<code class="hljs-inline gmod_wire_e2">"Hello World!"</code> is a string.
-						<code class="hljs-inline gmod_wire_e2">"#123"</code> is a string. Why? Because it is
-						<em>delimited by</em>, or contained within, a set of quotation marks.
+						<p>
+							<code class="hljs-inline gmod_wire_e2">"Hello World!"</code> is a string.
+							<code class="hljs-inline gmod_wire_e2">"#123"</code> is a string. Why? Because it is
+							<em>delimited by</em>, or contained within, a set of quotation marks. But there is a catch, which is why there is an asterisk.
+							I'll come back to that later.</p>
+
+						<p>Now we just need the final piece in our "Hello World!"-formula, namely the
+							<code class="hljs-inline gmod_wire_e2">print()</code> function (don't worry, I'll explain functions later). It now looks like this:</p>
+
+						<div class="card grey darken-4">
+							<div class="card-content asd">
+								<pre><code class="gmod_wire_e2 hljs">print("Hello World!")</code></pre>
+							</div>
+						</div>
+
+						<p>But where did
+							<code class="hljs-inline gmod_wire_e2">print()</code> come from? Throughout this whole Expression 2 course, we are going to cover a LOT of functions. You can find the
+							functions under the
+							<img src="/assets/img/e2-basics/editorbutton8.png">, located in the top right section of the editor. When the time is right, I will explain how to use the E2Helper.</p>
 					</section>
 
 					<!-- Section: Quiz -->
@@ -132,58 +152,44 @@
 						<div class="carousel carousel-slider">
 							<div class="carousel-item" href="#one!">
 								<div class="row">
-									<h5 class="center">Are you ready to learn about Expression 2?</h5>
+									<h5 class="center">Which of these are strings?</h5>
 								</div>
 								<div class="row">
 									<div class="col s12 m5 push-m6">
 										<div class="card grey darken-4 overflow-fix">
 											<div class="card-content asd">
-												<pre><code class="gmod_wire_e2 hljs">@name Hello World
-@inputs A B
-@outputs Add Sub Mul Div
-@outputs GreaterThan Highest Lowest Overflow Overflow Overflow Overflow
-@outputs Vector:vector
-@persist D
-@trigger all
-
-Add = A + B
-Sub = A - B
-Mul = A * B
-Div = A / B
-
-GreaterThan = A > B
-
-if(A > B) {
-Highest = A, Lowest = B
-} else {
-Highest = B, Lowest = A
-}
-
-Vector = vec(A, B, 0)
-Vector = Vector + vec(0, 0, A + B)
-Vector = Vector:normalized()</code></pre>
+												<pre><code class="gmod_wire_e2 hljs"></code></pre>
 											</div>
 										</div>
 									</div>
 									<div class="col s12 m4 pull-m4">
 										<form>
 											<p>
-												<input name="q1" type="radio" id="1" />
-												<label for="1">Yeah</label>
+												<input name="q1" type="checkbox" id="1" />
+												<label for="1">string</label>
 											</p>
 											<p>
-												<input name="q1" type="radio" id="2" data-answer />
-												<label for="2">Hell yeah</label>
+												<input name="q1" type="checkbox" id="2" data-answer />
+												<label for="2">"100"</label>
 											</p>
 											<p>
-												<button class="btn" type="submit">smash that like button</button>
+												<input name="q1" type="checkbox" id="3" data-answer />
+												<label for="3">"¤%(/!)"</label>
+											</p>
+											<p>
+												<input name="q1" type="checkbox" id="4" data-answer />
+												<label for="4">"number"</label>
+											</p>
+											<p>
+												<button class="btn" type="submit">submit it, man</button>
 											</p>
 										</form>
 										<p class="wrong">
-											Speak up, son
+											Not quite. Remember that a string is
+											<strong>anything</strong>* that is delimited by quotation marks
 										</p>
 										<p class="correct">
-											<a target="_blank" href="https://www.youtube.com/watch?v=LtU4tjoIyeQ">That's what I'm talking about, Bill.</a> Try to press those red indicators down there.
+											You're right, quite right.
 										</p>
 									</div>
 								</div>
@@ -268,7 +274,7 @@ Vector = Vector:normalized()</code></pre>
 						<div style="height: 1px;">
 							<ul class="section table-of-contents pinned">
 								<li>
-									<a href="#welcome">Welcome</a>
+									<a href="#finally">The wait is over</a>
 								</li>
 								<li>
 									<a href="#progression">Course progression</a>
