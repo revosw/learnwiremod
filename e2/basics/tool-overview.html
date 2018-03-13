@@ -38,7 +38,7 @@
 			</div>
 		</li>
 		<li class="bold">
-			<a href="../index.html" class="waves-effect waves-teal">Introduction</a>
+			<a href="../" class="waves-effect waves-teal">Introduction</a>
 		</li>
 		<li>
 			<ul class="collapsible collapsible-accordion">
@@ -47,7 +47,7 @@
 					<div class="collapsible-body">
 						<ul>
 							<li>
-								<a href="what-is-e2.html">What is Expression 2?</a>
+								<a href="./">What is Expression 2?</a>
 							</li>
 							<li class="active">
 								<a class="active" href="#!">Tool overview</a>
@@ -251,7 +251,7 @@
 						</table>
 					</section>
 
-					<section id="settings-editor" class="section scrollspy">
+					<section id="settings" class="section scrollspy">
 						<h4>Settings - Editor</h4>
 						<p>Hit that
 							<img src="/assets/img/e2/basics/editorbutton11.png" alt=""> button and edit along.</p>
@@ -261,7 +261,9 @@
 
 						<p>&lt;insert color scheme recommendations here sometime in the future&gt;</p>
 
+						<br>
 						<hr>
+						<br>
 
 						<h5>Auto completion</h5>
 						<p>I recommend:</p>
@@ -284,6 +286,7 @@
 						<img src="/assets/img/e2/basics/settings-editor1.gif" alt="">
 
 						<hr>
+						<br>
 
 						<h5>Other options</h5>
 						<p>I recommend:</p>
@@ -311,8 +314,10 @@
 						<p>You'll want to disable clicking outside the editor because of this happening when you resize the window:</p>
 
 						<img src="/assets/img/e2/basics/settings-editor2.gif" alt="">
-					</section>
-					<section id="settings-e2" class="section scrollspy">
+
+						<br>
+						<br>
+
 						<h4>Settings - Expression 2</h4>
 						<p>Now you need to navigate to the second tab of the settings page.</p>
 
@@ -329,167 +334,26 @@
 								<span class="red-text">EMPTY</span> (it won't do anything when concmd is off anyway)
 							</li>
 							<li>Expression 2 block comment style
-								<span class="yellow-text text-darken-2">DOESN'T SEEM TO MATTER</span>
+								<span class="yellow-text text-darken-2">DOESN'T SEEM TO DO ANYTHING</span>
+							</li>
+							<li>Ops/cpu usage sync
+								<span class="green-text">ON</span>
 							</li>
 						</ul>
 
-					</section>
-					<section id="settings-editor" class="section scrollspy">
+						<p>I like auto indenting because it automatically helps in organizing the code. You'll understand what I mean later.</p>
+						<img src="/assets/img/e2/basics/settings-e2.gif" alt="">
+
+						<p>By checking the concmd checkbox, your expressions can run console commands on your behalf. Very useful if you know
+							what you're doing, but we'll leave it off for now.</p>
+
+						<br>
+						<br>
+
 						<h4>Settings - Remote updater</h4>
-						<p>Syntax colors and font selection in the Editor tab is self explanatory - so what I'll instead do is come with cool
-							color scheme recommendations.</p>
+						<p>In this menu, you can manage your expressions remotely.</p>
 
-						<p>&lt;insert color scheme recommendations here sometime in the future&gt;</p>
 
-						<figure>
-							<img src="/assets/img/e2/basics/settings-editor.png" alt="">
-						</figure>
-
-						<table>
-							<thead>
-								<tr>
-									<td></td>
-								</tr>
-							</thead>
-						</table>
-					</section>
-
-					<!-- Section: Quiz -->
-					<section id="quiz" class="section section-quiz scrollspy">
-						<h1 class="center">It's QUIZ TIME</h1>
-
-						<div class="carousel carousel-slider">
-							<div class="carousel-item" href="#one!">
-								<div class="row">
-									<h5 class="center">Are you ready to learn about Expression 2?</h5>
-								</div>
-								<div class="row">
-									<div class="col s12 m5 push-m6">
-										<div class="card grey darken-4 overflow-fix">
-											<div class="card-content asd">
-												<pre><code class="gmod_wire_e2 hljs">@name Hello World
-@inputs A B
-@outputs Add Sub Mul Div
-@outputs GreaterThan Highest Lowest Overflow Overflow Overflow Overflow
-@outputs Vector:vector
-@persist D
-@trigger all
-
-Add = A + B
-Sub = A - B
-Mul = A * B
-Div = A / B
-
-GreaterThan = A > B
-
-if(A > B) {
-Highest = A, Lowest = B
-} else {
-Highest = B, Lowest = A
-}
-
-Vector = vec(A, B, 0)
-Vector = Vector + vec(0, 0, A + B)
-Vector = Vector:normalized()</code></pre>
-											</div>
-										</div>
-									</div>
-									<div class="col s12 m4 pull-m4">
-										<form>
-											<p>
-												<input name="q1" type="radio" id="1" />
-												<label for="1">Yeah</label>
-											</p>
-											<p>
-												<input name="q1" type="radio" id="2" data-answer />
-												<label for="2">Hell yeah</label>
-											</p>
-											<p>
-												<button class="btn" type="submit">smash that like button</button>
-											</p>
-										</form>
-										<p class="wrong">
-											Speak up, son
-										</p>
-										<p class="correct">
-											<a target="_blank" href="https://www.youtube.com/watch?v=LtU4tjoIyeQ">That's what I'm talking about, Bill.</a> Try to press those red indicators down there.
-										</p>
-									</div>
-								</div>
-							</div>
-							<div class="carousel-item" href="#two!">
-								<div class="row">
-									<h5 class="center">Woah there are other questions here? Try writing "yeah" in that text field down there</h5>
-								</div>
-								<div class="row">
-									<div class="col s12 m5 push-m6">
-										<div class="card grey darken-4 overflow-fix">
-											<div class="card-content asd">
-												<pre><code class="gmod_wire_e2 hljs"></code></pre>
-											</div>
-										</div>
-									</div>
-									<div class="col s12 m4 pull-m4">
-										<form>
-											<div class="input-field">
-												<input type="text" id="3" data-answer="yeah" />
-												<label for="3">daily dose of text input</label>
-											</div>
-											<p>
-												<button class="btn" type="submit">are we ready?</button>
-											</p>
-										</form>
-										<p class="wrong">
-											Did you just type "Yeah" instead of "yeah"?
-										</p>
-										<p class="correct">
-											What about that last question?
-										</p>
-									</div>
-								</div>
-							</div>
-							<div class="carousel-item" href="#three!">
-								<div class="row">
-									<h5 class="center">Okay, last one now. Where do you go to get help?</h5>
-								</div>
-								<div class="row">
-									<div class="col s12 m5 push-m6">
-										<div class="card grey darken-4 overflow-fix">
-											<div class="card-content asd">
-												<pre><code class="gmod_wire_e2 hljs"></code></pre>
-											</div>
-										</div>
-									</div>
-									<div class="col s12 m4 pull-m4">
-										<form>
-											<p>
-												<input type="checkbox" id="4" data-answer />
-												<label for="4">Wiremod discord</label>
-											</p>
-											<p>
-												<input type="checkbox" id="5" data-answer />
-												<label for="5">Wiremod reddit</label>
-											</p>
-											<p>
-												<input type="checkbox" id="6" />
-												<label for="6">Wiremod forums</label>
-											</p>
-											<p>
-												<button class="btn" type="submit">Don't forget to subscribe</button>
-											</p>
-										</form>
-										<p class="wrong">
-											The
-											<a href="">Wiremod forums</a> are read-only, so you can't ask for help there. You can however browse for fun.
-										</p>
-										<p class="correct">
-											You know exactly what to do when you need help. I think we're ready to move on to the basics.
-										</p>
-									</div>
-								</div>
-							</div>
-						</div>
-					</section>
 				</div>
 
 				<!-- Table of Contents -->
@@ -504,13 +368,16 @@ Vector = Vector:normalized()</code></pre>
 									<a href="#overview">Editor overview</a>
 								</li>
 								<li>
-									<a href="#buttons">Buttons</a>
+									<a href="#buttons">Button legend</a>
 								</li>
 								<li>
-									<a href="#settings">Settings</a>
+									<a href="#settings-editor">Settings - Editor</a>
 								</li>
 								<li>
-									<a href="#quiz">Quiz</a>
+									<a href="#settings-e2">Settings - Expression 2</a>
+								</li>
+								<li>
+									<a href="#settings-remote">Settings - Remote Uploader</a>
 								</li>
 								<li>
 							</ul>
