@@ -22,13 +22,13 @@
   padding-left: 32px !important;
 }
 
+.background a {
+  padding: 0 !important;
+}
+
 .collapsible-body li > a {
   padding-left: 40px !important;
   font-weight: normal !important;
-}
-
-.section-topic {
-  margin-top: 300px;
 }
 
 main {
