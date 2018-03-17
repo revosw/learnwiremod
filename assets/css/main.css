@@ -11,6 +11,10 @@
   font-size: 60px;
 }
 
+.spacer {
+  height: 180px;
+}
+
 @media screen and (max-width: 992px) {
   .main-header {
     padding-left: 0px;
@@ -54,9 +58,6 @@ pre {
   overflow: unset !important;
 }
 
-.carousel:last-of-type {
-  margin-bottom: 200px;
-}
 .indicator-item {
   background: rgb(255, 0, 0, 0.5) !important;
 }

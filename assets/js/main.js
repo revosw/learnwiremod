@@ -85,4 +85,9 @@ $(document).ready(function() {
         .show();
     }
   });
+
+  // === Insert spacer at bottom of content ===
+  $("main")
+    .find($(".col")[0])
+    .append("<div class='spacer hide-on-med-and-down'></div>");
 });
