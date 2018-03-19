@@ -27,6 +27,9 @@
               <a href="#topics">Topics</a>
             </li>
             <li>
+              <a href="#installation">Installation</a>
+            </li>
+            <li>
               <a href="#about">About</a>
             </li>
             <li>
@@ -82,6 +85,9 @@
     </li>
     <li>
       <a href="#topics">Topics</a>
+    </li>
+    <li>
+      <a href="#installation">Installation</a>
     </li>
     <li>
       <a href="#about">About</a>
@@ -194,23 +200,85 @@
   <section id="installation" class="section scrollspy">
     <div class="container">
       <h2>How to install Wiremod</h2>
-      <h4>From the workshop</h4>
-      <p>The most convenient (and recommended) method is to just install the
-        <a target="_blank" href="https://steamcommunity.com/sharedfiles/filedetails/?id=160250458">Wiremod addon from the workshop</a>
-        by hitting the subscribe button, and you're done.</p>
-      <h4>From SVN (sorry Mac and Linux users I don't know about your cases)</h4>
-      <p>But for those of you who want the bleeding edge builds of Wiremod, this is for you. To proceed, we first need to determine
-        if your windows is 32-bit or 64-bit.</p>
-      <p>FOR WINDOWS 10 USERS:
-        <a href="ms-settings:about">Click this link</a>, then look at "System type" under Device Specifications. My god, I love Windows 10 features.</p>
-      <p>FOR WINDOWS 7 AND 8 USERS: Open the start menu and type "system information". Open it up, then check the row where
-        it says "System type". It should say "x86-based" or "x64-based". x86 is 32-bit, x64 is 64-bit.</p>
-      <ul>
-        <li>Download
-          <a target="_blank" href="https://tortoisesvn.net/downloads.html">TortoiseSVN</a> (this is where 32-bit and 64-bit comes in)
-        </li>
-        <li></li>
-      </ul>
+      <div class="row">
+        <div class="col s12">
+          <ul class="tabs">
+            <li class="tab col s4">
+              <a class="active" href="#workshop">From the workshop (recommended)</a>
+            </li>
+            <li class="tab col s4">
+              <a href="#windows-svn">From SVN - Windows 10/8/7</a>
+            </li>
+          </ul>
+        </div>
+        <div id="workshop" class="col s12">
+          <p>The most convenient method is to just install the
+            <a target="_blank" href="https://steamcommunity.com/sharedfiles/filedetails/?id=160250458">Wiremod addon from the workshop</a>
+            by hitting the subscribe button, and you're done.</p>
+        </div>
+        <div id="windows-svn" class="col s12">
+          <h4>Setting up the repository</h4>
+          <p>For those of you who want the bleeding edge builds of Wiremod, this is for you. The workshop addon isn't updated
+            that frequently. To proceed, we first need to determine if your windows is 32-bit or 64-bit. Open the start menu
+            and type "system information". Open it up, then check the row where it says "System type". It should say "x86-based"
+            or "x64-based". x86 is 32-bit, x64 is 64-bit.</p>
+          <p>Download and install
+            <a target="_blank" href="https://tortoisesvn.net/downloads.html">TortoiseSVN</a> (this is where 32-bit and 64-bit comes in)
+          </p>
+          <p>Navigate to your steam folder, and proceed to
+            <strong>\steamapps\common\GarrysMod\garrysmod\addons</strong>
+          </p>
+          <p>Inside the addons folder, open the context menu (right click). You now have an option called "SVN Checkout..."</p>
+          <p>Paste the link "https://github.com/wiremod/wire/trunk" into URL of repository and click OK</p>
+          <img src="/assets/img/root/tortoisesvn.png" alt="">
+          <p>To update the wire repository, just right click the folder and click "SVN Update".</p>
+          <p>But having to manually update it every time is tedious... Why not automate it?</p>
+          <h4>Automating repository update</h4>
+          <p>Open the start menu, and start up Powershell ISE</p>
+          <p>In the white box on top, paste the two lines:
+            <br>
+            <strong>cd C:\"Program Files"\TortoiseSVN\bin</strong>
+            <br>
+            <strong>TortoiseProc.exe -command "update" -path "&lt;path to wire folder&gt;" -closeonend 1
+            </strong>
+          </p>
+          <p>Replace "path to wire folder" with the actual path to your wire folder inside the addons-folder. It should now
+            look something like this:</p>
+          <img src="/assets/img/root/ps.png" alt="">
+          <p>Click
+            <strong>File &gt; Save As...</strong>
+          </p>
+          <p>Choose a location to your liking. I saved mine inside a folder called "scripts" in Documents. You can call the
+            script "updatewire"
+          </p>
+          <p>Test to see if the script actually works by right clicking the file and choose
+            <strong>Run with PowerShell</strong>. It won't work if either the path to TortoiseSVN, or the path to the wire folder
+            is incorrect.</p>
+          <p>After saving the script, open Task Scheduler (type
+            <strong>taskschd.msc</strong> if you can't find it) from the start menu. In there, create a basic task like this:</p>
+          <img src="/assets/img/root/taskschd.png" alt="">
+          <p>You can name the task
+            <strong>Update wire repository</strong>, and click next
+          </p>
+          <p>
+            <strong>When I log on</strong>, next</p>
+          <p>
+            <strong>Start a program</strong>, next</p>
+          <p>
+            Write "powershell.exe" in the "Program/script" box.</p>
+          <p>Fill the "Add arguments" box with:
+            <strong>-ExecutionPolicy Bypass C:\Users\&lt;user&gt;\Documents\scripts\updatewire.ps1</strong>
+          </p>
+          <p>Don't forget to change &lt;user&gt; with your actual windows username</p>
+          <img src="/assets/img/root/taskschd2.png" alt="">
+          <p>Finish up by pressing next, then finish.</p>
+          <p>We need to test our task. Click on Task Scheduler Library, and scroll down the list to find your task. If it's
+            not there, hit F5 to refresh. Right click the task, and press Run.</p>
+          <img src="/assets/img/root/taskschd3.png" alt="">
+          <p>You should first see a powershell window in a split second, then the TortoiseSVN updating the repository. If so,
+            <strong>CONGRATULATIONS!</strong> You don't need to think of ever updating the wire repository on your computer.</p>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -227,7 +295,7 @@
       <h4>How?</h4>
       <p>This site is hosted via
         <a target="_blank" href="https://pages.github.com/">Github Pages</a>. It uses the
-        <a target="_blank" href="http://materializecss.com/">Materializecss</a> front-end framework, and
+        <a target="_blank" href="http://materializecss.com/">Materializecss</a> front-end framework, and a custom build of
         <a target="_blank" href="https://highlightjs.org/">highlight.js</a> syntax highlighting.</p>
       <h4>Who?</h4>
       You can find me on

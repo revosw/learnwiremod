@@ -17,9 +17,24 @@
     })
 }*/
 
+// WE JUST GOTTA WAIT SOME MONTHS FOR THE 1.0 RELEASE
+// OF MATERIALIZECSS BOYS, HANG IN THERE
+
+// ================================================
+// ===   Initialize MaterializeCSS components   ===
+// ================================================
+
+// Wait for 1.0 release
+
+// ================================================
+// ===              Initialize quiz             ===
+// ================================================
+
+// Wait for 1.0 release
+
 $(document).ready(function() {
   // === Init Materialize Components ===
-  $(".button-collapse").sideNav();
+  $(".button-collapse").sidenav();
 
   // Init Carousel
   $(".carousel.carousel-slider")
