@@ -37,6 +37,7 @@
 
 main {
   padding-left: 300px;
+  min-height: calc(100vh - 120px);
 }
 
 blockquote {

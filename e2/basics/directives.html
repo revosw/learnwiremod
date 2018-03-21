@@ -56,10 +56,19 @@
                 <a href="hello-world.html">Hello world</a>
               </li>
               <li>
-                <a href="first-functions.html">Our first functions</a>
+                <a href="variables.html">Variables</a>
               </li>
               <li class="active">
-                <a class="active" href="!#">Directives</a>
+                <a class="active" href="#!">Directives</a>
+              </li>
+              <li>
+                <a href="datatypes.html">Datatypes</a>
+              </li>
+              <li>
+                <a href="functions.html">Functions</a>
+              </li>
+              <li>
+                <a href="control-flow.html">Control flow</a>
               </li>
             </ul>
           </div>
@@ -131,8 +140,8 @@
 #[ Variables that should be kept between cycles ]#
 
 @trigger 
-#[ Sets which inputs and outputs triggers
-    an execution of the chip, or none ]#
+#[ Sets which inputs triggers an
+  execution of the chip, or none ]#
 
 @model "path/to/model"
 #[ Set the model of the expression ]#
@@ -148,7 +157,7 @@
             <h4>@name</h4>
             <p>The @name directive sets the name of the expression 2 chip. The name is viewed in two places, one when hovering
               your mouse over the expression and the other when looking inside the remote uploader. There is a method
-              <code class="hljs-inline gmod_wire_e2">entity:getName()</code> which is solely used for getting any expression's name</p>
+              <code class="hljs-inline gmod_wire_e2">entity:getName()</code> which is solely used for getting any expression's name.</p>
 
             <img src="/assets/img/e2/basics/e2-name.png" alt="">
             <div class="card grey darken-4">
@@ -162,106 +171,165 @@ print(entity():getName())</code></pre>
           </section>
 
           <section id="inputs" class="section scrollspy">
-            <h4>@name</h4>
-            <p>The @name directive sets the name of the expression 2 chip. The name is viewed in two places, one when hovering
-              your mouse over the expression and the other when looking inside the remote uploader. There is a method
-              <code class="hljs-inline gmod_wire_e2">entity:getName()</code> which is solely used for getting any expression's name</p>
+            <h4>@inputs</h4>
+            <p>The @inputs directive sets the expression's inputs. It is used to wire between your chip and other wire-compatible
+              tools.
+            </p>
 
-            <img src="/assets/img/e2/basics/e2-name.png" alt="">
+            <img src="/assets/img/e2/basics/e2-input.png" alt="">
             <div class="card grey darken-4">
               <div class="card-content asd">
-                <pre><code class="gmod_wire_e2 hljs">@name Expression name
+                <pre><code class="gmod_wire_e2 hljs">@inputs Button
 
-#prints "Expression name"
-print(entity():getName())</code></pre>
+#Check if Button has changed value since last execution
+if(~Button) {
+  print("Button is pressed or released")
+}
+
+#Check if Button is connected as an input or output
+if(->Button) {
+  print("Button is connected as an input or output")
+}</code></pre>
               </div>
             </div>
           </section>
 
           <section id="outputs" class="section scrollspy">
-            <h4>@name</h4>
-            <p>The @name directive sets the name of the expression 2 chip. The name is viewed in two places, one when hovering
-              your mouse over the expression and the other when looking inside the remote uploader. There is a method
-              <code class="hljs-inline gmod_wire_e2">entity:getName()</code> which is solely used for getting any expression's name</p>
+            <h4>@outputs</h4>
+            <p>The @outputs directive sets the expression's outputs. What differs input and output is that input takes in data
+              from outputs, while output pushes data to other inputs.</p>
 
-            <img src="/assets/img/e2/basics/e2-name.png" alt="">
+            <img src="/assets/img/e2/basics/e2-output.png" alt="">
             <div class="card grey darken-4">
               <div class="card-content asd">
-                <pre><code class="gmod_wire_e2 hljs">@name Expression name
+                <pre><code class="gmod_wire_e2 hljs">@outputs Screen
 
-#prints "Expression name"
-print(entity():getName())</code></pre>
+Screen = 5</code></pre>
               </div>
             </div>
           </section>
 
           <section id="persist" class="section scrollspy">
-            <h4>@name</h4>
-            <p>The @name directive sets the name of the expression 2 chip. The name is viewed in two places, one when hovering
-              your mouse over the expression and the other when looking inside the remote uploader. There is a method
-              <code class="hljs-inline gmod_wire_e2">entity:getName()</code> which is solely used for getting any expression's name</p>
-
-            <img src="/assets/img/e2/basics/e2-name.png" alt="">
+            <h4>@persist</h4>
+            <p>The @persist directive exists because of how Expression 2 variables work. When a variable is declared in the
+              code, it is removed when the code is finished executing. To prevent this, we need to persist the variable.
+              Try to run the code below, what do you think will happen?
+            </p>
             <div class="card grey darken-4">
               <div class="card-content asd">
-                <pre><code class="gmod_wire_e2 hljs">@name Expression name
+                <pre><code class="gmod_wire_e2 hljs">#interval() tells Expression 2 to run the code
+#once every x milliseconds (1 second in this example)
+interval(1000)
 
-#prints "Expression name"
-print(entity():getName())</code></pre>
+#first() is a function that returns true (1) if
+#this is the first time the code is executed after upload.
+#The second time and onwards, first() will not be true.
+#Thus, Number = 5 will only be executed once.
+if(first()) {
+  Number = 5
+}
+
+print(Number)</code></pre>
               </div>
             </div>
           </section>
 
           <section id="trigger" class="section scrollspy">
-            <h4>@name</h4>
-            <p>The @name directive sets the name of the expression 2 chip. The name is viewed in two places, one when hovering
-              your mouse over the expression and the other when looking inside the remote uploader. There is a method
-              <code class="hljs-inline gmod_wire_e2">entity:getName()</code> which is solely used for getting any expression's name</p>
+            <h4>@trigger</h4>
+            <p>The @trigger directive sets what inputs should trigger an execution.</p>
 
-            <img src="/assets/img/e2/basics/e2-name.png" alt="">
             <div class="card grey darken-4">
               <div class="card-content asd">
-                <pre><code class="gmod_wire_e2 hljs">@name Expression name
+                <pre><code class="gmod_wire_e2 hljs">#sets the expression to not execute from any inputs
+@trigger none
 
-#prints "Expression name"
-print(entity():getName())</code></pre>
+#sets the expression to execute on all inputs (default)
+@trigger all
+
+#sets the expression to execute only on specified inputs
+@inputs A B C D E
+@trigger A B E</code></pre>
               </div>
             </div>
           </section>
 
           <section id="model" class="section scrollspy">
-            <h4>@name</h4>
-            <p>The @name directive sets the name of the expression 2 chip. The name is viewed in two places, one when hovering
-              your mouse over the expression and the other when looking inside the remote uploader. There is a method
-              <code class="hljs-inline gmod_wire_e2">entity:getName()</code> which is solely used for getting any expression's name</p>
+            <h4>@model</h4>
+            <p>The @model directive sets what model the expression should be. The easiest way to get a model name is to simply
+              open the spawn menu > find the model you want the expression to be > right click > copy to clipboard</p>
 
-            <img src="/assets/img/e2/basics/e2-name.png" alt="">
+            <img src="/assets/img/e2/basics/e2-model.png" alt="">
+            <br>
+            <img src="/assets/img/e2/basics/e2-model2.png" alt="">
             <div class="card grey darken-4">
               <div class="card-content asd">
-                <pre><code class="gmod_wire_e2 hljs">@name Expression name
-
-#prints "Expression name"
-print(entity():getName())</code></pre>
+                <pre><code class="gmod_wire_e2 hljs">@model models/props_c17/oildrum001_explosive.mdl</code></pre>
               </div>
             </div>
           </section>
 
           <section id="autoupdate" class="section scrollspy">
-            <h4>@name</h4>
-            <p>The @name directive sets the name of the expression 2 chip. The name is viewed in two places, one when hovering
-              your mouse over the expression and the other when looking inside the remote uploader. There is a method
-              <code class="hljs-inline gmod_wire_e2">entity:getName()</code> which is solely used for getting any expression's name</p>
-
-            <img src="/assets/img/e2/basics/e2-name.png" alt="">
+            <h4>@autoupdate</h4>
+            <p>The @autoupdate directive is useful if you have a contraption that you save as a duplicate. When an expression
+              with the @autoupdate directive is loaded, it automatically checks for any newer version of the same expression.
+              Note that @autoupdate only works with saved expressions. Let's take an example.</p>
+            <p>The first thing you do is make an expression that looks like this, and
+              <em>save it</em>:</p>
             <div class="card grey darken-4">
               <div class="card-content asd">
-                <pre><code class="gmod_wire_e2 hljs">@name Expression name
+                <pre><code class="gmod_wire_e2 hljs">@autoupdate
 
-#prints "Expression name"
-print(entity():getName())</code></pre>
+if(first()) {
+    print("I am old")
+}</code></pre>
+              </div>
+            </div>
+            <p>Then you open the code (not on the expression you placed!) and update the code with this, then save:</p>
+            <div class="card grey darken-4">
+              <div class="card-content asd">
+                <pre><code class="gmod_wire_e2 hljs">@autoupdate
+  
+if(first()) {
+    print("I am new!")
+}</code></pre>
+              </div>
+            </div>
+            <p>Now, the expression you placed on the ground has the old code. The new code is saved in the SAME FILE as the
+              one you placed uses. Take out the advanced duplicator, right click the expression on the ground to copy, then
+              paste it somewhere else with left click. You never changed the contents of the expression on the ground, but
+              the @autoupdate directive made the expression fetch the new version of the code.</p>
+          </section>
+
+          <section id="info" class="section scrollspy">
+            <h2>Good to know</h2>
+            <p>There are some properties about directives that are good to know.</p>
+            <p>1. You can completely omit directives, it's not required to have them in your code.</p>
+            <p>2. You can have several directives of the same kind, with the exception of @name, @trigger and @model. It is
+              possible to have two @autoupdate, but it's useless having more than one.</p>
+            <div class="card grey darken-4">
+              <div class="card-content asd">
+                <pre><code class="gmod_wire_e2 hljs">@inputs  A B C
+@inputs  D E F
+@inputs  G H I
+@outputs J K L
+@outputs M N O
+@outputs P Q R
+@persist S T U
+@persist V W X</code></pre>
+              </div>
+            </div>
+            <p>3. You can group variables together to define their type. Since you can define more than one @inputs, @outputs
+              and @persist, the two properties combined makes a clean look on the top of your code</p>
+            <div class="card grey darken-4">
+              <div class="card-content asd">
+                <pre><code class="gmod_wire_e2 hljs">@persist [A B C D]:string [E F G]:vector
+
+@persist [A B C D E F G]:string
+@persist [H I J K L M N]:vector</code></pre>
               </div>
             </div>
           </section>
+
 
           <!-- Section: Quiz -->
           <section id="quiz" class="section section-quiz scrollspy">
@@ -270,39 +338,69 @@ print(entity():getName())</code></pre>
             <div class="carousel carousel-slider">
               <div class="carousel-item" href="#one!">
                 <div class="row">
-                  <h5 class="center">QUESTION</h5>
+                  <h5 class="center">Which of the inputs will trigger an execution?</h5>
                 </div>
                 <div class="row">
                   <div class="col s12 m5 push-m6">
                     <div class="card grey darken-4 overflow-fix">
                       <div class="card-content asd">
-                        <pre><code class="gmod_wire_e2 hljs">@name PLACEHOLDER</code></pre>
+                        <pre><code class="gmod_wire_e2 hljs">@inputs A B C D E F G H
+@trigger B D G H
+                        </code></pre>
                       </div>
                     </div>
                   </div>
-                  <div class="col s12 m4 pull-m4">
+                  <div class="col m4 pull-m4">
                     <form>
-                      <p>
-                        <input name="q1" type="radio" id="1" data-answer />
-                        <label for="1">PLACE</label>
-                      </p>
-                      <p>
-                        <input name="q1" type="checkbox" id="2" data-answer />
-                        <label for="2">HOLDER</label>
-                      </p>
-                      <div class="input-field">
-                        <input name="q1" type="text" id="3" data-answer="" />
-                        <label for="3">PLACEHOLDER</label>
+                      <div class="col m5">
+                        <p>
+                          <input name="q1" type="checkbox" id="1" />
+                          <label for="1">A</label>
+
+                        </p>
+                        <p>
+                          <input name="q1" type="checkbox" id="3" />
+                          <label for="3">C</label>
+
+                        </p>
+                        <p>
+                          <input name="q1" type="checkbox" id="5" />
+                          <label for="5">E</label>
+                        </p>
+                        <p>
+                          <input name="q1" type="checkbox" id="7" data-answer />
+                          <label for="7">G</label>
+                        </p>
+                      </div>
+                      <div class="col m7">
+                        <p>
+                          <input name="q1" type="checkbox" id="2" data-answer />
+                          <label for="2">B</label>
+                        </p>
+                        <p>
+                          <input name="q1" type="checkbox" id="4" data-answer />
+                          <label for="4">D</label>
+
+                        </p>
+                        <p>
+                          <input name="q1" type="checkbox" id="6" />
+                          <label for="6">F</label>
+                        </p>
+                        <p>
+                          <input name="q1" type="checkbox" id="8" data-answer />
+                          <label for="8">H</label>
+                        </p>
                       </div>
                       <p>
-                        <button class="btn" type="submit">PLACEHOLDER</button>
+                        <button class="btn" type="submit">1st place</button>
                       </p>
                     </form>
                     <p class="wrong">
-                      WRONG PLACEHOLDER
+                      Remember that even though default behavior is that all inputs are triggered, with the @trigger directive only the set inputs
+                      makes the expression execute
                     </p>
                     <p class="correct">
-                      CORRECT PLACEHOLDER
+                      <a href="https://www.youtube.com/watch?v=h6DtVHqyYts">You're winner</a>
                     </p>
                   </div>
                 </div>
@@ -332,10 +430,10 @@ print(entity():getName())</code></pre>
                   <a href="#persist">@persist</a>
                 </li>
                 <li>
-                  <a href="#model">@model</a>
+                  <a href="#trigger">@trigger</a>
                 </li>
                 <li>
-                  <a href="#trigger">@trigger</a>
+                  <a href="#model">@model</a>
                 </li>
                 <li>
                   <a href="#autoupdate">@autoupdate</a>

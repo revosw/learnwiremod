@@ -18,23 +18,13 @@
 }*/
 
 // WE JUST GOTTA WAIT SOME MONTHS FOR THE 1.0 RELEASE
-// OF MATERIALIZECSS BOYS, HANG IN THERE
-
-// ================================================
-// ===   Initialize MaterializeCSS components   ===
-// ================================================
-
-// Wait for 1.0 release
-
-// ================================================
-// ===              Initialize quiz             ===
-// ================================================
-
-// Wait for 1.0 release
+// OF MATERIALIZECSS BOYS, HANG IN THERE. JQUERY IS
+// GOING OUT THE WINDOW, VANILLA JAVASCRIPT AMIRITE?
+// http://next.materializecss.com/
 
 $(document).ready(function() {
   // === Init Materialize Components ===
-  $(".button-collapse").sidenav();
+  $(".button-collapse").sideNav();
 
   // Init Carousel
   $(".carousel.carousel-slider")
