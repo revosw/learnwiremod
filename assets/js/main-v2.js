@@ -25,7 +25,7 @@ window.onload = () => {
   // ================================================
   // ===      History API & page fetch setup      ===
   // ================================================
-  async function changePage(link = "/e2/", stateObj) {
+  async function changePage(link, stateObj) {
     main.innerHTML = await (await fetch(link)).text();
 
     // State object comes from the popstate event firing
@@ -81,4 +81,7 @@ window.onload = () => {
       
     }
   })
+
+  // Bottom spacer
+  main.appendChild(document.createElement("div").className = "spacer")
 };

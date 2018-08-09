@@ -213,11 +213,13 @@ Screen = 5</code></pre>
             <h4>@persist</h4>
             <p>The @persist directive exists because of how Expression 2 variables work. When a variable is declared in the
               code, it is removed when the code is finished executing. To prevent this, we need to persist the variable.
-              Try to run the code below, what do you think will happen?
+              Try to run the code below without changing the code. Next time, try uncommenting the first line by removing
+              the #.
             </p>
             <div class="card grey darken-4">
               <div class="card-content asd">
-                <pre><code class="gmod_wire_e2 hljs">#interval() tells Expression 2 to run the code
+                <pre><code class="gmod_wire_e2 hljs">#@persist Number
+#interval() tells Expression 2 to run the code
 #once every x milliseconds (1 second in this example)
 interval(1000)
 
@@ -305,7 +307,7 @@ if(first()) {
             <p>There are some properties about directives that are good to know.</p>
             <p>1. You can completely omit directives, it's not required to have them in your code.</p>
             <p>2. You can have several directives of the same kind, with the exception of @name, @trigger and @model. It is
-              possible to have two @autoupdate, but it's useless having more than one.</p>
+              possible to have more than one @autoupdate, but that is pointless.</p>
             <div class="card grey darken-4">
               <div class="card-content asd">
                 <pre><code class="gmod_wire_e2 hljs">@inputs  A B C
@@ -400,7 +402,7 @@ if(first()) {
                       makes the expression execute
                     </p>
                     <p class="correct">
-                      <a href="https://www.youtube.com/watch?v=h6DtVHqyYts">You're winner</a>
+                      <a target="_blank" href="https://www.youtube.com/watch?v=h6DtVHqyYts">You're winner</a>
                     </p>
                   </div>
                 </div>
