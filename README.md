@@ -1,2 +1,2 @@
 # learnwiremod
-A site for tutorials and reference of Wiremod
+A website for learning Wiremod
