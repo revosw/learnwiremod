@@ -11,66 +11,58 @@
   <!--Let browser know website is optimized for mobile-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>WFA - Homepage</title>
+
+  <style>
+    p,
+    td,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      color:antiquewhite
+    }
+
+    td:last-of-type {
+      padding-left: 50px;
+    }
+
+    tr:not(:last-of-type) {
+      border-bottom: 1px solid rgba(230,245,203,0.2);
+    }
+  </style>
+
 </head>
 
-<body id="topics" class="scrollspy">
-  <div class="navbar-fixed">
-    <nav class="grey darken-3">
-      <div class="container">
-        <div class="nav-wrapper">
-          <a href="/" class="brand-logo">Wiremod For All</a>
-          <a href="#" data-activates="mobile-nav" class="button-collapse">
-            <i class="material-icons">menu</i>
-          </a>
-          <ul class="right hide-on-med-and-down">
-            <li>
-              <a href="#topics">Topics</a>
-            </li>
-            <li>
-              <a href="#installation">Installation</a>
-            </li>
-            <li>
-              <a href="#about">About</a>
-            </li>
-            <li>
-              <a href="#!" class="dropdown-button" data-activates="dropdown">Important Resources
-                <span style="width:40px;"></span>
-                <i class="material-icons right">arrow_drop_down</i>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </div>
+<body class="grey darken-4">
 
   <!-- Link Dropdown -->
   <ul id="dropdown" class="dropdown-content">
     <li>
       <a target="_blank" href="https://discord.me/wiremod">
         <div class="valign-wrapper">
-          <img src="/assets/img/brand/discord.png" style="margin-right:14px;"></img> Wiremod Discord
+          <img src="/assets/img/brand/discord.png" style="margin-right:14px;"> Wiremod Discord
         </div>
       </a>
     </li>
     <li>
       <a target="_blank" href="https://www.reddit.com/r/wiremod/">
         <div class="valign-wrapper">
-          <img src="/assets/img/brand/reddit.png" style="margin-right:14px;"></img> Wiremod Reddit
+          <img src="/assets/img/brand/reddit.png" style="margin-right:14px;"> Wiremod Reddit
         </div>
       </a>
     </li>
     <li>
       <a target="_blank" href="https://github.com/wiremod/wire">
         <div class="valign-wrapper">
-          <img src="/assets/img/brand/github.png" style="margin-right:14px;"></img>Wiremod Github
+          <img src="/assets/img/brand/github.png" style="margin-right:14px;">Wiremod Github
         </div>
       </a>
     </li>
     <li>
       <a target="_blank" href="https://github.com/revosw/wiremodforall">
         <div class="valign-wrapper">
-          <img src="/assets/img/brand/github.png" style="margin-right:14px;"></img>WFA Docs
+          <img src="/assets/img/brand/github.png" style="margin-right:14px;">WFA Docs
         </div>
       </a>
     </li>
@@ -101,21 +93,21 @@
     <li>
       <a class="waves-effect" target="_blank" href="https://discord.me/wiremod">
         <div class="valign-wrapper">
-          <img src="/assets/img/brand/discord.png" style="margin-right:14px;"></img>Wiremod Discord
+          <img src="/assets/img/brand/discord.png" style="margin-right:14px;">Wiremod Discord
         </div>
       </a>
     </li>
     <li>
       <a class="waves-effect" target="_blank" href="https://reddit.com/r/wiremod">
         <div class="valign-wrapper">
-          <img src="/assets/img/brand/reddit.png" style="margin-right:14px;"></img>Wiremod Reddit
+          <img src="/assets/img/brand/reddit.png" style="margin-right:14px;">Wiremod Reddit
         </div>
       </a>
     </li>
     <li>
       <a class="waves-effect" target="_blank" href="https://github.com/wiremod/wire">
         <div class="valign-wrapper">
-          <img src="/assets/img/brand/github.png" style="margin-right:14px;"></img>Wiremod Github
+          <img src="/assets/img/brand/github.png" style="margin-right:14px;">Wiremod Github
         </div>
       </a>
     </li>
@@ -128,14 +120,14 @@
     <li>
       <a class="waves-effect" target="_blank" href="https://github.com/revosw/wiremodforall">
         <div class="valign-wrapper">
-          <img src="/assets/img/brand/github.png" style="margin-right:14px;"></img>WFA Docs
+          <img src="/assets/img/brand/github.png" style="margin-right:14px;">WFA Docs
         </div>
       </a>
     </li>
   </ul>
 
   <!-- Section: Topics -->
-  <section class="section grey darken-4">
+  <section class="section">
     <div class="container">
       <div class="row">
         <div class="col s12 m6">
@@ -197,124 +189,95 @@
   </section>
 
   <!-- Section: How to install -->
-  <section id="installation" class="section scrollspy">
+  <section class="section">
     <div class="container">
-      <h2>How to install Wiremod</h2>
-
+      
       <!-- Tabs -->
       <div class="row">
         <div class="col s12">
-          <ul class="tabs">
-            <li class="tab col s4">
-              <a class="active" href="#workshop">Workshop (recommended)</a>
+          <ul class="tabs transparent">
+            <li class="tab col">
+              <a class="" href="#installation">Installing Wiremod</a>
             </li>
-            <li class="tab col s4">
-              <a href="#git">Git</a>
-            </li>
-            <li class="tab col s4">
-              <a href="#svn">SVN - Windows only</a>
+            <li class="tab col">
+              <a class="active" href="#about">About</a>
             </li>
           </ul>
         </div>
-
+        
         <!-- Content -->
-        <div id="workshop" class="col s12">
+        <div id="installation" class="col s12">
+          <h2>How to install Wiremod</h2>
           <p class="flow-text">Install the
             <a target="_blank" href="https://steamcommunity.com/sharedfiles/filedetails/?id=160250458">Wiremod addon from the workshop</a>
-            by hitting the subscribe button. It's that simple.</p>
-        </div>
-        <div id="git" class="col s12">
-          <p class="flow-text">For those of you who want the bleeding edge builds of Wiremod, this is for you.</p>
+            by hitting the subscribe button, and you're done. However, if you want the bleeding edge builds, read on.</p>
           <h4>Installing git (WINDOWS ONLY)</h4>
           <p>Go to
-            <a href="https://git-scm.com/">git's homepage</a> and download latest release</p>
-        </div>
-        <div id="svn" class="col s12">
-          <p class="flow-text">For those of you who want the bleeding edge builds of Wiremod, this is for you.</p>
-          <h4>Setting up the repository</h4>
-          <p>To proceed, we first need to determine if your windows is 32-bit or 64-bit. Open the start menu and type "system
-            information". Open it up, then check the row where it says "System type". It should say "x86-based" or "x64-based".
-            x86 is 32-bit, x64 is 64-bit.</p>
-          <p>Download and install
-            <a target="_blank" href="https://tortoisesvn.net/downloads.html">TortoiseSVN</a> (this is where 32-bit and 64-bit comes in)
-          </p>
+            <a href="https://git-scm.com/">git's homepage</a> and download latest release. Skim through the installer with default settings.</p>
+          <h4>Cloning the repository</h4>
           <p>Navigate to your steam folder, and proceed to
             <strong>\steamapps\common\GarrysMod\garrysmod\addons</strong>
           </p>
-          <p>Inside the addons folder, open the context menu (right click). You now have an option called "SVN Checkout..."</p>
-          <p>Paste the link "https://github.com/wiremod/wire/trunk" into URL of repository and click OK</p>
-          <img src="/assets/img/root/tortoisesvn.png" alt="">
-          <p>To update the wire repository, just right click the folder and click "SVN Update".</p>
+          <p>Inside the addons folder, open the context menu (right click somewhere empty). You now have an option called <strong>Git Bash Here</strong></p>
+          <p>Copy this command: <strong>git clone https://github.com/wiremod/wire.git</strong> and paste it into Git Bash by right clicking the window, and select Paste.</p>
+          <p>To update your wiremod installation, just right click the wire folder, Git Bash, then execute the command: <strong>git pull</strong></p>
           <p>But having to manually update it every time is tedious... Why not automate it?</p>
-          <h4>Automating repository update</h4>
-          <p>Open the start menu, and start up Powershell ISE</p>
-          <p>In the white box on top, paste the two lines:
-            <br>
-            <strong>cd C:\"Program Files"\TortoiseSVN\bin</strong>
-            <br>
-            <strong>TortoiseProc.exe -command "update" -path "&lt;path to wire folder&gt;" -closeonend 1
-            </strong>
-          </p>
-          <p>Replace "path to wire folder" with the actual path to your wire folder inside the addons-folder. It should now
-            look something like this:</p>
-          <img src="/assets/img/root/ps.png" alt="">
-          <p>Click
-            <strong>File &gt; Save As...</strong>
-          </p>
-          <p>Choose a location to your liking. I saved mine inside a folder called "scripts" in Documents. You can call the
-            script "updatewire"
-          </p>
-          <p>Test to see if the script actually works by right clicking the file and choose
-            <strong>Run with PowerShell</strong>. It won't work if either the path to TortoiseSVN, or the path to the wire folder
-            is incorrect.</p>
-          <p>After saving the script, open Task Scheduler (type
-            <strong>taskschd.msc</strong> if you can't find it) from the start menu. In there, create a basic task like this:</p>
+          
+          <h4>Updating wiremod automatically</h4>
+          <p>Press the windows key + R, execute <strong>taskschd.msc</strong></p>
+          <p>Create a basic task</p>
           <img src="/assets/img/root/taskschd.png" alt="">
           <p>You can name the task
-            <strong>Update wire repository</strong>, and click next
+            <strong>Update wire</strong>, then click next
           </p>
           <p>
             <strong>When I log on</strong>, next</p>
           <p>
             <strong>Start a program</strong>, next</p>
           <p>
-            Write "powershell.exe" in the "Program/script" box.</p>
-          <p>Fill the "Add arguments" box with:
-            <strong>-ExecutionPolicy Bypass C:\Users\&lt;user&gt;\Documents\scripts\updatewire.ps1</strong>
+            Write <strong>"C:\Program Files\Git\git-cmd.exe"</strong> in the <strong>Program/script</strong> box. <span class="purple">INCLUDE THE QUOTES</span></p>
+          <p>Fill the <strong>Add arguments</strong> box with:
+            <strong>git pull && exit</strong>
           </p>
-          <p>Don't forget to change &lt;user&gt; with your actual windows username</p>
+          <p>Fill the <strong>Start in</strong> box with the wire folder:
+            <strong>&lt;directory to steam&gt;\steamapps\common\GarrysMod\garrysmod\addons\wire</strong>
+          </p>
           <img src="/assets/img/root/taskschd2.png" alt="">
           <p>Finish up by pressing next, then finish.</p>
           <p>We need to test our task. Click on Task Scheduler Library, and scroll down the list to find your task. If it's
             not there, hit F5 to refresh. Right click the task, and press Run.</p>
           <img src="/assets/img/root/taskschd3.png" alt="">
-          <p>You should first see a powershell window in a split second, then the TortoiseSVN updating the repository. If so,
-            <strong>CONGRATULATIONS!</strong> You don't need to think of ever updating the wire repository on your computer.</p>
+          <p>You should see a cmd window in a split second. If so, <strong>CONGRATULATIONS!</strong> You'll never need to think of updating the wire repository on your computer.</p>
+        </div>
+        <div id="about" class="col s12 l6">
+          <table>
+            <tr>
+              <td>WHAT</td>
+              <td>Wiremod For All is a website that aims to guide you through all the different parts of Wiremod.</td>
+            </tr>
+            <tr>
+              <td>WHY</td>
+              <td>The reason I launched this site is because most parts of Wiremod has had a steep learning curve for years. I want to
+                  change this, and make everyone, even the ones not familiar with Wiremod, able to learn the ins and outs of everything
+                  in Wiremod.</td>
+            </tr>
+            <tr>
+              <td>HOW</td>
+              <td>This site is hosted via
+                  <a target="_blank" href="https://pages.github.com/">Github Pages</a>. It uses the
+                  <a target="_blank" href="http://materializecss.com/">Materializecss</a> front-end framework, and a custom build of
+                  <a target="_blank" href="https://highlightjs.org/">highlight.js</a> syntax highlighting.</td>
+            </tr>
+            <tr>
+              <td>WHO</td>
+              <td>You can find me on
+                  <a target="_blank" href="http://steamcommunity.com/id/revodoucheon/">Steam</a> and Discord (Revolution#7018).</td>
+            </tr>
+          </table>
         </div>
       </div>
     </div>
-  </section>
-
-  <!-- Section: About -->
-  <section id="about" class="section scrollspy">
-    <div class="container">
-      <h2>About Wiremod For All</h2>
-      <h4>What?</h4>
-      <p>Wiremod For All is a website that aims to guide you through all the different parts of Wiremod.</p>
-      <h4>Why?</h4>
-      <p>The reason I launched this site is because most parts of Wiremod has had a steep learning curve for years. I want to
-        change this, and make everyone, even the ones not familiar with Wiremod, able to learn the ins and outs of everything
-        in Wiremod.</p>
-      <h4>How?</h4>
-      <p>This site is hosted via
-        <a target="_blank" href="https://pages.github.com/">Github Pages</a>. It uses the
-        <a target="_blank" href="http://materializecss.com/">Materializecss</a> front-end framework, and a custom build of
-        <a target="_blank" href="https://highlightjs.org/">highlight.js</a> syntax highlighting.</p>
-      <h4>Who?</h4>
-      You can find me on
-      <a target="_blank" href="http://steamcommunity.com/id/revodoucheon/">Steam</a> and Discord (Revolution#7018).
-    </div>
-  </section>
+  </div>
 
   <!--Import jQuery before materialize.js-->
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
