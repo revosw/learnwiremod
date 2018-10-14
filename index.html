@@ -5,12 +5,12 @@
   <!--Import Google Icon Font-->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!--Import materialize.css-->
-  <link type="text/css" rel="stylesheet" href="/assets/css/materialize.min.css" media="screen,projection" />
+  <link type="text/css" rel="stylesheet" href="/assets/css/materialize.css" media="screen,projection" />
   <link type="text/css" rel="stylesheet" href="/assets/css/main.css" />
 
   <!--Let browser know website is optimized for mobile-->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>WFA - Homepage</title>
+  <title>Learn Wiremod - Homepage</title>
 
   <style>
     p,
@@ -22,13 +22,14 @@
     h5 {
       color:antiquewhite
     }
-
     td:last-of-type {
       padding-left: 50px;
     }
-
     tr:not(:last-of-type) {
       border-bottom: 1px solid rgba(230,245,203,0.2);
+    }
+    section:first-of-type {
+      margin-top: 40px;
     }
   </style>
 
@@ -62,69 +63,14 @@
     <li>
       <a target="_blank" href="https://github.com/revosw/wiremodforall">
         <div class="valign-wrapper">
-          <img src="/assets/img/brand/github.png" style="margin-right:14px;">WFA Docs
+          <img src="/assets/img/brand/github.png" style="margin-right:14px;">Learn Wiremod Docs
         </div>
       </a>
     </li>
   </ul>
 
   <!-- Mobile Side Nav -->
-  <ul id="mobile-nav" class="side-nav">
-    <li>
-      <div class="background">
-        <img class="responsive-img z-depth-2" src="/assets/img/brand/brand.png" alt="">
-      </div>
-    </li>
-    <li>
-      <a href="#topics">Topics</a>
-    </li>
-    <li>
-      <a href="#installation">Installation</a>
-    </li>
-    <li>
-      <a href="#about">About</a>
-    </li>
-    <li>
-      <div class="divider"></div>
-    </li>
-    <li>
-      <a class="subheader">Wiremod Official</a>
-    </li>
-    <li>
-      <a class="waves-effect" target="_blank" href="https://discord.me/wiremod">
-        <div class="valign-wrapper">
-          <img src="/assets/img/brand/discord.png" style="margin-right:14px;">Wiremod Discord
-        </div>
-      </a>
-    </li>
-    <li>
-      <a class="waves-effect" target="_blank" href="https://reddit.com/r/wiremod">
-        <div class="valign-wrapper">
-          <img src="/assets/img/brand/reddit.png" style="margin-right:14px;">Wiremod Reddit
-        </div>
-      </a>
-    </li>
-    <li>
-      <a class="waves-effect" target="_blank" href="https://github.com/wiremod/wire">
-        <div class="valign-wrapper">
-          <img src="/assets/img/brand/github.png" style="margin-right:14px;">Wiremod Github
-        </div>
-      </a>
-    </li>
-    <li>
-      <div class="divider"></div>
-    </li>
-    <li>
-      <a class="subheader">WFA</a>
-    </li>
-    <li>
-      <a class="waves-effect" target="_blank" href="https://github.com/revosw/wiremodforall">
-        <div class="valign-wrapper">
-          <img src="/assets/img/brand/github.png" style="margin-right:14px;">WFA Docs
-        </div>
-      </a>
-    </li>
-  </ul>
+  <ul id="mobile-nav" class="side-nav"></ul>
 
   <!-- Section: Topics -->
   <section class="section">
@@ -211,7 +157,8 @@
           <p class="flow-text">Install the
             <a target="_blank" href="https://steamcommunity.com/sharedfiles/filedetails/?id=160250458">Wiremod addon from the workshop</a>
             by hitting the subscribe button, and you're done. However, if you want the bleeding edge builds, read on.</p>
-          <h4>Installing git (WINDOWS ONLY)</h4>
+          <h4>Installing git</h4>
+          <p><span class="purple">Mac and Linux users - jump over this step as you already have git tools from your terminal.</span></p>
           <p>Go to
             <a href="https://git-scm.com/">git's homepage</a> and download latest release. Skim through the installer with default settings.</p>
           <h4>Cloning the repository</h4>
@@ -224,6 +171,7 @@
           <p>But having to manually update it every time is tedious... Why not automate it?</p>
           
           <h4>Updating wiremod automatically</h4>
+          <p><span class="purple">Mac and Linux users - I have no idea how your automation systems work.</span></p>
           <p>Press the windows key + R, execute <strong>taskschd.msc</strong></p>
           <p>Create a basic task</p>
           <img src="/assets/img/root/taskschd.png" alt="">
@@ -253,7 +201,7 @@
           <table>
             <tr>
               <td>WHAT</td>
-              <td>Wiremod For All is a website that aims to guide you through all the different parts of Wiremod.</td>
+              <td>Learn Wiremod is a website that aims to teach you all the different parts of Wiremod.</td>
             </tr>
             <tr>
               <td>WHY</td>
@@ -265,7 +213,7 @@
               <td>HOW</td>
               <td>This site is hosted via
                   <a target="_blank" href="https://pages.github.com/">Github Pages</a>. It uses the
-                  <a target="_blank" href="http://materializecss.com/">Materializecss</a> front-end framework, and a custom build of
+                  <a target="_blank" href="https://materializecss.com/">Materializecss</a> front-end framework, and a custom build of
                   <a target="_blank" href="https://highlightjs.org/">highlight.js</a> syntax highlighting.</td>
             </tr>
             <tr>

@@ -3,51 +3,34 @@
   padding-left: 300px;
 }
 
-.top-nav {
-  height: 120px;
-}
-
-.page-title {
-  font-size: 60px;
-}
-
-.spacer {
-  height: 180px;
+main {
+  padding-left: 300px;
 }
 
 @media screen and (max-width: 992px) {
   .main-header {
     padding-left: 0px;
   }
+  main {
+    padding-left: 0px !important;
+  }
 }
 
-.side-nav .collapsible-header,
-.side-nav.fixed .collapsible-header {
-  padding-left: 32px !important;
-}
-
+/* Some weird padding out of nowhere when down to mobile size */
 .background a {
-  padding: 0 !important;
+  padding: 0 !important
 }
 
-.collapsible-body li > a {
-  padding-left: 40px !important;
-  font-weight: normal !important;
+.top-nav {
+  height: 83px;
 }
 
-main {
-  padding-left: 300px;
-  min-height: calc(100vh - 120px);
+.spacer {
+  height: 180px;
 }
 
 blockquote {
   background: #f9f9f9;
-}
-
-@media screen and (max-width: 992px) {
-  main {
-    padding-left: 0px !important;
-  }
 }
 
 .card-content {

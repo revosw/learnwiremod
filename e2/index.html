@@ -5,12 +5,26 @@
 	<!--Import Google Icon Font-->
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<!--Import materialize.css-->
-	<link type="text/css" rel="stylesheet" href="/assets/css/materialize.min.css" media="screen,projection" />
+	<link type="text/css" rel="stylesheet" href="/assets/css/materialize.css" media="screen,projection" />
 	<link type="text/css" rel="stylesheet" href="/assets/css/default.css" />
 	<link type="text/css" rel="stylesheet" href="/assets/css/main.css" />
 	<!--Let browser know website is optimized for mobile-->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>Expression 2</title>
+
+	<style>
+		td:nth-child(even) {
+			background: #EEF5FE
+		}
+		th:first-child {
+			width: 120px;
+		}
+
+		td {
+			width: 200px;
+		}
+	</style>
+
 </head>
 
 <body>
@@ -19,105 +33,19 @@
 		<nav class="top-nav red darken-2 z-depth-0 valign-wrapper">
 			<div class="container">
 				<div class="nav-wrapper">
-					<a href="#" data-activates="nav-mobile" class="button-collapse top-nav full hide-on-large-only">
+					<a href="#" data-activates="nav-mobile" class="button-collapse hide-on-large-only">
 						<i class="material-icons">menu</i>
 					</a>
-					<a class="page-title center">Introduction</a>
+					<h2>Introduction</h2>
 				</div>
 			</div>
 		</nav>
 	</header>
 
 	<!-- Side nav -->
-	<ul id="nav-mobile" class="side-nav fixed">
-		<li>
-			<div class="background">
-				<a href="/">
-					<img class="responsive-img z-depth-2" src="/assets/img/brand/brand.png" alt="">
-				</a>
-			</div>
-		</li>
-		<li class="bold active">
-			<a href="#!" class="waves-effect waves-teal">Introduction</a>
-		</li>
-		<li>
-			<ul class="collapsible collapsible-accordion">
-				<li class="bold">
-					<a class="collapsible-header waves-effect waves-teal">The basics</a>
-					<div class="collapsible-body">
-						<ul>
-							<li>
-								<a href="basics/">What is Expression 2?</a>
-							</li>
-							<li>
-								<a href="basics/tool.html">Tool overview</a>
-							</li>
-							<li>
-								<a href="basics/hello-world.html">Hello world</a>
-							</li>
-							<li>
-								<a href="basics/variables.html">Variables</a>
-							</li>
-							<li>
-								<a href="basics/directives.html">Directives</a>
-							</li>
-							<li>
-								<a href="basics/datatypes.html">Datatypes</a>
-							</li>
-							<li>
-								<a href="basics/functions.html">Functions</a>
-							</li>
-							<li>
-								<a href="basics/control-flow.html">Control flow</a>
-							</li>
-						</ul>
-					</div>
-				</li>
-			</ul>
-		</li>
-		<li>
-			<div class="divider"></div>
-		</li>
-		<li>
-			<a class="subheader">Wiremod Official</a>
-		</li>
-		<li>
-			<a class="waves-effect" target="_blank" href="https://discord.me/wiremod">
-				<div class="valign-wrapper">
-					<img src="/assets/img/brand/discord.png" style="margin-right:14px;"></img>Wiremod Discord
-				</div>
-			</a>
-		</li>
-		<li>
-			<a class="waves-effect" target="_blank" href="https://reddit.com/r/wiremod">
-				<div class="valign-wrapper">
-					<img src="/assets/img/brand/reddit.png" style="margin-right:14px;"></img>Wiremod Reddit
-				</div>
-			</a>
-		</li>
-		<li>
-			<a class="waves-effect" target="_blank" href="https://github.com/wiremod/wire">
-				<div class="valign-wrapper">
-					<img src="/assets/img/brand/github.png" style="margin-right:14px;"></img>Wiremod Github
-				</div>
-			</a>
-		</li>
-		<li>
-			<div class="divider"></div>
-		</li>
-		<li>
-			<a class="subheader">WFA</a>
-		</li>
-		<li>
-			<a class="waves-effect" target="_blank" href="https://github.com/revosw/wiremodforall">
-				<div class="valign-wrapper">
-					<img src="/assets/img/brand/github.png" style="margin-right:14px;"></img>WFA Docs
-				</div>
-			</a>
-		</li>
-	</ul>
+	<ul id="nav-mobile" class="side-nav fixed"></ul>
 
-	<!-- Main Content -->
+	<!-- Page Content -->
 	<main>
 		<div class="container">
 			<div class="row">
@@ -129,12 +57,11 @@
 						</h2>
 
 						<p>...to the course that will take you from absolute zero programming experience to an independent Expression 2 developer.
-							Before you rush out in excitement to your favorite section, let me explain what purpose this course serves.</p>
+							Before you rush out in excitement to your favorite section, let me explain what you can expect of this course.</p>
 
 						<p>
-							<strong class="green-text">This course is</strong> a resource where it doesn't matter where you go after you're done with the basics.
-							<em>Even if you aren't new</em>, I strongly recommend that you at least go through every single part of
-							<a href="basics/what-is-e2.html">The Basics™</a> before jumping into the other sections like EGP, holograms, effects and such. You never know, maybe
+							<strong class="green-text">This course is</strong> linear, you are supposed to go from first page to last page in chronological order.
+							<em>Even if you aren't new</em>, I do recommend that you skim through from the beginning. You never know, maybe
 							you learn something new?</p>
 						<p>
 							<strong class="red-text">This course is NOT</strong> a replacement for all other documentation, use the
@@ -145,34 +72,216 @@
 						</p>
 					</section>
 
-					<section id="progression" class="section scrollspy">
+					<section id="content" class="section scrollspy">
 						<h2>Course progression</h2>
 
-						<p>Once you are done with
-							<a href="basics/what-is-e2.html">The Basics™</a>, you are free to go to what ever section you want. A diagram of the progression looks like this:</p>
+						<p>The course is laid out into modules, which are spread out in levels. Each module stand on their own, and each level
+							of a module gradually explains more complex functionality</p>
 
-						<figure>
-							<img class="responsive-img" src="/assets/img/e2/basics/progression.png" alt="">
-						</figure>
+						<table class="responsive-table bordered contenttable">
+							<thead>
+								<tr>
+									<th></th>
+									<th class="center">I</th>
+									<th class="center">II</td>
+									<th class="center">III</td>
+									<th class="center">IV</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th>Number</th>
+									<td>
+										- Simple arithmetics<br>
+										- Printing results to chat
+									</td>
+									<td>
+										- Number conversion
+									</td>
+									<td>
+										- Binary & hexadecimal number formats
+									</td>
+									<td>
+										- Binary operators
+									</td>
+								</tr>
+								<tr>
+									<th>String</th>
+									<td>
+										- What is a string<br>
+										- String conversion
+									</td>
+									<td>
+										- String formatting<br>
+										- Escape characters
+									</td>
+									<td>
+										- Callable strings<br>
+									</td>
+									<td class="center red-text">N/A</td>
+								</tr>
+								<tr>
+									<th>Variable</th>
+									<td>
+										- Storing a value<br>
+										- Setting datatype
+									</td>
+									<td class="center red-text">N/A</td>
+									<td class="center red-text">N/A</td>
+									<td class="center red-text">N/A</td>
+								</tr>
+								<tr>
+									<th>Vector</th>
+									<td>
+										- What is a vector<br>
+										- Vector for positioning and color
+									</td>
+									<td>
+										-
+									</td>
+									<td>
+										-
+									</td>
+									<td class="center red-text">N/A</td>
+								</tr>
+								<tr>
+									<th>Control flow</th>
+									<td>
+										- If & elseif
+									</td>
+									<td>
+										- While and for loop
+									</td>
+									<td>
+										- Switch statement
+									</td>
+									<td>
+										- Nested for loops
+									</td>
+								</tr>
+								<tr>
+									<th>Directive</th>
+									<td>
+										- @inputs<br>
+										- @outputs<br>
+										- @name<br>
+										- @persist
+									</td>
+									<td>
+										- @trigger<br>
+										- @model<br>
+										- @autoupdate
+									</td>
+									<td class="center red-text">N/A</td>
+									<td class="center red-text">N/A</td>
+								</tr>
+								<tr>
+									<th>Preprocessor</th>
+									<td>
+										- #include<br>
+										- #ifdef and #ifndef
+									</td>
+									<td>IV</td>
+									<td class="center red-text">N/A</td>
+									<td class="center red-text">N/A</td>
+								</tr>
+								<tr>
+									<th>Array</th>
+									<td>
+										- What is an array<br>
+										- Indexing an array<br>
+									</td>
+									<td>
+										- Looping through an array with for loop<br>
+										- Handling different datatypes
+									</td>
+									<td>
+										-
+									</td>
+									<td>
+										-
+									</td>
+								</tr>
+								<tr>
+									<th>Table</th>
+									<td>
+										- What is a table<br>
+										- 
+									</td>
+									<td>
+										- String and number indices
+									</td>
+									<td>III</td>
+									<td>IV</td>
+								</tr>
+								<tr>
+									<th>Holograms</th>
+									<td>
+										- What is a hologram<br>
+										- Properties of a hologram
+									</td>
+									<td>
+										- 
+									</td>
+									<td>
+										-
+									</td>
+									<td>IV</td>
+								</tr>
+								<tr>
+									<th>EGP</th>
+									<td>
+										- What is EGP<br>
+										- Shapes on a screen
+									</td>
+									<td>
+										- EGP HUD<br>
+										- EGP polygon
+									</td>
+									<td>
+										- EGP 3D tracker
+									</td>
+									<td>IV</td>
+								</tr>
+								<tr>
+									<th>Effects</th>
+									<td>I</td>
+									<td>II</td>
+									<td>III</td>
+									<td>IV</td>
+								</tr>
+								<tr>
+									<th>File</th>
+									<td>
+										- Reading from a file<br>
+										- Writing to a file
+									</td>
+									<td>II</td>
+									<td>III</td>
+									<td>IV</td>
+								</tr>
+							</tbody>
+						</table>
+						
 					</section>
 
-					<section id="content" class="section scrollspy">
-						<h2>Course contents</h2>
+					<section id="projects" class="section scrollspy">
+						<h2>Projects</h2>
 
-						<h4>The basics</h4>
-						<p>The basics is a section that contains all the fundamentals you need in order to efficiently go through all the other
-							sections. How and when to write functions, directives, if statements, coding conventions and more.</p>
+						<p>I'm certainly not alone to think that "learn by example" is the best method to learn something new. These are the projects
+							you'll be doing throughout the course:
+						</p>
 					</section>
 
 					<section id="help" class="section scrollspy">
 						<h2>Need help?</h2>
 
-						<p>My goal, as I told you a bit earlier, is to make you an
-							<em>independent expression 2 developer</em>. I want to teach you how to troubleshoot and correct mistakes in your code
-							on your own, so that you don't have to seek help every single time you see red color at the bottom of the editor.</p>
+						<p>My goal, as I wrote a bit earlier, is to make you an
+							<em>independent expression 2 developer</em>. I want to teach you how to troubleshoot and correct coding mistakes on your own,
+							so that you don't have to seek help every time you see red color at the bottom of the editor.</p>
 
 						<p>But let's face it, there comes a time where you're just stuck - things that might be out of your comprehension. It
-							happens to everyone. The Wiremod discord server and Wiremod reddit board are
+							happens to everyone. The Wiremod discord server and Wiremod subreddit are
 							<em>the</em> places to talk about everything wiremod related, whether you need help or just wanna chat. Those are linked
 							in the side navigation to the left. There are lots of youtube videos out there, old and new, that can also help you
 							out.
@@ -353,7 +462,7 @@ Vector = Vector:normalized()</code></pre>
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script type="text/javascript" src="/assets/js/materialize.min.js"></script>
 	<script type="text/javascript" src="/assets/js/highlight.pack.js"></script>
-	<script src="/assets/js/main.js"></script>
+	<script type="text/javascript" src="/assets/js/main.js"></script>
 </body>
 
 </html>

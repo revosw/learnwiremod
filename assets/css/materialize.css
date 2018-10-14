@@ -4329,7 +4329,7 @@ nav ul li {
 }
 
 nav ul li.active {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgb(202, 83, 83);
 }
 
 nav ul a {
@@ -7385,7 +7385,7 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .side-nav li.active {
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: rgba(209, 77, 77, 0.829);
 }
 
 .side-nav li > a {
@@ -7550,13 +7550,13 @@ input[type=range]:focus::-ms-fill-upper {
   }
 }
 
-.side-nav .collapsible-body > ul:not(.collapsible) > li.active,
-.side-nav.fixed .collapsible-body > ul:not(.collapsible) > li.active {
+.side-nav > li.active,
+.side-nav.fixed > li.active {
   background-color: #ee6e73;
 }
 
-.side-nav .collapsible-body > ul:not(.collapsible) > li.active a,
-.side-nav.fixed .collapsible-body > ul:not(.collapsible) > li.active a {
+.side-nav > li.active a,
+.side-nav.fixed > li.active a {
   color: #fff;
 }
 
