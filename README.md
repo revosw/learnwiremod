@@ -16,7 +16,7 @@ A menu on the left that keeps track of where in the document you are. You can cl
 Using [highlight.js](https://highlightjs.org/), you can create your own language ruleset and color scheme. For now there is a ruleset and color scheme for Expression 2, but not yet for CPU/SPU/GPU.
 
 ### Quizzing the material
-People should understand what they read. Quizzes help with that. Great stuff.
+People should understand what they read, quizzing the material at the end of each section helps with that.
 
 ### Editor with intellisense?
-No idea how to implement this. Tried googling if language servers can be run in the browser, but couldn't get any info.
+Maybe using [ace](https://ace.c9.io/), but I haven't looked into how to make code completion work. In a write-some-code quiz, the code would also have to be parsed and validated, which sounds quite hard.
