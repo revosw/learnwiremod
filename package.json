@@ -4,7 +4,8 @@
   "description": "A website for learning Wiremod",
   "main": "index.js",
   "scripts": {
-    "build-css": "tailwindcss build src/styles.css -o public/css/styles.css"
+    "build:css": "cross-env NODE_ENV=production tailwindcss build src/styles.css -o public/css/styles.css",
+    "build:css-dev": "tailwindcss build src/styles.css -o public/css/styles.css"
   },
   "repository": {
     "type": "git",
@@ -17,8 +18,9 @@
     "url": "https://github.com/revosw/learnwiremod/issues"
   },
   "homepage": "https://github.com/revosw/learnwiremod#readme",
-  "dependencies": {
+  "devDependencies": {
     "autoprefixer": "^10.1.0",
+    "cross-env": "^7.0.3",
     "postcss": "^8.2.1",
     "postcss-import": "^14.0.0",
     "tailwindcss": "^2.0.2"

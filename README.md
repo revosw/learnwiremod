@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/4e274d51-4406-44ba-ad61-d89ee67ae0ee/deploy-status)](https://app.netlify.com/sites/learnwiremod/deploys)
+
 # learnwiremod
 A website for learning Wiremod
 
