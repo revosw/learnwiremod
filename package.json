@@ -1,0 +1,26 @@
+{
+  "name": "learnwiremod",
+  "version": "1.0.0",
+  "description": "A website for learning Wiremod",
+  "main": "index.js",
+  "scripts": {
+    "build-css": "tailwindcss build src/styles.css -o public/css/styles.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/revosw/learnwiremod.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/revosw/learnwiremod/issues"
+  },
+  "homepage": "https://github.com/revosw/learnwiremod#readme",
+  "dependencies": {
+    "autoprefixer": "^10.1.0",
+    "postcss": "^8.2.1",
+    "postcss-import": "^14.0.0",
+    "tailwindcss": "^2.0.2"
+  }
+}

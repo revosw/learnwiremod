@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link type="text/css" rel="stylesheet" href="css/styles.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Learn Wiremod - Homepage</title>
+</head>
+
+<body class="bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-100">
+  <div class="flex absolute bottom-0 left-0">
+    <a class="mr-2" href="https://discord.me/wiremod"><img src="img/brand/discord.png" alt=""></a>
+    <a class="mr-2" href="https://www.reddit.com/r/wiremod/"><img src="img/brand/reddit.png" alt=""></a>
+    <div class="divide-y-2">
+      <a class="mr-2" href="https://github.com/wiremod/wire"><img src="img/brand/github.png" alt=""></a>
+      <a href="https://github.com/revosw/learnwiremod"><img src="img/brand/github.png" alt=""></a>
+    </div>
+  </div>
+
+  <header>
+    <img src="img/header.png" alt="Header">
+  </header>
+
+  <div class="grid grid-cols-3">
+    <div></div>
+
+    <main>
+      <section class="section">
+        <div class="container">
+          <div class="row">
+            <div class="col s12 m6">
+              <div class="card">
+                <div class="card-image">
+                  <a href="/e2/">
+                    <img src="/assets/img/topics/e2.png" class="responsive-img" alt="">
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col s12 m6">
+              <div class="card">
+                <div class="card-image">
+                  <a href="/gates/">
+                    <img src="/assets/img/topics/gates.png" class="responsive-img" alt="">
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col s12 m6 l3">
+              <div class="card">
+                <div class="card-image">
+                  <a href="/tools/">
+                    <img src="/assets/img/topics/tools.png" class="responsive-img" alt="">
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col s12 m6 l3">
+              <div class="card">
+                <div class="card-image">
+                  <a href="/cpu/">
+                    <img src="/assets/img/topics/cpu.png" class="responsive-img" alt="">
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col s12 m6 l3">
+              <div class="card">
+                <div class="card-image">
+                  <a href="/spu/">
+                    <img src="/assets/img/topics/spu.png" class="responsive-img" alt="">
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="col s12 m6 l3">
+              <div class="card">
+                <div class="card-image">
+                  <a href="/gpu/">
+                    <img src="/assets/img/topics/gpu.png" class="responsive-img" alt="">
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div id="installation" class="col s12">
+        <h2>How to install Wiremod</h2>
+        <p class="flow-text">Install the
+          <a target="_blank" href="https://steamcommunity.com/sharedfiles/filedetails/?id=160250458">Wiremod addon from
+            the
+            workshop</a>
+          by hitting the subscribe button, and you're done. However, if you want the bleeding edge builds, read on.
+        </p>
+        <h4>Installing git</h4>
+        <p><span class="purple">Mac and Linux users - jump over this step as you already have git tools from your
+            terminal.</span></p>
+        <p>Go to
+          <a href="https://git-scm.com/">git's homepage</a> and download latest release. Skim through the installer with
+          default settings.
+        </p>
+        <h4>Cloning the repository</h4>
+        <p>Navigate to your steam folder, and proceed to
+          <strong>\steamapps\common\GarrysMod\garrysmod\addons</strong>
+        </p>
+        <p>Inside the addons folder, open the context menu (right click somewhere empty). You now have an option called
+          <strong>Git Bash Here</strong>
+        </p>
+        <p>Copy this command: <strong>git clone https://github.com/wiremod/wire.git</strong> and paste it into Git Bash
+          by
+          right clicking the window, and select Paste.</p>
+        <p>To update your wiremod installation, just right click the wire folder, Git Bash, then execute the command:
+          <strong>git pull</strong>
+        </p>
+        <p>But having to manually update it every time is tedious... Why not automate it?</p>
+
+        <h4>Updating wiremod automatically</h4>
+        <p><span class="purple">Mac and Linux users - I have no idea how your automation systems work.</span></p>
+        <p>Press the windows key + R, execute <strong>taskschd.msc</strong></p>
+        <p>Create a basic task</p>
+        <img src="/assets/img/root/taskschd.png" alt="">
+        <p>You can name the task
+          <strong>Update wire</strong>, then click next
+        </p>
+        <p>
+          <strong>When I log on</strong>, next
+        </p>
+        <p>
+          <strong>Start a program</strong>, next
+        </p>
+        <p>
+          Write <strong>"C:\Program Files\Git\git-cmd.exe"</strong> in the <strong>Program/script</strong> box. <span
+            class="purple">INCLUDE THE QUOTES</span></p>
+        <p>Fill the <strong>Add arguments</strong> box with:
+          <strong>git pull && exit</strong>
+        </p>
+        <p>Fill the <strong>Start in</strong> box with the wire folder:
+          <strong>&lt;directory to steam&gt;\steamapps\common\GarrysMod\garrysmod\addons\wire</strong>
+        </p>
+        <img src="/assets/img/root/taskschd2.png" alt="">
+        <p>Finish up by pressing next, then finish.</p>
+        <p>We need to test our task. Click on Task Scheduler Library, and scroll down the list to find your task. If
+          it's
+          not there, hit F5 to refresh. Right click the task, and press Run.</p>
+        <img src="/assets/img/root/taskschd3.png" alt="">
+        <p>You should see a cmd window in a split second. If so, <strong>CONGRATULATIONS!</strong> You'll never need to
+          think of updating the wire repository on your computer.</p>
+      </div>
+      <div id="about" class="col s12 l6">
+        <table>
+          <tr>
+            <td>WHAT</td>
+            <td>Learn Wiremod is a website that aims to teach you all the different parts of Wiremod.</td>
+          </tr>
+          <tr>
+            <td>WHY</td>
+            <td>The reason I launched this site is because most parts of Wiremod has had a steep learning curve for
+              years. I
+              want to
+              change this, and make everyone, even the ones not familiar with Wiremod, able to learn the ins and outs of
+              everything
+              in Wiremod.</td>
+          </tr>
+          <tr>
+            <td>HOW</td>
+            <td>This site is hosted via
+              <a target="_blank" href="https://pages.github.com/">Github Pages</a>. It uses the
+              <a target="_blank" href="https://materializecss.com/">Materializecss</a> front-end framework, and a custom
+              build of
+              <a target="_blank" href="https://highlightjs.org/">highlight.js</a> syntax highlighting.
+            </td>
+          </tr>
+          <tr>
+            <td>WHO</td>
+            <td>You can find me on
+              <a target="_blank" href="http://steamcommunity.com/id/revodoucheon/">Steam</a> and Discord
+              (Revolution#7018).
+            </td>
+          </tr>
+        </table>
+      </div>
+    </main>
+
+    <div></div>
+  </div>
+
+
+</body>
+
+</html>
