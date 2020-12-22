@@ -4,8 +4,8 @@
   "description": "A website for learning Wiremod",
   "main": "index.js",
   "scripts": {
-    "build:css": "cross-env NODE_ENV=production tailwindcss build src/styles.css -o public/css/styles.css",
-    "build:css-dev": "tailwindcss build src/styles.css -o public/css/styles.css"
+    "build:css": "cross-env NODE_ENV=production tailwindcss build src/consolidate.css -o public/css/styles.css",
+    "build:css-dev": "tailwindcss build src/consolidate.css -o public/css/styles.css"
   },
   "repository": {
     "type": "git",
