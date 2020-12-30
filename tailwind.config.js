@@ -5,11 +5,10 @@ module.exports = {
       'public/*.html'
     ]
   },
-  darkMode: "class",
   theme: {
     extend: {
       gridTemplateColumns: {
-        "main-layout": "260px 1fr",
+        "main-layout": "260px 1fr 20px",
         "section": "450px 1fr"
       }
     }

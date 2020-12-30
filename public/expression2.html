@@ -150,8 +150,8 @@
   </nav>
 
   <main>
-    <header class="mb-4">
-      <img src="img/e2/header.png" alt="Expression 2 header image">
+    <header class="m-10">
+      <img class="mx-auto rounded-md shadow-inner" src="img/e2/header.png" alt="Expression 2 header image">
     </header>
     <section id="introduction" class="grid grid-cols-1 xl:grid-cols-section gap-4 my-10">
       <div>
@@ -216,35 +216,32 @@
 
     <section id="quiz" class="grid grid-cols-1 xl:grid-cols-section gap-4 my-10">
       <div>
-        <h1 class="center">It´s QUIZ TIME</h1>
-      </div>
-      <div>
         <h2>Are you ready to learn about Expression 2?</h2>
       </div>
       <pre class="codeblock"><code class="gmod_wire_e2 hljs">@name Hello World
-  @inputs A B
-  @outputs Add Sub Mul Div
-  @outputs GreaterThan Highest Lowest Overflow Overflow Overflow Overflow
-  @outputs Vector:vector
-  @persist D
-  @trigger all
-  
-  Add = A + B
-  Sub = A - B
-  Mul = A * B
-  Div = A / B
-  
-  GreaterThan = A > B
-  
-  if(A > B) {
-  Highest = A, Lowest = B
+@inputs A B
+@outputs Add Sub Mul Div
+@outputs GreaterThan Highest Lowest Overflow Overflow Overflow Overflow
+@outputs Vector:vector
+@persist D
+@trigger all
+
+Add = A + B
+Sub = A - B
+Mul = A * B
+Div = A / B
+
+GreaterThan = A > B
+
+if(A > B) {
+Highest = A, Lowest = B
 } else {
-  Highest = B, Lowest = A
-  }
-  
-  Vector = vec(A, B, 0)
-  Vector = Vector + vec(0, 0, A + B)
-  Vector = Vector:normalized()</code></pre>
+Highest = B, Lowest = A
+}
+
+Vector = vec(A, B, 0)
+Vector = Vector + vec(0, 0, A + B)
+Vector = Vector:normalized()</code></pre>
       <div class="col s12 m4 pull-m4">
         <form>
           <p>

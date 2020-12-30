@@ -1,5 +1,5 @@
 import initScrollspy from "./ScrollSpy.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-    initScrollspy();
+    initScrollspy("#navMain", {offset: 4});
 })

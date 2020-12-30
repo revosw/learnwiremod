@@ -3,9 +3,6 @@
 /*
 $(document).ready(function () {
 
-  // Init Scrollspy
-  initScrollspy();
-
   // === Quiz ===
 
   // Hide quiz feedback
