@@ -7,14 +7,18 @@
   <title>CPU - Learn Wiremod</title>
   <link rel="stylesheet" href="css/styles.css">
   <script src="js/app.js"></script>
+  <script src="js/highlight.pack.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+  </script>
 </head>
 
-<body class="bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-100">
+<body class="md:grid grid-cols-main-layout gap-x-24 bg-gray-800 text-gray-100">
   <header class="mb-10">
-    <img src="img/tools/header.png" alt="Tools header image">
+    <img src="img/cpu/header.png" alt="Tools header image">
   </header>
 
-  <div class="grid grid-cols-1 md:grid-cols-content dark:text-gray-200">
+  <div class="grid grid-cols-1 md:grid-cols-content">
     <nav class="ml-10 hidden md:block">
       <ul class="sticky top-20">
         <li>
@@ -68,9 +72,9 @@
       </ul>
     </nav>
 
-    <main>
-      <div>
-        <p class="inline-block">
+    <main class="md:col-span-2">
+      <div class="flex flex-col xl:flex-row mb-5">
+        <p style="width: 400px;" class="mr-5">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum amet, quis dolorum beatae cumque nemo eaque
           dolor libero est provident tempore iusto omnis, ex quisquam dicta, sit pariatur obcaecati reiciendis similique
           veniam non consectetur perferendis? Dolor quae tempore obcaecati eaque explicabo odio amet laborum, maxime
@@ -108,11 +112,117 @@
           neque aliquid veritatis ex officiis. Consectetur fuga harum, aut reiciendis doloribus quos dolorum quae
           ratione natus.
         </p>
-        <img src="img/e2/editor.png" alt="">
+          <pre class="codeblock"><code class="gmod_wire_e2 hljs">@name Sudoku
+@outputs CharX CharY Char CharParam Clk
+@persist Board:array CharQueue:string CharXQueue:array CharYQueue:array
+#include "inc/sudoku"
+
+function writeToScreen(X, Y, InputChar:string) {
+    print("X is " + X)
+    print("Y is " + Y)
+    print("InputChar is " + InputChar)
+    print("CharQueue is " + CharQueue)
+    print("CharXQueue is" + CharXQueue:concat())
+    print("CharYQueue is" + CharYQueue:concat())
+    CharQueue += InputChar
+    CharXQueue:pushNumber(X)
+    CharYQueue:pushNumber(Y)
+}
+
+if (first()) {
+    runOnHTTP(1)
+    runOnChat(1)
+    
+    if (!httpCanRequest()) {
+        error("HTTP is disabled - cannot fetch sudoku board")
+    }
+    
+    writeToScreen(0,2,"1")
+    writeToScreen(2,0,"1")
+    writeToScreen(0,3,"2")
+    writeToScreen(3,0,"2")
+    writeToScreen(0,4,"3")
+    writeToScreen(4,0,"3")
+}
+elseif(clk("nextChar")) {
+    if (CharQueue != "") {
+        #Copy-by-value or copy-by-reference?
+        Char = toByte(CharQueue[1])
+        CharQueue = CharQueue:replaceRE("^%w", "")
+    }
+}
+
+function place(X, Y, C:string) {
+    writeToScreen(X, Y, C)    
+}
+
+function drawBoard() {
+    # Position numbers in column and row
+    writeToScreen(0,0,"+")
+}
+
+function parseInput(Input:string) {
+    
+}
+
+if (chatClk(owner())) {
+    hideChat(1)
+    
+    if (owner():lastSaid()[1] == "!") {
+        parseInput(owner():lastSaid():sub(2))
+    }
+}
+
+if(httpClk()) {
+    Tbl = jsonDecode("{\"test\":55}")
+    
+    printTable(Tbl:add(table("one",15)))
+    
+    T = jsonDecode(httpData())
+}</code></pre>
+      </div>
+      <div class="flex flex-col xl:flex-row mb-5">
+        <p style="width: 400px" class="mr-5">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum amet, quis dolorum beatae cumque nemo eaque
+          dolor libero est provident tempore iusto omnis, ex quisquam dicta, sit pariatur obcaecati reiciendis similique
+          veniam non consectetur perferendis? Dolor quae tempore obcaecati eaque explicabo odio amet laborum, maxime
+          nostrum velit, architecto placeat consectetur consequatur perferendis assumenda possimus porro aliquid eveniet
+          vero animi tenetur quas! Beatae molestiae, asperiores vitae sed odit suscipit error repellat atque deleniti
+          itaque. Nihil laudantium corporis at enim amet. Dolorum temporibus itaque nesciunt at totam veniam quidem
+          eligendi, iure amet perferendis aperiam quaerat atque ipsum quibusdam debitis! Temporibus officia culpa iure
+          expedita nobis alias facere consectetur voluptatum a. Ab perspiciatis non sequi est inventore delectus.
+          Nesciunt quam corrupti consequatur soluta assumenda consectetur porro nostrum in quo officiis dicta
+          exercitationem, id quod architecto sed impedit corporis, excepturi aspernatur aperiam temporibus laudantium
+          rem suscipit magni quaerat! Cupiditate cum totam architecto nemo error modi est blanditiis aliquid consequatur
+          aspernatur quia, illum aperiam nam fugit! Corporis illum eligendi id impedit repellat laborum. Ut, et? Alias
+          perspiciatis quam aperiam similique repellat nihil minus, necessitatibus vel voluptatibus ea. Possimus
+          inventore iure numquam itaque a reiciendis, facilis repudiandae tempore sapiente iste ut animi ex quos
+          excepturi earum iusto aspernatur similique facere amet dignissimos cum illum cumque rerum! Corporis nam minus
+          tempore neque rerum dolore aliquam in laboriosam reiciendis tenetur laborum, ipsa, ipsam tempora nobis ut aut
+          laudantium, veniam ad sapiente doloribus possimus. Repellendus consequatur deserunt non nisi provident,
+          maiores at nulla. Corporis ullam consequatur eaque, omnis quasi qui dolorum placeat explicabo eveniet fugiat.
+          Magnam similique, eaque odit qui saepe ipsa porro animi et facilis? Quaerat sed a voluptatibus veniam tempore
+          ratione dolorum! Ipsa, dolor. Magnam harum labore unde error eos quia placeat necessitatibus repudiandae
+          cumque deserunt. Qui, cumque quos? Est dolor cumque officia, aliquam sequi blanditiis assumenda deserunt cum
+          perspiciatis omnis natus corporis libero architecto eaque qui possimus atque sint laudantium mollitia modi
+          reprehenderit vitae magnam? Ipsa eligendi minima illo harum incidunt error saepe nulla sed quasi molestias
+          consequuntur qui reiciendis modi repellendus quas libero eius enim ad veritatis, ea itaque ducimus voluptates
+          quam. Cumque alias, voluptates ipsa libero nostrum delectus eveniet. Dolore reiciendis facilis voluptates,
+          error est quae quos id labore perspiciatis totam in ab at? Rerum voluptatum, dolorem blanditiis eos
+          perferendis labore sint earum repellat, nisi quod tempore. Ea culpa placeat dolores totam perspiciatis nihil
+          itaque commodi aliquid? Iure, quasi? Distinctio officia dolores veritatis sapiente! Deserunt illo debitis
+          veniam at dicta, unde sequi exercitationem. Nulla non repellendus quos qui inventore? Reprehenderit asperiores
+          nobis amet optio repellat? Explicabo dolor commodi tenetur harum voluptatibus natus cupiditate ratione,
+          architecto suscipit accusantium dolorum vitae error nesciunt veritatis distinctio ullam. Unde dolorem magni
+          necessitatibus deserunt incidunt? Eos quo cumque voluptas quaerat ipsa facere fugit quibusdam et sequi! Ipsum
+          sed quos ad possimus officia reprehenderit, alias quisquam, voluptatem omnis dignissimos pariatur. Sequi, quis
+          corporis voluptatem perferendis assumenda provident atque obcaecati praesentium minus maiores ducimus nostrum
+          neque aliquid veritatis ex officiis. Consectetur fuga harum, aut reiciendis doloribus quos dolorum quae
+          ratione natus.
+        </p>
+        <img class="rounded-md self-start sticky top-5" src="img/e2/editor.png" alt="" loading="lazy">
       </div>
     </main>
-
-    <div class="hidden md:block"></div>
   </div>
 </body>
 

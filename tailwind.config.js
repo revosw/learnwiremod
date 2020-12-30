@@ -9,7 +9,8 @@ module.exports = {
   theme: {
     extend: {
       gridTemplateColumns: {
-        "content": "minmax(200px, max-content) 384px 1fr"
+        "main-layout": "260px 1fr",
+        "section": "450px 1fr"
       }
     }
   },

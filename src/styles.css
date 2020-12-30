@@ -1,9 +1,31 @@
 html {
   scroll-behavior: smooth;
+  font-family: "Germano";
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
   }
+}
+
+h1,
+h2 {
+  font-family: "Intro Black";
+}
+
+p {
+  font-size: 21px;
+}
+
+.navlink {
+  @apply pl-2 border-l-2 border-gray-100;
+}
+
+.active {
+  @apply border-blue-600 !important;
+}
+
+.codeblock {
+  @apply self-start shadow-lg p-3 text-sm w-3/5 rounded-md top-5 sticky hljs;
 }

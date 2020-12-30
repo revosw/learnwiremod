@@ -1,7 +1,10 @@
+
+
+/*
 $(document).ready(function () {
 
   // Init Scrollspy
-  $(".scrollspy").scrollSpy();
+  initScrollspy();
 
   // === Quiz ===
 
@@ -57,3 +60,4 @@ $(document).ready(function () {
     }
   });
 });
+*/

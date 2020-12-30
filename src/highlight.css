@@ -11,6 +11,7 @@
 
 .hljs {
   color: rgb(160, 160, 240);
+  background-color: #212121;
 }
 
 .hljs-inline {
@@ -59,13 +60,13 @@
 }
 
 .hljs-operator {
-  color: rgb(217, 252, 234);
+  color: rgb(255, 255, 255);
 }
 
 .hljs-symbol {
   color: #fff;
 }
 
-.hljs-function {
+/*.hljs-function {
 	color: rgb(160,160,240);
-}
+}*/
