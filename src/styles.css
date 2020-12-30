@@ -29,3 +29,7 @@ p {
 .codeblock {
   @apply self-start shadow-lg p-3 text-sm w-3/5 rounded-md top-5 sticky hljs;
 }
+
+#navMain::-webkit-scrollbar {
+  width: 0;
+}
