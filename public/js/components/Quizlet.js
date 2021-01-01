@@ -1,4 +1,4 @@
-import { hashCode } from "./hash.js";
+import { hashCode } from "../lib/hash.js";
 
 class Quizlet extends HTMLElement {
     constructor() {
@@ -14,14 +14,14 @@ class Quizlet extends HTMLElement {
                 <form id="form" class="flex flex-col m-5"></form>
                 </div>
                 <div class="bg-darkgray rounded-b-md flex justify-between items-center p-4">
-                <input type="submit" id="submit" value="Submit" class="bg-gray-700 px-4 py-1 my-2 mr-4">
+                <input type="submit" id="submit" value="Submit" class="bg-gray-700 px-4 py-1 my-2 mr-4 self-start">
                 <p id="message" class=""></p>
                 </div>
                 </div>`;
 
         const validate = () => {
             const messageElement = this.shadowRoot.querySelector("#message");
-            const checkedIncorrectAnswers = this.shadowRoot.querySelector("input").matches(":not([data-answer]):checked")
+            const checkedIncorrectAnswers = this.shadowRoot.querySelector(":not([data-answer]):checked") !== null
             const notCheckedCorrectAnswers = this.shadowRoot.querySelector("[data-answer]:not(:checked)") !== null
 
             if (checkedIncorrectAnswers || notCheckedCorrectAnswers) {
@@ -53,7 +53,7 @@ class Quizlet extends HTMLElement {
     }
 
     constructCodeQuizlet() {
-
+        console.log(this.shadowRoot.querySelector("form"));
     }
 
     constructSingleChoiceQuizlet() {
@@ -94,6 +94,5 @@ class Quizlet extends HTMLElement {
         }
     }
 }
-customElements.define("lw-quizlet", Quizlet);
 
 export default Quizlet;
