@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Expression 2 - Learn Wiremod</title>
   <link rel="stylesheet" href="css/styles.css">
-  <script src="js/app.js"></script>
+  <script type="module" src="js/app.js"></script>
   <script src="js/highlight.pack.js"></script>
   <script>
     hljs.initHighlightingOnLoad();
@@ -74,7 +74,7 @@
         </ul>
       </li>
       <li>
-        <a class="navlink" href="#editor">The editor</a>
+        <a class="navlink" href="#tool">Exploring the tool</a>
         <ul class="text-xs text-gray-400">
           <li>
             <a class="navlink" href="#spawnmenu">Finding it in the menu</a>
@@ -152,27 +152,38 @@
       <img class="mx-auto rounded-md shadow-inner" src="img/e2/header.png" alt="Expression 2 header image">
     </header>
     <section id="introduction" class="grid grid-cols-1 xl:grid-cols-section gap-4 my-10">
-      <div>
-
+      <div class="my-4">
+        <!-- CODE QUIZLET
+        <div class="flex flex-col w-full">
+          <div class="bg-gray-100 text-gray-800 p-4 rounded-t-md">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias?</div>
+          <div class="bg-darkgray">
+            
+          </div>
+          <div class="bg-gray-100 rounded-b-md flex justify-between">
+            <p class="text-gray-800">Correct!</p>
+            <input type="submit" form="testform" value="stupid" class="bg-darkgray px-4 py-1 my-2">
+          </div>
+        </div> -->
+        
         <p>
           Expression 2 is a programmable chip used to interact with the environment on a server. These are
           some of the things you can build with Expression 2.
         </p>
         <p>
-          <strong class="green-text">This course is</strong> linear, you are supposed to go from first
+          <strong class="text-green-300">This course is</strong> linear, you are supposed to go from first
           page to last page in chronological order.
           <em>Even if you aren't new</em>, I do recommend that you skim through from the beginning.
           You never know, maybe
           you learn something new?
         </p>
         <p>
-          <strong class="red-text">This course is NOT</strong> a replacement for all other
+          <strong class="text-red-300">This course is NOT</strong> a replacement for all other
           documentation, use the
           <a href="https://github.com/wiremod/wire/wiki/Expression-2">Expression 2 wiki</a> as a
           supplement.
         </p>
         <p>
-          <strong class="red-text">This course is NOT</strong> going to cover the
+          <strong class="text-red-300">This course is NOT</strong> going to cover the
           <a href="https://github.com/wiremod/wire">Lua behind how Expression 2 works</a>
         </p>
       </div>
@@ -213,9 +224,7 @@
     </section>
 
     <section id="quiz" class="grid grid-cols-1 xl:grid-cols-section gap-4 my-10">
-      <div>
-        <h2>Are you ready to learn about Expression 2?</h2>
-      </div>
+      <!--
       <pre class="codeblock"><code class="gmod_wire_e2 hljs">@name Hello World
 @inputs A B
 @outputs Add Sub Mul Div
@@ -239,146 +248,63 @@ Highest = B, Lowest = A
 
 Vector = vec(A, B, 0)
 Vector = Vector + vec(0, 0, A + B)
-Vector = Vector:normalized()</code></pre>
-      <div class="col s12 m4 pull-m4">
-        <form>
-          <p>
-            <input name="q1" type="radio" id="1" />
-            <label for="1">Yeah</label>
-          </p>
-          <p>
-            <input name="q1" type="radio" id="2" data-answer />
-            <label for="2">Hell yeah</label>
-          </p>
-          <p>
-            <button class="btn" type="submit">smash that like button</button>
-          </p>
-        </form>
-        <p class="wrong">
-          Speak up, son
-        </p>
-        <p class="correct">
-          <a target="_blank" href="https://www.youtube.com/watch?v=LtU4tjoIyeQ">That's
-            what I'm talking about, Bill.</a> Try to press those red indicators down
-          there.
-        </p>
-      </div>
-      </div>
-      </div>
-      <div class="carousel-item" href="#two!">
-        <div class="row">
-          <h5 class="center">Woah there are other questions here? Try writing "yeah" in that
-            text field down there</h5>
-        </div>
-        <div class="row">
-          <div class="col s12 m5 push-m6">
-            <div class="card grey darken-4 overflow-fix">
-              <div class="card-content asd">
-                <pre><code class="gmod_wire_e2 hljs"></code></pre>
-              </div>
-            </div>
-          </div>
-          <div class="col s12 m4 pull-m4">
-            <form>
-              <div class="input-field">
-                <input type="text" id="3" data-answer="yeah" />
-                <label for="3">daily dose of text input</label>
-              </div>
-              <p>
-                <button class="btn" type="submit">are we ready?</button>
-              </p>
-            </form>
-            <p class="wrong">
-              Did you just type "Yeah" instead of "yeah"?
-            </p>
-            <p class="correct">
-              What about that last question?
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="carousel-item" href="#three!">
-        <div class="row">
-          <h5 class="center">Okay, last one now. Where do you go to get help?</h5>
-        </div>
-        <div class="row">
-          <div class="col s12 m5 push-m6">
-            <div class="card grey darken-4 overflow-fix">
-              <div class="card-content asd">
-                <pre><code class="gmod_wire_e2 hljs"></code></pre>
-              </div>
-            </div>
-          </div>
-          <div class="col s12 m4 pull-m4">
-            <form>
-              <p>
-                <input type="checkbox" id="4" data-answer />
-                <label for="4">Wiremod discord</label>
-              </p>
-              <p>
-                <input type="checkbox" id="5" data-answer />
-                <label for="5">Wiremod reddit</label>
-              </p>
-              <p>
-                <input type="checkbox" id="6" />
-                <label for="6">Wiremod forums</label>
-              </p>
-              <p>
-                <button class="btn" type="submit">Don't forget to subscribe</button>
-              </p>
-            </form>
-            <p class="wrong">
-              The
-              <a target="_blank"
-                href="http://web.archive.org/web/20160507055909/http://www.wiremod.com/forum/?tabid=11">Wiremod
-                forum</a> (it takes a while to load) is read-only, so you can't ask for
-              help there. You can however browse
-              for fun.
-            </p>
-            <p class="correct">
-              You know exactly what to do when you need help. I think we're ready to move
-              on to the basics.
-            </p>
-          </div>
-        </div>
-      </div>
+Vector = Vector:normalized()</code></pre> -->
+      <div>
+        <lw-quizlet
+          type="singlechoice"
+          question="Are you ready to learn about Expression 2?"
+          alternatives="XYeah;OHell yeah"
+          incorrect="Speak up, son"
+          correct="Let's get started"
+        ></lw-quizlet>
+
+        <lw-quizlet
+          type="multiplechoice"
+          question="Where do you go to get help?"
+          alternatives="OWiremod discord server;OWiremod subreddit;OWiremod discussion board;XWiremod forums"
+          incorrect="The wiremod forums are down, however you can visit the discord server, subreddit and discussion board anytime"
+          correct="That's right, you know where to go when you need some help"></lw-quizlet>
       </div>
     </section>
 
-    <section id="editor" class="grid grid-cols-1 xl:grid-cols-section gap-4 my-10">
-      <section id="menu" class="section scrollspy">
-        <h2>Finding it in the menu
-        </h2>
+    <section id="menu" class="section scrollspy">
+      <h2>Finding it in the menu
+      </h2>
 
-        <p>Open up the spawn menu with Q, and have a look at the Wire tab. Under
-          <strong>Chips, Gates</strong> you'll find Expression 2.
-        </p>
+      <p>Open up the spawn menu with Q, and have a look at the Wire tab. Under
+        <strong>Chips, Gates</strong> you'll find Expression 2.
+      </p>
 
-        <figure>
-          <img src="img/e2/spawnmenu.png" alt="">
-          <figcaption>You can change size and model of the chip, and open and create files and folders
-          </figcaption>
-        </figure>
+      <figure>
+        <img src="img/e2/spawnmenu.png" alt="">
+        <figcaption>You can change size and model of the chip, and open and create files and folders
+        </figcaption>
+      </figure>
 
-        <figure>
-          <img src="img/e2/chips.png" alt="">
-          <figcaption>The sizes and models of the Expression 2 chip</figcaption>
-        </figure>
+      <figure>
+        <img src="img/e2/chips.png" alt="">
+        <figcaption>The sizes and models of the Expression 2 chip</figcaption>
+      </figure>
 
-        <p>You can create, open, copy, rename and delete files. Folders are different, you can create them
-          but
-          <strong>not</strong> rename, nor delete them.
-          <a href="https://github.com/wiremod/wire/issues/1598">Issue on Github</a>
-        </p>
+      <p>You can create, open, copy, rename and delete files. Folders are different, you can create them
+        but
+        <strong>not</strong> rename, nor delete them.
+        <a href="https://github.com/wiremod/wire/issues/1598">Issue on Github</a>
+      </p>
 
-        <figure>
-          <img src="img/e2/fileoption.png" alt="">
-          <figcaption>
-          </figcaption>
-        </figure>
-      </section>
+      <figure>
+        <img src="img/e2/fileoption.png" alt="">
+        <figcaption>
+        </figcaption>
+      </figure>
+    </section>
 
-      <section id="overview" class="section scrollspy">
+    <section id="tool" class="grid grid-cols-1 xl:grid-cols-section gap-4 my-10">
+      <div>
+        <h1>Exploring the tool</h1>
+      </div>
+
+      <section id="overview" class="grid grid-cols-1 xl:grid-cols-section gap-4 my-10">
         <h2>Editor overview
         </h2>
 
@@ -394,7 +320,7 @@ Vector = Vector:normalized()</code></pre>
         </figure>
       </section>
 
-      <section id="buttons" class="section scrollspy">
+      <section id="buttons" class="grid grid-cols-1 xl:grid-cols-section gap-4 my-10">
         <h4>Button legend</h4>
         <table>
           <thead>
@@ -495,7 +421,7 @@ Vector = Vector:normalized()</code></pre>
         </table>
       </section>
 
-      <section id="settings-editor" class="section scrollspy">
+      <section id="settings-editor" class="grid grid-cols-1 xl:grid-cols-section gap-4 my-10">
         <h4>Settings - Editor</h4>
         <p>Hit that
           <img src="img/e2/editorbutton11.png" alt=""> button and edit along.
@@ -566,7 +492,7 @@ Vector = Vector:normalized()</code></pre>
         <br>
       </section>
 
-      <section id="settings-e2" class="section scrollspy">
+      <section id="settings-e2" class="grid grid-cols-1 xl:grid-cols-section gap-4 my-10">
         <h4>Settings - Expression 2</h4>
         <p>Now you need to navigate to the second tab of the settings page.</p>
 
@@ -599,7 +525,7 @@ Vector = Vector:normalized()</code></pre>
           what you're doing, but we'll leave it off for now.</p>
       </section>
 
-      <section id="settings-remote" class="section scrollspy">
+      <section id="settings-remote" class="grid grid-cols-1 xl:grid-cols-section gap-4 my-10">
         <h4>Settings - Remote updater</h4>
         <p>In this menu, you can manage your expressions remotely. The feature is very useful if, for
           example, your expression
@@ -726,7 +652,7 @@ Vector = Vector:normalized()</code></pre>
       </p>
     </section>
 
-    <section id="numbers" class="section scrollspy">
+    <section id="numbers" class="grid grid-cols-1 xl:grid-cols-section gap-4 my-10">
       <p>Expression 2 uses the same arithmetic operators as everyone after 2000 B.C. (first written records of
         their use)
         has known and loved.
@@ -751,7 +677,7 @@ Vector = Vector:normalized()</code></pre>
             print(-450) #prints -450</code></pre>
     </section>
 
-    <section id="directives" class="section scrollspy">
+    <section id="directives" class="grid grid-cols-1 xl:grid-cols-section gap-4 my-10">
       <h2>Overview</h2>
 
       <div class="card grey darken-4">
@@ -782,7 +708,7 @@ Vector = Vector:normalized()</code></pre>
       </div>
 
 
-      <section id="name" class="section scrollspy">
+      <section id="name" class="grid grid-cols-1 xl:grid-cols-section gap-4 my-10">
         <h4>@name</h4>
         <p>The @name directive sets the name of the expression 2 chip. The name is viewed in two places, one
           when hovering
@@ -804,7 +730,7 @@ Vector = Vector:normalized()</code></pre>
         </div>
       </section>
 
-      <section id="inputs" class="section scrollspy">
+      <section id="inputs" class="grid grid-cols-1 xl:grid-cols-section gap-4 my-10">
         <h4>@inputs</h4>
         <p>The @inputs directive sets the expression's inputs. It is used to wire between your chip and
           other
@@ -830,7 +756,7 @@ Vector = Vector:normalized()</code></pre>
         </div>
       </section>
 
-      <section id="outputs" class="section scrollspy">
+      <section id="outputs" class="grid grid-cols-1 xl:grid-cols-section gap-4 my-10">
         <h4>@outputs</h4>
         <p>The @outputs directive sets the expression's outputs. What differs input and output is that input
           takes in data
@@ -846,7 +772,7 @@ Vector = Vector:normalized()</code></pre>
         </div>
       </section>
 
-      <section id="persist" class="section scrollspy">
+      <section id="persist" class="grid grid-cols-1 xl:grid-cols-section gap-4 my-10">
         <h4>@persist</h4>
         <p>The @persist directive exists because of how Expression 2 variables work. When a variable is
           declared
@@ -1015,40 +941,40 @@ Vector = Vector:normalized()</code></pre>
                 <form>
                   <div class="col m5">
                     <p>
-                      <input name="q1" type="checkbox" id="1" />
+                      <input name="q1" type="checkbox" />
                       <label for="1">A</label>
 
                     </p>
                     <p>
-                      <input name="q1" type="checkbox" id="3" />
+                      <input name="q1" type="checkbox" />
                       <label for="3">C</label>
 
                     </p>
                     <p>
-                      <input name="q1" type="checkbox" id="5" />
+                      <input name="q1" type="checkbox" />
                       <label for="5">E</label>
                     </p>
                     <p>
-                      <input name="q1" type="checkbox" id="7" data-answer />
+                      <input name="q1" type="checkbox" data-answer />
                       <label for="7">G</label>
                     </p>
                   </div>
                   <div class="col m7">
                     <p>
-                      <input name="q1" type="checkbox" id="2" data-answer />
+                      <input name="q1" type="checkbox" data-answer />
                       <label for="2">B</label>
                     </p>
                     <p>
-                      <input name="q1" type="checkbox" id="4" data-answer />
+                      <input name="q1" type="checkbox" data-answer />
                       <label for="4">D</label>
 
                     </p>
                     <p>
-                      <input name="q1" type="checkbox" id="6" />
+                      <input name="q1" type="checkbox" />
                       <label for="6">F</label>
                     </p>
                     <p>
-                      <input name="q1" type="checkbox" id="8" data-answer />
+                      <input name="q1" type="checkbox" data-answer />
                       <label for="8">H</label>
                     </p>
                   </div>

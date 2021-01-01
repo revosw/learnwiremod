@@ -10,6 +10,9 @@ module.exports = {
       gridTemplateColumns: {
         "main-layout": "260px 1fr 20px",
         "section": "450px 1fr"
+      },
+      colors: {
+        darkgray: "#212121"
       }
     }
   },
