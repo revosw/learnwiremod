@@ -14,7 +14,7 @@ class Quizlet extends HTMLElement {
                 <form id="form" class="flex flex-col m-5"></form>
                 </div>
                 <div class="bg-darkgray rounded-b-md flex justify-between items-center p-4">
-                <input type="submit" id="submit" value="Submit" class="bg-gray-700 px-4 py-1 my-2 mr-4 self-start">
+                <input type="submit" id="submit" value="Submit" class="bg-gray-700 px-4 py-1 my-2 mr-4 self-start shadow-md">
                 <p id="message" class=""></p>
                 </div>
                 </div>`;
@@ -47,6 +47,8 @@ class Quizlet extends HTMLElement {
         else if (type === "singlechoice") {
             this.constructSingleChoiceQuizlet();
             this.shadowRoot.getElementById("submit").onclick = validate;
+            console.log(this.shadowRoot.querySelector("input"))
+            this.shadowRoot.querySelector("input").checked = true;
         } else {
             throw `the type attribute of the quizlet has to be either code, multiplechoice or singlechoice`;
         }
