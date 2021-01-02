@@ -164,7 +164,7 @@
             <input type="submit" form="testform" value="stupid" class="bg-darkgray px-4 py-1 my-2">
           </div>
         </div> -->
-        
+
         <p>
           Expression 2 is a programmable chip used to interact with the environment on a server. These are
           some of the things you can build with Expression 2.
@@ -179,7 +179,7 @@
         <p>
           <strong class="text-red-300">This course is NOT</strong> a replacement for all other
           documentation, use the
-          <a href="https://github.com/wiremod/wire/wiki/Expression-2">Expression 2 wiki</a> as a
+          <a class="" href="https://github.com/wiremod/wire/wiki/Expression-2">Expression 2 wiki</a> as a
           supplement.
         </p>
         <p>
@@ -250,78 +250,108 @@ Vector = vec(A, B, 0)
 Vector = Vector + vec(0, 0, A + B)
 Vector = Vector:normalized()</code></pre> -->
       <div>
-        <lw-quizlet
-          type="singlechoice"
-          question="Are you ready to learn about Expression 2?"
-          alternatives="XYeah;OHell yeah"
-          incorrect="Speak up, son"
-          correct="Let's get started"
-        ></lw-quizlet>
+        <lw-quizlet type="singlechoice" question="Are you ready to learn about Expression 2?"
+          alternatives="XYeah;OHell yeah" incorrect="Speak up, son" correct="Let's get started">
+        </lw-quizlet>
 
-        <lw-quizlet
-          type="multiplechoice"
-          question="Where do you go to get help?"
+        <lw-quizlet type="multiplechoice" question="Where do you go to get help?"
           alternatives="OWiremod discord server;OWiremod subreddit;OWiremod discussion board;XWiremod forums"
           incorrect="The wiremod forums are down, however you can visit the discord server, subreddit and discussion board anytime"
-          correct="That's right, you know where to go when you need some help"></lw-quizlet>
+          correct="That's right, you know where to go when you need some help">
+        </lw-quizlet>
       </div>
-    </section>
 
-    <section id="menu" class="grid grid-cols-1 xl:grid-cols-section gap-4 my-10">
-      <h2>Finding it in the menu
-      </h2>
+      <div>
+        <lw-quizlet type="code" question="Finish the implementation so that you print the word 'hello world'">
+          <pre slot="start"><code>#@persist Number
+#interval() tells Expression 2 to run the code
+#once every x milliseconds (1 second in this example)
+interval(1000)
 
-      <p>Open up the spawn menu with Q, and have a look at the Wire tab. Under
-        <strong>Chips, Gates</strong> you'll find Expression 2.
-      </p>
+#first() is a function that returns true (1) if
+#this is the first time the code is executed after upload.
+#The second time and onwards, first() will not be true.
+#Thus, Number = 5 will only be executed once.
+if(first()) {
+  Number = 5
+}
 
-      <figure>
-        <img src="img/e2/spawnmenu.png" alt="">
-        <figcaption>You can change size and model of the chip, and open and create files and folders
-        </figcaption>
-      </figure>
+print(Number)</code></pre>
+          <pre slot="solution"><code>#@persist Number
+#interval() tells Expression 2 to run the code
+#once every x milliseconds (1 second in this example)
+interval(1000)
 
-      <figure>
-        <img src="img/e2/chips.png" alt="">
-        <figcaption>The sizes and models of the Expression 2 chip</figcaption>
-      </figure>
+print("Hello world")
 
-      <p>You can create, open, copy, rename and delete files. Folders are different, you can create them
-        but
-        <strong>not</strong> rename, nor delete them.
-        <a href="https://github.com/wiremod/wire/issues/1598">Issue on Github</a>
-      </p>
-
-      <figure>
-        <img src="img/e2/fileoption.png" alt="">
-        <figcaption>
-        </figcaption>
-      </figure>
+print(Number)</code></pre>
+        </lw-quizlet>
+      </div>
     </section>
 
     <section id="tool" class="grid grid-cols-1 xl:grid-cols-section gap-4 my-10">
       <div>
-        <h1>Exploring the tool</h1>
+        <h1 class="text-3xl">Exploring the tool</h1>
+
+        <p>Open up the spawnmenu with Q, and have a look at the Wire tab. Under
+          <strong>Chips, Gates</strong> you'll find Expression 2.
+        </p>
       </div>
 
-      <section id="overview" class="grid grid-cols-1 xl:grid-cols-section gap-4 my-10">
-        <h2>Editor overview
-        </h2>
-
-        <p>When you select the tool, close the spawn menu and right click to open the editor. Optionally,
-          you can click the button
-          on the bottom of the tool's spawn menu and open the editor there, but I have personally never
-          used that button.
-        </p>
+      <div>
+        <figure>
+          <img class="rounded-md" src="img/e2/spawnmenu.png" alt="">
+          <figcaption>You can change size and model of the chip, and open and create files and folders
+          </figcaption>
+        </figure>
 
         <figure>
-          <img src="img/e2/editor.png" alt="">
-          <figcaption>We're greeted by a comment upon opening the editor (2018, colorized)</figcaption>
+          <img src="img/e2/chips.png" alt="">
+          <figcaption>The sizes and models of the Expression 2 chip</figcaption>
         </figure>
-      </section>
+      </div>
 
-      <section id="buttons" class="grid grid-cols-1 xl:grid-cols-section gap-4 my-10">
-        <h4>Button legend</h4>
+      <div>
+        <p>You can create, open, copy, rename and delete files. Folders are different, you can create them
+          but
+          <strong>not</strong> rename, nor delete them.
+          <a href="https://github.com/wiremod/wire/issues/1598">Issue on Github</a>
+        </p>
+      </div>
+
+      <div>
+        <figure>
+          <img class="rounded-md" src="img/e2/fileoption.png" alt="">
+          <figcaption>
+            Right clicking a folder vs. right clicking a file
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="overview" class="grid grid-cols-1 xl:grid-cols-section gap-4 my-10">
+      <div>
+        <h2>Editor overview</h2>
+
+        <p>When you select the tool, close the spawnmenu and right click to open the editor. Optionally,
+          you can click the button
+          on the bottom of the tool's spawnmenu and open the editor there, but I have personally never
+          used that button.
+        </p>
+      </div>
+
+      <div>
+        <figure>
+          <img src="img/e2/editor.png" alt="">
+          <figcaption>The Expression 2 code editor</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="buttons" class="grid grid-cols-1 xl:grid-cols-section gap-4 my-10">
+      <div>
+        <h2>Button legend</h2>
+
         <table>
           <thead>
             <tr>
@@ -419,297 +449,251 @@ Vector = Vector:normalized()</code></pre> -->
             </tr>
           </tbody>
         </table>
-      </section>
-
-      <section id="settings-editor" class="grid grid-cols-1 xl:grid-cols-section gap-4 my-10">
-        <h4>Settings - Editor</h4>
-        <p>Hit that
-          <img src="img/e2/editorbutton11.png" alt=""> button and edit along.
-        </p>
-        <h5>Syntax colors and font</h5>
-        <p>Syntax coloring is coloring of the text you write in the editor. Instead of going over every
-          colorable element, what
-          I'll instead do is come with cool color scheme recommendations.</p>
-
-        <p>&lt;insert color scheme recommendations here sometime in the future&gt;</p>
-
-        <br>
-        <hr>
-        <br>
-
-        <h5>Auto completion</h5>
-        <p>I recommend:</p>
-        <ul>
-          <li>Auto completion
-            <span class="green-text">ON</span>
-          </li>
-          <li>More info
-            <span class="green-text">ON</span>
-          </li>
-          <li>Auto completion control style
-            <span class="green-text">DEFAULT</span>
-          </li>
-          <li>Highlight word after AC use
-            <span class="red-text">OFF</span>
-          </li>
-        </ul>
-
-        Auto completion both helps you correctly type functions, and makes you discover other functions.</p>
-        <img src="img/e2/settings-editor1.gif" alt="">
-
-        <hr>
-        <br>
-
-        <h5>Other options</h5>
-        <p>I recommend:</p>
-        <ul>
-          <li>New tab on open
-            <span class="green-text">ON</span>
-          </li>
-          <li>Save tabs on close
-            <span class="green-text">ON</span>
-          </li>
-          <li>Open old tabs on load
-            <span class="green-text">ON</span>
-          </li>
-          <li>Show caret position
-            <span class="yellow-text text-darken-2">YOU DECIDE YOURSELF</span>
-          </li>
-          <li>Highlight copies of selected word
-            <span class="green-text">ON</span>
-          </li>
-          <li>Enable clicking outside editor
-            <span class="red-text">OFF</span>
-          </li>
-        </ul>
-
-        <p>You'll want to disable clicking outside the editor because of this happening when you resize the
-          window:</p>
-
-        <img src="img/e2/settings-editor2.gif" alt="">
-
-        <br>
-        <br>
-      </section>
-
-      <section id="settings-e2" class="grid grid-cols-1 xl:grid-cols-section gap-4 my-10">
-        <h4>Settings - Expression 2</h4>
-        <p>Now you need to navigate to the second tab of the settings page.</p>
-
-        <h5>Clientside Expression 2 options</h5>
-        <p>I recommend:</p>
-        <ul>
-          <li>Auto indentation
-            <span class="green-text">ON</span>
-          </li>
-          <li>Concmd
-            <span class="red-text">OFF</span>
-          </li>
-          <li>Concmd whitelist
-            <span class="red-text">EMPTY</span> (it won't do anything when concmd is off anyway)
-          </li>
-          <li>Expression 2 block comment style
-            <span class="yellow-text text-darken-2">DOESN'T SEEM TO DO ANYTHING</span>
-          </li>
-          <li>Ops/cpu usage sync
-            <span class="green-text">ON</span>
-          </li>
-        </ul>
-
-        <p>I like auto indenting because it automatically helps in organizing the code. You'll understand
-          what I mean later.</p>
-        <img src="img/e2/settings-e2.gif" alt="">
-
-        <p>By checking the concmd checkbox, your expressions can run console commands on your behalf. Very
-          useful if you know
-          what you're doing, but we'll leave it off for now.</p>
-      </section>
-
-      <section id="settings-remote" class="grid grid-cols-1 xl:grid-cols-section gap-4 my-10">
-        <h4>Settings - Remote updater</h4>
-        <p>In this menu, you can manage your expressions remotely. The feature is very useful if, for
-          example, your expression
-          is far away from you or deep within a contraption and you want to edit it.</p>
-        <p>The menu benefits server admins too, as not all expressions are coded with good intents. Some
-          people who code expressions
-          do everything in their might to be as annoying as possible, playing loud sounds everywhere and
-          trying to crash the
-          server. A person who code expressions with evil intents is what most people call a "mingebag",
-          and
-          <a target="_blank" href="https://www.google.no/search?q=minge">you don't want to call everyone
-            around you that</a>. The expression of mingebags can then be found, and an admin can
-          ban/kick/warn those who have mingebag-expressions. In the picture below, we can see a player
-          blinder. Sounds annoying
-          being blinded, don't you think?
-        </p>
-
-        <img src="img/e2/settings-remote.png" alt="">
-
-        <p>
-          <span class="red-text">However, there's a small downside to it.</span> Server owners can with
-          the click of a button download your expression.
-          You will be notified of it, but if you're working on a grand project, it's not a great feeling
-          having your code copied
-          like that.
-          <br>
-          <strong>To server owners:</strong>
-          <del>Don't be a jerk</del>
-          <strong>Please respect expression programmers' privacy</strong> and don't just hammer the
-          download buttons to steal/copy other
-          people's code. Though there are no executive powers protecting a right of privacy, all I ask of
-          you is to keep a decent
-          moral standard.
-        </p>
-
-      </section>
+      </div>
     </section>
 
-    <section id="helloworld">
-      <h2>The wait is over</h2>
+    <section id="settings-editor" class="grid grid-cols-1 xl:grid-cols-section gap-4 my-10">
+      <div>
 
-      <p>Finally we are going to start learning the actual language. But I think it was important that I
-        placed all that
-        tool-stuff
-        on its own page, rather than stretching it throughout the whole basics section. From now on, most of
-        what we're
-        going
-        to see is code.</p>
+        <h2>Editor settings</h2>
+        <p>Hit that <img class="inline-block" src="img/e2/editorbutton11.png" alt=""> button and edit along. We'll first
+          take a look at syntax coloring. Syntax coloring is coloring of the text you write in the editor. Instead of
+          going over every colorable element, what I'll instead do is come with cool color scheme recommendations.</p>
 
-      <p>It is a convention in programming that the first thing a new programmer learns is how to output the
-        string "Hello
-        World!"
-        to a console (or in our case, the chat). "But wait," you say. String?</p>
+        <p>&lt;insert color scheme recommendations here sometime in the future&gt;</p>
+      </div>
 
-      <blockquote class="flow-text">
-        String - any* text, numbers or other characters or symbols delimited by quotation marks
-      </blockquote>
+      <div></div>
 
-      <p>
-        <code class="hljs-inline gmod_wire_e2">"Hello World!"</code> is a string.
-        <code class="hljs-inline gmod_wire_e2">"#123"</code> is a string. Why? Because the characters are
-        <em>delimited by</em>, or contained within, a set of quotation marks. But there is a catch, which is
-        why there
-        is an asterisk.
-        I'll come back to that later.
-      </p>
+      <div>
+        <h2>Auto completion</h2>
+        <p>I recommend:</p>
+        <div class="grid grid-cols-3">
+          <p class="col-span-2">Auto completion</p>
+          <p>ON</p>
 
-      <p>Now we just need the final piece in our "Hello World!"-formula, namely the
-        <code class="hljs-inline gmod_wire_e2">print()</code> function (don't worry, I'll explain functions
-        later). It
-        now looks like this:
-      </p>
+          <p class="col-span-2">More info</p>
+          <p>ON</p>
 
-      <div class="card grey darken-4">
-        <div class="card-content asd">
-          <pre><code class="gmod_wire_e2 hljs">print("Hello World!")</code></pre>
+          <p class="col-span-2">Auto completion control style</p>
+          <p>DEFAULT</p>
+
+          <p class="col-span-2">Highlight word after AC use</p>
+          <p>OFF</p>
         </div>
       </div>
 
-      <p>And we got ourselves a salutation to mother earth. Beautiful.</p>
-      <img src="img/e2/helloworld.png" alt="" class="responsive-img">
+      <div>
+        <figure>
+          <img src="img/e2/settings-editor1.gif" alt="">
+          <figcaption>Auto completion both helps you in correctly typing functions, and discovering other functions.
+          </figcaption>
+        </figure>
+      </div>
+      <div>
+        <h2>Other options</h2>
+        <p>I recommend:</p>
+        <div class="grid grid-cols-3">
+          <p class="col-span-2">New tab on open</p>
+          <p>ON</p>
 
+          <p class="col-span-2">Save tabs on close</p>
+          <p>ON</p>
 
+          <p class="col-span-2">Open old tabs on load</p>
+          <p>ON</p>
 
-      <p>Let's do some more printing. You can print numbers:</p>
+          <p class="col-span-2">Show caret position</p>
+          <p>ON</p>
 
-      <div class="card grey darken-4">
-        <div class="card-content asd">
-          <pre><code class="gmod_wire_e2 hljs">print(12345)</code></pre>
+          <p class="col-span-2">Highlight copies of selected word</p>
+          <p>ON</p>
+
+          <p class="col-span-2">Enable clicking outside editor</p>
+          <p>OFF</p>
+        </div>
+      </div>
+      <div>
+        <figure>
+          <img src="img/e2/settings-editor2.gif" alt="">
+          <figcaption>You'll want to disable clicking outside the editor because of this happening when you resize the
+            window</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section id="settings-e2" class="grid grid-cols-1 xl:grid-cols-section gap-4 my-10">
+      <div>
+        <h2>Expression 2 settings</h2>
+        <p>Now you need to navigate to the second tab of the settings page.</p>
+        <p>I recommend:</p>
+        <div class="grid grid-cols-3">
+          <p class="col-span-2">Auto indentation</p>
+          <p>ON</p>
+
+          <p class="col-span-2">Concmd</p>
+          <p>OFF</p>
+
+          <p class="col-span-2">Concmd whitelist</p>
+          <p>LEAVE IT BLANK</p>
+
+          <p class="col-span-2">Expression 2 block comment style</p>
+          <p>DOESN'T WORK</p>
+
+          <p class="col-span-2">Highlight copies of selected word</p>
+          <p>ON</p>
+
+          <p class="col-span-2">Ops/cpu usage sync</p>
+          <p>ON</p>
         </div>
       </div>
 
-      <p>You can do math inside print:</p>
-
-      <div class="card grey darken-4">
-        <div class="card-content asd">
-          <pre><code class="gmod_wire_e2 hljs">print( 10 * (50 - 40) )</code></pre>
-        </div>
+      <div>
+        <figure>
+          <img src="img/e2/settings-e2.gif" alt="">
+          <figcaption>Auto indenting automatically inserts the correct indentation (space to the left) when you press
+            enter</figcaption>
+        </figure>
       </div>
+    </section>
 
-      <p>You can print other functions (we will get to how it works after a while):</p>
+    <section id="settings-remote" class="grid grid-cols-1 xl:grid-cols-section gap-4 my-10">
+      <div>
 
-      <div class="card grey darken-4">
-        <div class="card-content asd">
-          <pre><code class="gmod_wire_e2 hljs">print( random() )</code></pre>
-        </div>
+        <h2>Remote uploader settings</h2>
+        <p>In this menu, you can manage your expressions remotely. The feature is very useful if, for example, your
+          expression is far away from you or deep within a contraption and you want to edit it.</p>
+        <p>The menu benefits server admins too, as not all expressions are coded with good intents. Some people who code
+          expressions do everything in their might to be as annoying as possible, playing loud sounds everywhere and
+          trying to crash the server.
+        </p>
       </div>
+      <div>
+        <figure>
+          <img src="img/e2/settings-remote.png" alt="">
+          <figcaption>Sometimes you can find evil expressions in the remote updater list</figcaption>
+        </figure>
+      </div>
+    </section>
 
-      <p>In the code above, we have a new function,
-        <code class="hljs-inline gmod_wire_e2">random()</code>. It is a function that
-        <em>returns</em> a random number between 0.0 and 1.0. The word return is an important one, I want
-        you to
-        remember this
-        word, as it is a word we are going to use about functions a lot.
-      </p>
+    <section id="helloworld" class="grid grid-cols-1 xl:grid-cols-section gap-4 my-10">
+      <div>
 
-      <p>But where does
-        <code class="hljs-inline gmod_wire_e2">print()</code> and
-        <code class="hljs-inline gmod_wire_e2">random()</code> come from? Throughout this whole Expression 2
-        course, we
-        are going to cover a LOT of functions. You can find the
-        functions under the
-        <img src="img/e2/editorbutton8.png">, located in the top right section of the editor.
-      </p>
+        <h1>Our first program</h1>
+
+        <p>Finally we are going to start learning Expression 2! Let's start </p>
+
+        <p>
+          <code class="hljs-inline gmod_wire_e2">"Hello World!"</code> is a string.
+          <code class="hljs-inline gmod_wire_e2">"#123"</code> is a string. Why? Because the characters are
+          <em>delimited by</em>, or contained within, a set of quotation marks. But there is a catch, which is
+          why there
+          is an asterisk.
+          I'll come back to that later.
+        </p>
+
+        <p>Now we just need the final piece in our "Hello World!"-formula, namely the
+          <code class="hljs-inline gmod_wire_e2">print()</code> function (don't worry, I'll explain functions
+          later). It
+          now looks like this:
+        </p>
+
+        <pre><code class="gmod_wire_e2 hljs">print("Hello World!")</code></pre>
+
+        <p>And we got ourselves a salutation to mother earth. Beautiful.</p>
+        <img src="img/e2/helloworld.png" alt="" class="responsive-img">
+
+
+
+        <p>Let's do some more printing. You can print numbers:</p>
+
+        <pre><code class="gmod_wire_e2 hljs">print(12345)</code></pre>
+
+        <p>You can do math inside print:</p>
+
+        <pre><code class="gmod_wire_e2 hljs">print( 10 * (50 - 40) )</code></pre>
+
+        <p>You can print other functions (we will get to how it works after a while):</p>
+
+        <pre><code class="gmod_wire_e2 hljs">print( random() )</code></pre>
+
+        <p>In the code above, we have a new function,
+          <code class="hljs-inline gmod_wire_e2">random()</code>. It is a function that
+          <em>returns</em> a random number between 0.0 and 1.0. The word return is an important one, I want
+          you to
+          remember this
+          word, as it is a word we are going to use about functions a lot.
+        </p>
+
+        <p>But where does
+          <code class="hljs-inline gmod_wire_e2">print()</code> and
+          <code class="hljs-inline gmod_wire_e2">random()</code> come from? Throughout this whole Expression 2
+          course, we
+          are going to cover a LOT of functions. You can find the
+          functions under the
+          <img src="img/e2/editorbutton8.png">, located in the top right section of the editor.
+        </p>
+      </div>
     </section>
 
     <section id="numbers" class="grid grid-cols-1 xl:grid-cols-section gap-4 my-10">
-      <p>Expression 2 uses the same arithmetic operators as everyone after 2000 B.C. (first written records of
-        their use)
-        has known and loved.
-        We got addition, subtraction, multiplication and division.
-      </p>
-      <div class="card grey darken-4">
-        <div class="card-content asd">
-          <pre><code class="gmod_wire_e2 hljs">10 + 10
-            10 - 10
-            10 * 10
-            10 / 10</code></pre>
-        </div>
+      <div>
+
+        <p>Expression 2 uses the same arithmetic operators as everyone after 2000 B.C. (first written records of
+          their use)
+          has known and loved.
+          We got addition, subtraction, multiplication and division.
+        </p>
+        <pre><code class="gmod_wire_e2 hljs">10 + 10
+        10 - 10
+        10 * 10
+        10 / 10</code></pre>
+        <p>Follow my lead. Open the Expression 2 editor, and click somewhere in the open file.
+          Press <strong>Ctrl + A</strong> to select everything, then delete the selection.</p>
+        <p>In order to print the result of a calculation in chat, just enclose it in <code
+            class="gmod_wire_e2 hljs-inline">print()</code></p>
+
+        <pre><code class="gmod_wire_e2 hljs">print(10 + 10) #prints 20
+              print(20 * (15 - 10)) #prints 100
+              print(-450) #prints -450</code></pre>
       </div>
-      <p>Follow my lead. Open the Expression 2 editor, and click somewhere in the open file.
-        Press <strong>Ctrl + A</strong> to select everything, then delete the selection.</p>
-      <p>In order to print the result of a calculation in chat, just enclose it in <code
-          class="gmod_wire_e2 hljs-inline">print()</code></p>
-      <div class="card grey darken-4">
-        <div class="card-content asd">
-          <pre><code class="gmod_wire_e2 hljs">print(10 + 10) #prints 20
-            print(20 * (15 - 10)) #prints 100
-            print(-450) #prints -450</code></pre>
     </section>
 
     <section id="directives" class="grid grid-cols-1 xl:grid-cols-section gap-4 my-10">
-      <h2>Overview</h2>
+      <div>
 
-      <div class="card grey darken-4">
-        <div class="card-content asd">
-          <pre><code class="gmod_wire_e2 hljs">@name Name of the Expression
-  #[ Sets the name of the Expression chip ]#
-  
-  @inputs 
-  #[ Sets the inputs of the Expression chip ]#
-  
-  @outputs 
-  #[ Sets the outputs of the Expression chip ]#
-  
-  @persist 
+        <h2>Overview</h2>
+
+        <pre><code class="gmod_wire_e2 hljs">@name Name of the Expression
+              #[ Sets the name of the Expression chip ]#
+              
+              @inputs 
+              #[ Sets the inputs of the Expression chip ]#
+              
+              @outputs 
+              #[ Sets the outputs of the Expression chip ]#
+              
+              @persist 
   #[ Variables that should be kept between cycles ]#
   
   @trigger 
   #[ Sets which inputs triggers an
-    execution of the chip, or none ]#
+  execution of the chip, or none ]#
   
   @model "path/to/model"
   #[ Set the model of the expression ]#
   
   @autoupdate
   #[ By having this directive in your expression,
-      you enable it to be updated ]#</code></pre>
-        </div>
+  you enable it to be updated ]#</code></pre>
+
       </div>
+    </section>
 
+    <section id="name" class="grid grid-cols-1 xl:grid-cols-section gap-4 my-10">
+      <div>
 
-      <section id="name" class="grid grid-cols-1 xl:grid-cols-section gap-4 my-10">
-        <h4>@name</h4>
+        <h2>@name</h2>
         <p>The @name directive sets the name of the expression 2 chip. The name is viewed in two places, one
           when hovering
           your mouse over the expression and the other when looking inside the remote uploader. There is a
@@ -720,18 +704,17 @@ Vector = Vector:normalized()</code></pre> -->
         </p>
 
         <img src="img/e2/e2-name.png" alt="">
-        <div class="card grey darken-4">
-          <div class="card-content asd">
-            <pre><code class="gmod_wire_e2 hljs">@name Expression name
-  
-  #prints "Expression name"
-  print(entity():getName())</code></pre>
-          </div>
-        </div>
-      </section>
+        <pre><code class="gmod_wire_e2 hljs">@name Expression name
+            
+            #prints "Expression name"
+            print(entity():getName())</code></pre>
+      </div>
+    </section>
 
-      <section id="inputs" class="grid grid-cols-1 xl:grid-cols-section gap-4 my-10">
-        <h4>@inputs</h4>
+    <section id="inputs" class="grid grid-cols-1 xl:grid-cols-section gap-4 my-10">
+      <div>
+
+        <h2>@inputs</h2>
         <p>The @inputs directive sets the expression's inputs. It is used to wire between your chip and
           other
           wire-compatible
@@ -739,41 +722,39 @@ Vector = Vector:normalized()</code></pre> -->
         </p>
 
         <img src="img/e2/e2-input.png" alt="">
-        <div class="card grey darken-4">
-          <div class="card-content asd">
-            <pre><code class="gmod_wire_e2 hljs">@inputs Button
-  
-  #Check if Button has changed value since last execution
-  if(~Button) {
-    print("Button is pressed or released")
-  }
-  
-  #Check if Button is connected as an input or output
-  if(->Button) {
-    print("Button is connected as an input or output")
-  }</code></pre>
-          </div>
-        </div>
-      </section>
+        <pre><code class="gmod_wire_e2 hljs">@inputs Button
+            
+            #Check if Button has changed value since last execution
+            if(~Button) {
+              print("Button is pressed or released")
+            }
+            
+            #Check if Button is connected as an input or output
+            if(->Button) {
+              print("Button is connected as an input or output")
+            }</code></pre>
+      </div>
+    </section>
 
-      <section id="outputs" class="grid grid-cols-1 xl:grid-cols-section gap-4 my-10">
-        <h4>@outputs</h4>
+    <section id="outputs" class="grid grid-cols-1 xl:grid-cols-section gap-4 my-10">
+      <div>
+
+        <h2>@outputs</h2>
         <p>The @outputs directive sets the expression's outputs. What differs input and output is that input
           takes in data
           from outputs, while output pushes data to other inputs.</p>
 
         <img src="img/e2/e2-output.png" alt="">
-        <div class="card grey darken-4">
-          <div class="card-content asd">
-            <pre><code class="gmod_wire_e2 hljs">@outputs Screen
-  
-  Screen = 5</code></pre>
-          </div>
-        </div>
-      </section>
+        <pre><code class="gmod_wire_e2 hljs">@outputs Screen
+          
+          Screen = 5</code></pre>
+      </div>
+    </section>
 
-      <section id="persist" class="grid grid-cols-1 xl:grid-cols-section gap-4 my-10">
-        <h4>@persist</h4>
+    <section id="persist" class="grid grid-cols-1 xl:grid-cols-section gap-4 my-10">
+      <div>
+
+        <h2>@persist</h2>
         <p>The @persist directive exists because of how Expression 2 variables work. When a variable is
           declared
           in the
@@ -784,66 +765,63 @@ Vector = Vector:normalized()</code></pre> -->
           removing
           the #.
         </p>
-        <div class="card grey darken-4">
-          <div class="card-content asd">
-            <pre><code class="gmod_wire_e2 hljs">#@persist Number
-  #interval() tells Expression 2 to run the code
-  #once every x milliseconds (1 second in this example)
-  interval(1000)
-  
-  #first() is a function that returns true (1) if
-  #this is the first time the code is executed after upload.
-  #The second time and onwards, first() will not be true.
-  #Thus, Number = 5 will only be executed once.
-  if(first()) {
-    Number = 5
-  }
-  
-  print(Number)</code></pre>
-          </div>
-        </div>
-      </section>
+        <pre><code class="gmod_wire_e2 hljs">#@persist Number
+        #interval() tells Expression 2 to run the code
+        #once every x milliseconds (1 second in this example)
+        interval(1000)
+        
+        #first() is a function that returns true (1) if
+        #this is the first time the code is executed after upload.
+        #The second time and onwards, first() will not be true.
+        #Thus, Number = 5 will only be executed once.
+        if(first()) {
+          Number = 5
+        }
+        
+        print(Number)</code></pre>
+      </div>
+    </section>
 
-      <section id="trigger" class="grid grid-cols-1 xl:grid-cols-section gap-4 my-10">
-        <h4>@trigger</h4>
+    <section id="trigger" class="grid grid-cols-1 xl:grid-cols-section gap-4 my-10">
+      <div>
+
+        <h2>@trigger</h2>
         <p>The @trigger directive sets what inputs should trigger an execution.</p>
 
-        <div class="card grey darken-4">
-          <div class="card-content asd">
-            <pre><code class="gmod_wire_e2 hljs">#sets the expression to not execute from any inputs
-  @trigger none
-  
-  #sets the expression to execute on all inputs (default)
-  @trigger all
-  
-  #sets the expression to execute only on specified inputs
-  @inputs A B C D E
-  @trigger A B E</code></pre>
-          </div>
-        </div>
-      </section>
+        <pre><code class="gmod_wire_e2 hljs">#sets the expression to not execute from any inputs
+          @trigger none
+          
+          #sets the expression to execute on all inputs (default)
+          @trigger all
+          
+          #sets the expression to execute only on specified inputs
+          @inputs A B C D E
+          @trigger A B E</code></pre>
+      </div>
+    </section>
 
-      <section id="model" class="grid grid-cols-1 xl:grid-cols-section gap-4 my-10">
-        <h4>@model</h4>
+    <section id="model" class="grid grid-cols-1 xl:grid-cols-section gap-4 my-10">
+      <div>
+
+        <h2>@model</h2>
         <p>The @model directive sets what model the expression should be. The easiest way to get a model
           name is
           to simply
-          open the spawn menu > find the model you want the expression to be > right click > copy to
+          open the spawnmenu > find the model you want the expression to be > right click > copy to
           clipboard
         </p>
 
         <img src="img/e2/e2-model.png" alt="">
         <br>
         <img src="img/e2/e2-model2.png" alt="">
-        <div class="card grey darken-4">
-          <div class="card-content asd">
-            <pre><code class="gmod_wire_e2 hljs">@model models/props_c17/oildrum001_explosive.mdl</code></pre>
-          </div>
-        </div>
-      </section>
+        <pre><code class="gmod_wire_e2 hljs">@model models/props_c17/oildrum001_explosive.mdl</code></pre>
+      </div>
+    </section>
 
-      <section id="autoupdate" class="grid grid-cols-1 xl:grid-cols-section gap-4 my-10">
-        <h4>@autoupdate</h4>
+    <section id="autoupdate" class="grid grid-cols-1 xl:grid-cols-section gap-4 my-10">
+      <div>
+
+        <h2>@autoupdate</h2>
         <p>The @autoupdate directive is useful if you have a contraption that you save as a duplicate. When
           an
           expression
@@ -854,27 +832,19 @@ Vector = Vector:normalized()</code></pre> -->
         <p>The first thing you do is make an expression that looks like this, and
           <em>save it</em>:
         </p>
-        <div class="card grey darken-4">
-          <div class="card-content asd">
-            <pre><code class="gmod_wire_e2 hljs">@autoupdate
-  
-  if(first()) {
-      print("I am old")
-  }</code></pre>
-          </div>
-        </div>
+        <pre><code class="gmod_wire_e2 hljs">@autoupdate
+          
+          if(first()) {
+            print("I am old")
+          }</code></pre>
         <p>Then you open the code (not on the expression you placed!) and update the code with this, then
           save:
         </p>
-        <div class="card grey darken-4">
-          <div class="card-content asd">
-            <pre><code class="gmod_wire_e2 hljs">@autoupdate
-    
-  if(first()) {
-      print("I am new!")
-  }</code></pre>
-          </div>
-        </div>
+        <pre><code class="gmod_wire_e2 hljs">@autoupdate
+                
+                if(first()) {
+                  print("I am new!")
+                }</code></pre>
         <p>Now, the expression you placed on the ground has the old code. The new code is saved in the SAME
           FILE
           as the
@@ -884,43 +854,44 @@ Vector = Vector:normalized()</code></pre> -->
           paste it somewhere else with left click. You never changed the contents of the expression on the
           ground, but
           the @autoupdate directive made the expression fetch the new version of the code.</p>
-      </section>
+      </div>
+    </section>
 
-      <section id="info" class="grid grid-cols-1 xl:grid-cols-section gap-4 my-10">
+    <section id="info" class="grid grid-cols-1 xl:grid-cols-section gap-4 my-10">
+      <div>
+
         <h2>Good to know</h2>
         <p>There are some properties about directives that are good to know.</p>
         <p>1. You can completely omit directives, it's not required to have them in your code.</p>
         <p>2. You can have several directives of the same kind, with the exception of @name, @trigger and
           @model. It is
           possible to have more than one @autoupdate, but that is pointless.</p>
-        <div class="card grey darken-4">
-          <div class="card-content asd">
-            <pre><code class="gmod_wire_e2 hljs">@inputs  A B C
-  @inputs  D E F
-  @inputs  G H I
-  @outputs J K L
-  @outputs M N O
-  @outputs P Q R
-  @persist S T U
-  @persist V W X</code></pre>
-          </div>
-        </div>
+        <pre><code class="gmod_wire_e2 hljs">@inputs  A B C
+                @inputs  D E F
+                @inputs  G H I
+                @outputs J K L
+                @outputs M N O
+                @outputs P Q R
+                @persist S T U
+                @persist V W X</code></pre>
         <p>3. You can group variables together to define their type. Since you can define more than one
           @inputs,
           @outputs
           and @persist, the two properties combined makes a clean look on the top of your code</p>
-        <div class="card grey darken-4">
-          <div class="card-content asd">
-            <pre><code class="gmod_wire_e2 hljs">@persist [A B C D]:string [E F G]:vector
-  
-  @persist [A B C D E F G]:string
-  @persist [H I J K L M N]:vector</code></pre>
-          </div>
-        </div>
-      </section>
+        <pre><code class="gmod_wire_e2 hljs">@persist [A B C D]:string [E F G]:vector
+              
+              @persist [A B C D E F G]:string
+              @persist [H I J K L M N]:vector</code></pre>
+      </div>
+    </section>
 
-      <section id="quiz-directives" class="grid grid-cols-1 xl:grid-cols-section gap-4 my-10">
+    <section id="quiz-directives" class="grid grid-cols-1 xl:grid-cols-section gap-4 my-10">
+      <div>
+
         <h1 class="center">It's QUIZ TIME</h1>
+
+        <lw-quizlet type="multiplechoice" question="Which of these will trigger an execution?"
+          alternatives="XA;OB;XC;OD;XE;"></lw-quizlet>
 
         <div class="carousel carousel-slider">
           <div class="carousel-item" href="#one!">
@@ -932,8 +903,8 @@ Vector = Vector:normalized()</code></pre> -->
                 <div class="card grey darken-4 overflow-fix">
                   <div class="card-content asd">
                     <pre><code class="gmod_wire_e2 hljs">@inputs A B C D E F G H
-  @trigger B D G H
-                          </code></pre>
+                    @trigger B D G H
+                  </code></pre>
                   </div>
                 </div>
               </div>
@@ -996,14 +967,13 @@ Vector = Vector:normalized()</code></pre> -->
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
 
     </section>
 
     <section>
-      <section>
-        - Write all runOnX() inside if(first()) (https://github.com/adosikas/wire/wiki/E2:-Triggers)
-      </section>
+      - Write all runOnX() inside if(first()) (https://github.com/adosikas/wire/wiki/E2:-Triggers)
     </section>
   </main>
 </body>

@@ -14,8 +14,16 @@ h2 {
   font-family: "Intro Black";
 }
 
+h1 {
+  @apply text-3xl;
+}
+
 p {
   font-size: 21px;
+}
+
+p > a {
+  @apply text-yellow-400;
 }
 
 .navlink {
