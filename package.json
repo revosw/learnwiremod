@@ -6,7 +6,6 @@
   "scripts": {
     "build:css": "postcss src/consolidate.css -o public/css/styles.css --env production",
     "build:css-dev": "postcss src/consolidate.css -o public/css/styles.css",
-    "postinstall": "copy node_modules/highlight.js/lib/core.js public/js/lib/highlight.js"
   },
   "repository": {
     "type": "git",
