@@ -5,26 +5,11 @@
 	your mouse to get that blue background color of the selected text.
 */
 
-::selection {
-  background-color: rgba(79, 146, 255, 0.3);
-}
 
-.hljs {
-  color: rgb(160, 160, 240);
-  /* background-color: #212121; */
-  @apply bg-darkgray
-}
 
-.hljs-inline {
-  color: rgb(160, 160, 240);
-  /* display: inline-block;
-  background-color: #212121;
-  padding: 0 2px;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
-  border-radius: 4px; */
-
-  @apply inline-block bg-darkgray shadow-md px-2 rounded-md;
-}
+/* .hljs {
+  @apply bg-darkgray rounded-md text-base p-1;
+} */
 
 .hljs-ppcommand {
   color: rgb(240, 96, 240);
@@ -62,14 +47,6 @@
   color: rgb(240, 160, 96);
 }
 
-.hljs-operator {
-  color: rgb(255, 255, 255);
-}
-
-.hljs-symbol {
-  color: #fff;
-}
-
-/*.hljs-function {
+.hljs-function {
 	color: rgb(160,160,240);
-}*/
+}

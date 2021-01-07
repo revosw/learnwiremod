@@ -1,40 +1,31 @@
 import { hashCode } from "../lib/hash.js";
 
+const template = document.createElement("template");
+template.innerHTML = `
+    <div class="flex flex-col w-full my-4 shadow-md">
+        <link rel="stylesheet" href="css/styles.css">
+        <div class="bg-gray-700 text-gray-100 p-4 rounded-t-md"><h2 id="question"></h2></div>
+        <div class="bg-darkgray">
+            <form id="form" class="flex flex-col m-5"></form>
+        </div>
+        <div id="bottom" class="bg-darkgray rounded-b-md flex justify-between items-center p-4">
+            <input type="submit" id="submit" value="Submit" class="bg-gray-700 px-4 py-1 my-2 mr-4 self-start shadow-md">
+            <p id="message" class=""></p>
+        </div>
+    </div>
+`;
+
 class Quizlet extends HTMLElement {
     constructor() {
         super();
 
         this.attachShadow({ mode: "open" });
+        this.shadowRoot.appendChild(template.cloneNode(true));
 
-        this.shadowRoot.innerHTML = `
-        <div class="flex flex-col w-full my-4 shadow-md">
-            <link rel="stylesheet" href="css/styles.css">
-            <div class="bg-gray-700 text-gray-100 p-4 rounded-t-md">${this.getAttribute("question")}</div>
-            <div class="bg-darkgray">
-                <form id="form" class="flex flex-col m-5"></form>
-            </div>
-            <div id="bottom" class="bg-darkgray rounded-b-md flex justify-between items-center p-4">
-                <input type="submit" id="submit" value="Submit" class="bg-gray-700 px-4 py-1 my-2 mr-4 self-start shadow-md">
-                <p id="message" class=""></p>
-            </div>
-        </div>`;
+        console.log(this.shadowRoot);
+        console.log(this.shadowRoot.querySelector("div"));
 
-        const validate = () => {
-            const messageElement = this.shadowRoot.querySelector("#message");
-            const checkedIncorrectAnswers = this.shadowRoot.querySelector(":not([data-answer]):checked") !== null
-            const notCheckedCorrectAnswers = this.shadowRoot.querySelector("[data-answer]:not(:checked)") !== null
-
-            if (checkedIncorrectAnswers || notCheckedCorrectAnswers) {
-                messageElement.innerText = this.getAttribute("incorrect");
-                messageElement.classList.add("text-red-300");
-                messageElement.classList.remove("text-green-300");
-            }
-            else {
-                messageElement.innerText = this.getAttribute("correct");
-                messageElement.classList.add("text-green-300");
-                messageElement.classList.remove("text-red-300");
-            }
-        }
+        this.shadowRoot.querySelector("*").textContent = this.getAttribute("question");
 
         const type = this.getAttribute("type");
         if (type === "code") {
@@ -51,6 +42,27 @@ class Quizlet extends HTMLElement {
         } else {
             throw `the type attribute of the quizlet has to be either code, multiplechoice or singlechoice`;
         }
+    }
+
+    validate() {
+        const messageElement = this.shadowRoot.querySelector("#message");
+        const checkedIncorrectAnswers = this.shadowRoot.querySelector(":not([data-answer]):checked") !== null
+        const notCheckedCorrectAnswers = this.shadowRoot.querySelector("[data-answer]:not(:checked)") !== null
+
+        if (checkedIncorrectAnswers || notCheckedCorrectAnswers) {
+            messageElement.innerText = this.getAttribute("incorrect");
+            messageElement.classList.add("text-red-300");
+            messageElement.classList.remove("text-green-300");
+        }
+        else {
+            messageElement.innerText = this.getAttribute("correct");
+            messageElement.classList.add("text-green-300");
+            messageElement.classList.remove("text-red-300");
+        }
+    }
+
+    connectedCallback() {
+        this.shadowRoot.querySelector("#submit").addEventListener("click", validate);
     }
 
     constructCodeQuizlet() {

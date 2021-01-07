@@ -19,7 +19,7 @@ h1 {
 }
 
 p {
-  font-size: 21px;
+  @apply text-xl;
 }
 
 p > a {
@@ -31,13 +31,18 @@ p > a {
 }
 
 .active {
-  @apply border-blue-600 !important;
+  @apply border-blue-600;
 }
 
-.codeblock {
-  @apply self-start shadow-lg p-3 text-sm w-3/5 rounded-md top-5 sticky hljs;
+p > code,
+pre {
+  @apply bg-darkgray shadow-md rounded-md text-base p-1;
 }
 
 #navMain::-webkit-scrollbar {
   width: 0;
+}
+
+::selection {
+  @apply bg-gray-400;
 }

@@ -7,10 +7,6 @@
   <title>Expression 2 - Learn Wiremod</title>
   <link rel="stylesheet" href="css/styles.css">
   <script type="module" src="js/app.js"></script>
-  <script src="js/lib/highlight.pack.js"></script>
-  <script>
-    hljs.initHighlightingOnLoad();
-  </script>
 </head>
 
 <body class="md:grid grid-cols-main-layout gap-x-24 bg-gray-800 text-gray-100">
@@ -225,7 +221,7 @@
 
     <section id="quiz" class="grid grid-cols-1 xl:grid-cols-section gap-4 my-10">
       <!--
-      <pre class="codeblock"><code class="gmod_wire_e2 hljs">@name Hello World
+      <code>@name Hello World
 @inputs A B
 @outputs Add Sub Mul Div
 @outputs GreaterThan Highest Lowest Overflow Overflow Overflow Overflow
@@ -248,9 +244,9 @@ Highest = B, Lowest = A
 
 Vector = vec(A, B, 0)
 Vector = Vector + vec(0, 0, A + B)
-Vector = Vector:normalized()</code></pre> -->
+Vector = Vector:normalized()</code> -->
       <div>
-        <lw-quizlet type="singlechoice" question="Are you ready to learn about Expression 2?"
+        <!-- <lw-quizlet type="singlechoice" question="Are you ready to learn about Expression 2?"
           alternatives="XYeah;OHell yeah" incorrect="Speak up, son" correct="Let's get started">
         </lw-quizlet>
 
@@ -258,12 +254,12 @@ Vector = Vector:normalized()</code></pre> -->
           alternatives="OWiremod discord server;OWiremod subreddit;OWiremod discussion board;XWiremod forums"
           incorrect="The wiremod forums are down, however you can visit the discord server, subreddit and discussion board anytime"
           correct="That's right, you know where to go when you need some help">
-        </lw-quizlet>
+        </lw-quizlet> -->
       </div>
 
       <div>
-        <lw-quizlet type="code" question="Finish the implementation so that you print the word 'hello world'">
-          <pre slot="start"><code>#@persist Number
+        <!-- <lw-quizlet type="code" question="Finish the implementation so that you print the word 'hello world'">
+          <code>#@persist Number
 #interval() tells Expression 2 to run the code
 #once every x milliseconds (1 second in this example)
 interval(1000)
@@ -276,20 +272,98 @@ if(first()) {
   Number = 5
 }
 
-print(Number)</code></pre>
-          <pre slot="solution"><code>#@persist Number
+print(Number)</code>
+          <code>#@persist Number
 #interval() tells Expression 2 to run the code
 #once every x milliseconds (1 second in this example)
 interval(1000)
 
 print("Hello world")
 
-print(Number)</code></pre>
-        </lw-quizlet>
+print(Number)</code>
+        </lw-quizlet> -->
       </div>
     </section>
 
     <section id="tool" class="grid grid-cols-1 xl:grid-cols-section gap-4 my-10">
+      <div></div>
+      <div>
+        <pre><code>@name Sudoku./129q--<>?
+@outputs CharX CharY Char CharParam Clk
+@persist Board:array CharQueue:string CharXQueue:array CharYQueue:array
+#include "inc/sudoku"
+
+function writeToScreen(X, Y, InputChar:string) {
+    print("X is " + X)
+    print("Y is " + Y)
+    print("InputChar is " + InputChar)
+    print("CharQueue is " + CharQueue)
+    print("CharXQueue is" + CharXQueue:concat())
+    print("CharYQueue is" + CharYQueue:concat())
+    CharQueue += InputChar
+    CharXQueue:pushNumber(X)
+    CharYQueue:pushNumber(Y)
+}
+
+!%&/()=?@${[]}
+
+
+if(first()) {
+    runOnHTTP(1)
+    runOnChat(1)
+    
+    if (!httpCanRequest()) {
+        error("HTTP is disabled - cannot fetch sudoku board")
+    }
+    [string]
+    
+    writeToScreen(0,2,"1")
+    writeToScreen(2,0,"1")
+    writeToScreen(0,3,"2")
+    writeToScreen(3,0,"2")
+    writeToScreen(0,4,"3")
+    writeToScreen(4,0,"3")
+}
+elseif(clk("nextChar")) {
+    if (CharQueue != "") {
+        #Copy-by-value or copy-by-reference?
+        Char = toByte(CharQueue[1])
+        CharQueue = CharQueue:replaceRE("^%w", "")
+    }
+}
+
+function place(X, Y, C:string) {
+    writeToScreen(X, Y, C)    
+}
+
+function drawBoard() {
+    # Position numbers in column and row
+    writeToScreen(0,0,"+")
+}
+
+function parseInput(Input:string) {
+    
+}
+
+if (chatClk(owner())) {
+    hideChat(1)
+    
+    if (owner():lastSaid()[1] == "!") {
+        parseInput(owner():lastSaid():sub(2))
+    }
+}
+
+if(httpClk()) {
+    Tbl = jsonDecode("{\"test\":55}")
+    
+    printTable(Tbl:add(table("one",15)))
+    
+    T = jsonDecode(httpData())
+}
+
+
+</code></pre>
+      </div>
       <div>
         <h1 class="text-3xl">Exploring the tool</h1>
 
@@ -486,7 +560,7 @@ print(Number)</code></pre>
       <div>
         <figure>
           <img src="img/e2/settings-editor1.gif" alt="">
-          <figcaption>Auto completion both helps you in correctly typing functions, and discovering other functions.
+          <figcaption>Auto completion both helps you in correctly typing functions, and discovering new functions.
           </figcaption>
         </figure>
       </div>
@@ -584,8 +658,8 @@ print(Number)</code></pre>
         <p>Finally we are going to start learning Expression 2! Let's start </p>
 
         <p>
-          <code class="hljs-inline gmod_wire_e2">"Hello World!"</code> is a string.
-          <code class="hljs-inline gmod_wire_e2">"#123"</code> is a string. Why? Because the characters are
+          <code>"Hello World!"</code> is a string.
+          <code>"#123"</code> is a string. Why? Because the characters are
           <em>delimited by</em>, or contained within, a set of quotation marks. But there is a catch, which is
           why there
           is an asterisk.
@@ -593,12 +667,12 @@ print(Number)</code></pre>
         </p>
 
         <p>Now we just need the final piece in our "Hello World!"-formula, namely the
-          <code class="hljs-inline gmod_wire_e2">print()</code> function (don't worry, I'll explain functions
+          <code>print()</code> function (don't worry, I'll explain functions
           later). It
           now looks like this:
         </p>
 
-        <pre><code class="gmod_wire_e2 hljs">print("Hello World!")</code></pre>
+        <pre><code>print("Hello World!")</code></pre>
 
         <p>And we got ourselves a salutation to mother earth. Beautiful.</p>
         <img src="img/e2/helloworld.png" alt="" class="responsive-img">
@@ -607,18 +681,18 @@ print(Number)</code></pre>
 
         <p>Let's do some more printing. You can print numbers:</p>
 
-        <pre><code class="gmod_wire_e2 hljs">print(12345)</code></pre>
+        <pre><code>print(12345)</code></pre>
 
         <p>You can do math inside print:</p>
 
-        <pre><code class="gmod_wire_e2 hljs">print( 10 * (50 - 40) )</code></pre>
+        <pre><code>print( 10 * (50 - 40) )</code></pre>
 
         <p>You can print other functions (we will get to how it works after a while):</p>
 
-        <pre><code class="gmod_wire_e2 hljs">print( random() )</code></pre>
+        <pre><code>print( random() )</code></pre>
 
         <p>In the code above, we have a new function,
-          <code class="hljs-inline gmod_wire_e2">random()</code>. It is a function that
+          <code>random()</code>. It is a function that
           <em>returns</em> a random number between 0.0 and 1.0. The word return is an important one, I want
           you to
           remember this
@@ -626,8 +700,8 @@ print(Number)</code></pre>
         </p>
 
         <p>But where does
-          <code class="hljs-inline gmod_wire_e2">print()</code> and
-          <code class="hljs-inline gmod_wire_e2">random()</code> come from? Throughout this whole Expression 2
+          <code>print()</code> and
+          <code>random()</code> come from? Throughout this whole Expression 2
           course, we
           are going to cover a LOT of functions. You can find the
           functions under the
@@ -644,18 +718,17 @@ print(Number)</code></pre>
           has known and loved.
           We got addition, subtraction, multiplication and division.
         </p>
-        <pre><code class="gmod_wire_e2 hljs">10 + 10
-        10 - 10
-        10 * 10
-        10 / 10</code></pre>
+        <pre><code>10 + 10
+10 - 10
+10 * 10
+10 / 10</code></pre>
         <p>Follow my lead. Open the Expression 2 editor, and click somewhere in the open file.
           Press <strong>Ctrl + A</strong> to select everything, then delete the selection.</p>
-        <p>In order to print the result of a calculation in chat, just enclose it in <code
-            class="gmod_wire_e2 hljs-inline">print()</code></p>
+        <p>In order to print the result of a calculation in chat, just enclose it in <code>print()</code></p>
 
-        <pre><code class="gmod_wire_e2 hljs">print(10 + 10) #prints 20
-              print(20 * (15 - 10)) #prints 100
-              print(-450) #prints -450</code></pre>
+        <pre><code>print(10 + 10) #prints 20
+print(20 * (15 - 10)) #prints 100
+print(-450) #prints -450</code></pre>
       </div>
     </section>
 
@@ -664,28 +737,28 @@ print(Number)</code></pre>
 
         <h2>Overview</h2>
 
-        <pre><code class="gmod_wire_e2 hljs">@name Name of the Expression
-              #[ Sets the name of the Expression chip ]#
-              
-              @inputs 
-              #[ Sets the inputs of the Expression chip ]#
-              
-              @outputs 
-              #[ Sets the outputs of the Expression chip ]#
-              
-              @persist 
-  #[ Variables that should be kept between cycles ]#
-  
-  @trigger 
-  #[ Sets which inputs triggers an
-  execution of the chip, or none ]#
-  
-  @model "path/to/model"
-  #[ Set the model of the expression ]#
-  
-  @autoupdate
-  #[ By having this directive in your expression,
-  you enable it to be updated ]#</code></pre>
+        <pre><code>@name Name of the Expression
+#[ Sets the name of the Expression chip ]#
+
+@inputs 
+#[ Sets the inputs of the Expression chip ]#
+
+@outputs 
+#[ Sets the outputs of the Expression chip ]#
+
+@persist 
+#[ Variables that should be kept between cycles ]#
+
+@trigger 
+#[ Sets which inputs triggers an
+execution of the chip, or none ]#
+
+@model "path/to/model"
+#[ Set the model of the expression ]#
+
+@autoupdate
+#[ By having this directive in your expression,
+you enable it to be updated ]#</code></pre>
 
       </div>
     </section>
@@ -698,16 +771,16 @@ print(Number)</code></pre>
           when hovering
           your mouse over the expression and the other when looking inside the remote uploader. There is a
           method
-          <code class="hljs-inline gmod_wire_e2">entity:getName()</code> which is solely used for getting
+          <code>entity:getName()</code> which is solely used for getting
           any
           expression's name.
         </p>
 
         <img src="img/e2/e2-name.png" alt="">
-        <pre><code class="gmod_wire_e2 hljs">@name Expression name
-            
-            #prints "Expression name"
-            print(entity():getName())</code></pre>
+        <pre><code>@name Expression name
+
+#prints "Expression name"
+print(entity():getName())</code></pre>
       </div>
     </section>
 
@@ -722,17 +795,17 @@ print(Number)</code></pre>
         </p>
 
         <img src="img/e2/e2-input.png" alt="">
-        <pre><code class="gmod_wire_e2 hljs">@inputs Button
-            
-            #Check if Button has changed value since last execution
-            if(~Button) {
-              print("Button is pressed or released")
-            }
-            
-            #Check if Button is connected as an input or output
-            if(->Button) {
-              print("Button is connected as an input or output")
-            }</code></pre>
+        <pre><code>@inputs Button
+
+#Check if Button has changed value since last execution
+if(~Button) {
+  print("Button is pressed or released")
+}
+
+#Check if Button is connected as an input or output
+if(->Button) {
+  print("Button is connected as an input or output")
+}</code></pre>
       </div>
     </section>
 
@@ -745,9 +818,9 @@ print(Number)</code></pre>
           from outputs, while output pushes data to other inputs.</p>
 
         <img src="img/e2/e2-output.png" alt="">
-        <pre><code class="gmod_wire_e2 hljs">@outputs Screen
-          
-          Screen = 5</code></pre>
+        <pre><code>@outputs Screen
+
+Screen = 5</code></pre>
       </div>
     </section>
 
@@ -765,20 +838,20 @@ print(Number)</code></pre>
           removing
           the #.
         </p>
-        <pre><code class="gmod_wire_e2 hljs">#@persist Number
-        #interval() tells Expression 2 to run the code
-        #once every x milliseconds (1 second in this example)
-        interval(1000)
-        
-        #first() is a function that returns true (1) if
-        #this is the first time the code is executed after upload.
-        #The second time and onwards, first() will not be true.
-        #Thus, Number = 5 will only be executed once.
-        if(first()) {
-          Number = 5
-        }
-        
-        print(Number)</code></pre>
+        <pre><code>#@persist Number
+#interval() tells Expression 2 to run the code
+#once every x milliseconds (1 second in this example)
+interval(1000)
+
+#first() is a function that returns true (1) if
+#this is the first time the code is executed after upload.
+#The second time and onwards, first() will not be true.
+#Thus, Number = 5 will only be executed once.
+if(first()) {
+  Number = 5
+}
+
+print(Number)</code></pre>
       </div>
     </section>
 
@@ -788,15 +861,15 @@ print(Number)</code></pre>
         <h2>@trigger</h2>
         <p>The @trigger directive sets what inputs should trigger an execution.</p>
 
-        <pre><code class="gmod_wire_e2 hljs">#sets the expression to not execute from any inputs
-          @trigger none
-          
-          #sets the expression to execute on all inputs (default)
-          @trigger all
-          
-          #sets the expression to execute only on specified inputs
-          @inputs A B C D E
-          @trigger A B E</code></pre>
+        <pre><code>#sets the expression to not execute from any inputs
+@trigger none
+
+#sets the expression to execute on all inputs (default)
+@trigger all
+
+#sets the expression to execute only on specified inputs
+@inputs A B C D E
+@trigger A B E</code></pre>
       </div>
     </section>
 
@@ -814,7 +887,7 @@ print(Number)</code></pre>
         <img src="img/e2/e2-model.png" alt="">
         <br>
         <img src="img/e2/e2-model2.png" alt="">
-        <pre><code class="gmod_wire_e2 hljs">@model models/props_c17/oildrum001_explosive.mdl</code></pre>
+        <pre><code>@model models/props_c17/oildrum001_explosive.mdl</code></pre>
       </div>
     </section>
 
@@ -832,19 +905,19 @@ print(Number)</code></pre>
         <p>The first thing you do is make an expression that looks like this, and
           <em>save it</em>:
         </p>
-        <pre><code class="gmod_wire_e2 hljs">@autoupdate
-          
-          if(first()) {
-            print("I am old")
-          }</code></pre>
+        <pre><code>@autoupdate
+
+if(first()) {
+  print("I am old")
+}</code></pre>
         <p>Then you open the code (not on the expression you placed!) and update the code with this, then
           save:
         </p>
-        <pre><code class="gmod_wire_e2 hljs">@autoupdate
-                
-                if(first()) {
-                  print("I am new!")
-                }</code></pre>
+        <pre><code>@autoupdate
+
+if(first()) {
+  print("I am new!")
+}</code></pre>
         <p>Now, the expression you placed on the ground has the old code. The new code is saved in the SAME
           FILE
           as the
@@ -866,22 +939,22 @@ print(Number)</code></pre>
         <p>2. You can have several directives of the same kind, with the exception of @name, @trigger and
           @model. It is
           possible to have more than one @autoupdate, but that is pointless.</p>
-        <pre><code class="gmod_wire_e2 hljs">@inputs  A B C
-                @inputs  D E F
-                @inputs  G H I
-                @outputs J K L
-                @outputs M N O
-                @outputs P Q R
-                @persist S T U
-                @persist V W X</code></pre>
+        <pre><code>@inputs  A B C
+@inputs  D E F
+@inputs  G H I
+@outputs J K L
+@outputs M N O
+@outputs P Q R
+@persist S T U
+@persist V W X</code></pre>
         <p>3. You can group variables together to define their type. Since you can define more than one
           @inputs,
           @outputs
           and @persist, the two properties combined makes a clean look on the top of your code</p>
-        <pre><code class="gmod_wire_e2 hljs">@persist [A B C D]:string [E F G]:vector
-              
-              @persist [A B C D E F G]:string
-              @persist [H I J K L M N]:vector</code></pre>
+        <pre><code>@persist [A B C D]:string [E F G]:vector
+
+@persist [A B C D E F G]:string
+@persist [H I J K L M N]:vector</code></pre>
       </div>
     </section>
 
@@ -890,83 +963,62 @@ print(Number)</code></pre>
 
         <h1 class="center">It's QUIZ TIME</h1>
 
-        <lw-quizlet type="multiplechoice" question="Which of these will trigger an execution?"
-          alternatives="XA;OB;XC;OD;XE;"></lw-quizlet>
+        <!-- <lw-quizlet type="multiplechoice" question="Which of these will trigger an execution?"
+          alternatives="XA;OB;XC;OD;XE;"></lw-quizlet> -->
 
-        <div class="carousel carousel-slider">
-          <div class="carousel-item" href="#one!">
-            <div class="row">
-              <h5 class="center">Which of the inputs will trigger an execution?</h5>
-            </div>
-            <div class="row">
-              <div class="col s12 m5 push-m6">
-                <div class="card grey darken-4 overflow-fix">
-                  <div class="card-content asd">
-                    <pre><code class="gmod_wire_e2 hljs">@inputs A B C D E F G H
+
+        <h5 class="center">Which of the inputs will trigger an execution?</h5>
+        <code>@inputs A B C D E F G H
                     @trigger B D G H
-                  </code></pre>
-                  </div>
-                </div>
-              </div>
-              <div class="col m4 pull-m4">
-                <form>
-                  <div class="col m5">
-                    <p>
-                      <input name="q1" type="checkbox" />
-                      <label for="1">A</label>
+                  </code>
+        <p>
+          <input name="q1" type="checkbox" />
+          <label for="1">A</label>
 
-                    </p>
-                    <p>
-                      <input name="q1" type="checkbox" />
-                      <label for="3">C</label>
+        </p>
+        <p>
+          <input name="q1" type="checkbox" />
+          <label for="3">C</label>
 
-                    </p>
-                    <p>
-                      <input name="q1" type="checkbox" />
-                      <label for="5">E</label>
-                    </p>
-                    <p>
-                      <input name="q1" type="checkbox" data-answer />
-                      <label for="7">G</label>
-                    </p>
-                  </div>
-                  <div class="col m7">
-                    <p>
-                      <input name="q1" type="checkbox" data-answer />
-                      <label for="2">B</label>
-                    </p>
-                    <p>
-                      <input name="q1" type="checkbox" data-answer />
-                      <label for="4">D</label>
+        </p>
+        <p>
+          <input name="q1" type="checkbox" />
+          <label for="5">E</label>
+        </p>
+        <p>
+          <input name="q1" type="checkbox" data-answer />
+          <label for="7">G</label>
+        </p>
+        <p>
+          <input name="q1" type="checkbox" data-answer />
+          <label for="2">B</label>
+        </p>
+        <p>
+          <input name="q1" type="checkbox" data-answer />
+          <label for="4">D</label>
 
-                    </p>
-                    <p>
-                      <input name="q1" type="checkbox" />
-                      <label for="6">F</label>
-                    </p>
-                    <p>
-                      <input name="q1" type="checkbox" data-answer />
-                      <label for="8">H</label>
-                    </p>
-                  </div>
-                  <p>
-                    <button class="btn" type="submit">1st place</button>
-                  </p>
-                </form>
-                <p class="wrong">
-                  Remember that even though default behavior is that all inputs are triggered,
-                  with
-                  the @trigger directive only the set inputs
-                  makes the expression execute
-                </p>
-                <p class="correct">
-                  <a target="_blank" href="https://www.youtube.com/watch?v=h6DtVHqyYts">You're
-                    winner</a>
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
+        </p>
+        <p>
+          <input name="q1" type="checkbox" />
+          <label for="6">F</label>
+        </p>
+        <p>
+          <input name="q1" type="checkbox" data-answer />
+          <label for="8">H</label>
+        </p>
+        <p>
+          <button class="btn" type="submit">1st place</button>
+        </p>
+        <p class="wrong">
+          Remember that even though default behavior is that all inputs are triggered,
+          with
+          the @trigger directive only the set inputs
+          makes the expression execute
+        </p>
+        <p class="correct">
+          <a target="_blank" href="https://www.youtube.com/watch?v=h6DtVHqyYts">You're
+            winner</a>
+        </p>
       </div>
     </section>
 
