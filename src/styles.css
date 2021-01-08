@@ -19,7 +19,7 @@ h1 {
 }
 
 p {
-  @apply text-xl;
+  @apply text-xl mb-4;
 }
 
 p > a {
@@ -34,13 +34,25 @@ p > a {
   @apply border-blue-600;
 }
 
+section {
+  @apply grid grid-cols-1 xl:grid-cols-section gap-4 my-10;
+}
+
+section > div > img {
+  @apply shadow-md rounded-md;
+}
+
 p > code,
 pre {
   @apply bg-darkgray shadow-md rounded-md text-base p-1;
 }
 
-#navMain::-webkit-scrollbar {
-  width: 0;
+pre {
+  @apply relative mb-4
+}
+
+pre > span {
+  @apply absolute top-2 right-2 text-2xl
 }
 
 ::selection {

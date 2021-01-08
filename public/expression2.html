@@ -73,40 +73,37 @@
         <a class="navlink" href="#tool">Exploring the tool</a>
         <ul class="text-xs text-gray-400">
           <li>
-            <a class="navlink" href="#spawnmenu">Finding it in the menu</a>
+            <a class="navlink" href="#spawnmenu">In the spawnmenu</a>
           </li>
           <li>
             <a class="navlink" href="#overview">Editor overview</a>
           </li>
           <li>
-            <a class="navlink" href="#buttons">Button legend</a>
+            <a class="navlink" href="#settings-editor">Editor settings</a>
           </li>
           <li>
-            <a class="navlink" href="#settings-editor">Settings - Editor</a>
+            <a class="navlink" href="#settings-e2">Expression 2 settings</a>
           </li>
           <li>
-            <a class="navlink" href="#settings-e2">Settings - Expression 2</a>
-          </li>
-          <li>
-            <a class="navlink" href="#settings-remote">Settings - Remote Uploader</a>
+            <a class="navlink" href="#settings-remote">Remote Updater settings</a>
           </li>
           <li class="navlink"><br></li>
         </ul>
       </li>
       <li>
-        <a class="navlink" href="#helloworld">Hello world</a>
+        <a class="navlink" href="#helloworld">Our first program</a>
         <ul class="text-xs text-gray-400">
           <li>
-            <a class="navlink" href="#printing">Printing to console</a>
+            <a class="navlink" href="#printing">Printing to chat</a>
           </li>
-          <li class="navlink"><br></li>
-        </ul>
-      </li>
-      <li>
-        <a class="navlink" href="#numbers">Numbers</a>
-        <ul class="text-xs text-gray-400">
           <li>
-            <a class="navlink" href="#printing">Printing to console</a>
+            <a class="navlink" href="#conditionals">Conditional logic</a>
+          </li>
+          <li>
+            <a class="navlink" href="#conditionals">Boolean and relational operators</a>
+          </li>
+          <li>
+            <a class="navlink" href="#variables">Variables</a>
           </li>
           <li class="navlink"><br></li>
         </ul>
@@ -114,9 +111,6 @@
       <li>
         <a class="navlink" href="#directives">Directives</a>
         <ul class="text-xs text-gray-400">
-          <li>
-            <a class="navlink" href="#overview">Overview</a>
-          </li>
           <li>
             <a class="navlink" href="#name">@name</a>
           </li>
@@ -145,10 +139,11 @@
 
   <main>
     <header class="m-10">
-      <img class="mx-auto rounded-md shadow-inner" src="img/e2/header.png" alt="Expression 2 header image">
+      <img class="mx-auto" src="img/e2/header.png" alt="Expression 2 header image">
     </header>
-    <section id="introduction" class="grid grid-cols-1 xl:grid-cols-section gap-4 my-10">
+    <section id="introduction">
       <div class="my-4">
+        <h1>Introduction</h1>
         <!-- CODE QUIZLET
         <div class="flex flex-col w-full">
           <div class="bg-gray-100 text-gray-800 p-4 rounded-t-md">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias?</div>
@@ -185,7 +180,7 @@
       </div>
     </section>
 
-    <section id="projects" class="grid grid-cols-1 xl:grid-cols-section gap-4 my-10">
+    <section id="projects">
       <div>
         <h2>Projects</h2>
 
@@ -196,7 +191,7 @@
       </div>
     </section>
 
-    <section id="help" class="grid grid-cols-1 xl:grid-cols-section gap-4 my-10">
+    <section id="help">
       <div>
         <h2>Need help?</h2>
 
@@ -217,9 +212,80 @@
           out.
         </p>
       </div>
+      <div>
+        <pre><code>@name Sudoku./129q--<>?
+@outputs CharX CharY Char CharParam Clk
+@persist Board:array CharQueue:string CharXQueue:array CharYQueue:array
+#include "inc/sudoku"
+
+function array:writeToScreen(X, Y, InputChar:string) {
+    print("X is " + X)
+    print("Y is " + Y)
+    print("InputChar is " + InputChar)
+    print("CharQueue is " + CharQueue)
+    print("CharXQueue is" + CharXQueue:concat())
+    print("CharYQueue is" + CharYQueue:concat())
+    CharQueue += InputChar
+    CharXQueue:pushNumber(X)
+    CharYQueue:pushNumber(Y)
+}
+
+if(first()) {
+    runOnHTTP(1)
+    runOnChat(1)
+    
+    if (!httpCanRequest()) {
+        error("HTTP is disabled - cannot fetch sudoku board")
+    }
+    
+    writeToScreen(0,2,"1")
+    writeToScreen(2,0,"1")
+    writeToScreen(0,3,"2")
+    writeToScreen(3,0,"2")
+    writeToScreen(0,4,"3")
+    writeToScreen(4,0,"3")
+}
+
+elseif(clk("nextChar")) {
+    if (CharQueue != "") {
+        #Copy-by-value or copy-by-reference?
+        Char = toByte(CharQueue[1])
+        CharQueue = CharQueue:replaceRE("^%w", "")
+    }
+}
+
+function place(X, Y, C:string) {
+    writeToScreen(X, Y, C)    
+}
+
+function drawBoard() {
+    # Position numbers in column and row
+    writeToScreen(0,0,"+")
+}
+
+function parseInput(Input:string) {
+    
+}
+
+if (chatClk(owner())) {
+    hideChat(1)
+    
+    if (owner():lastSaid()[1] == "!") {
+        parseInput(owner():lastSaid():sub(2))
+    }
+}
+
+if(httpClk()) {
+    Tbl = jsonDecode("{\"test\":55}")
+    
+    printTable(Tbl:add(table("one",15)))
+    
+    T = jsonDecode(httpData())
+}</code></pre>
+      </div>
     </section>
 
-    <section id="quiz" class="grid grid-cols-1 xl:grid-cols-section gap-4 my-10">
+    <section id="quiz">
       <!--
       <code>@name Hello World
 @inputs A B
@@ -285,96 +351,25 @@ print(Number)</code>
       </div>
     </section>
 
-    <section id="tool" class="grid grid-cols-1 xl:grid-cols-section gap-4 my-10">
-      <div></div>
-      <div>
-        <pre><code>@name Sudoku./129q--<>?
-@outputs CharX CharY Char CharParam Clk
-@persist Board:array CharQueue:string CharXQueue:array CharYQueue:array
-#include "inc/sudoku"
-
-function writeToScreen(X, Y, InputChar:string) {
-    print("X is " + X)
-    print("Y is " + Y)
-    print("InputChar is " + InputChar)
-    print("CharQueue is " + CharQueue)
-    print("CharXQueue is" + CharXQueue:concat())
-    print("CharYQueue is" + CharYQueue:concat())
-    CharQueue += InputChar
-    CharXQueue:pushNumber(X)
-    CharYQueue:pushNumber(Y)
-}
-
-!%&/()=?@${[]}
-
-
-if(first()) {
-    runOnHTTP(1)
-    runOnChat(1)
-    
-    if (!httpCanRequest()) {
-        error("HTTP is disabled - cannot fetch sudoku board")
-    }
-    [string]
-    
-    writeToScreen(0,2,"1")
-    writeToScreen(2,0,"1")
-    writeToScreen(0,3,"2")
-    writeToScreen(3,0,"2")
-    writeToScreen(0,4,"3")
-    writeToScreen(4,0,"3")
-}
-elseif(clk("nextChar")) {
-    if (CharQueue != "") {
-        #Copy-by-value or copy-by-reference?
-        Char = toByte(CharQueue[1])
-        CharQueue = CharQueue:replaceRE("^%w", "")
-    }
-}
-
-function place(X, Y, C:string) {
-    writeToScreen(X, Y, C)    
-}
-
-function drawBoard() {
-    # Position numbers in column and row
-    writeToScreen(0,0,"+")
-}
-
-function parseInput(Input:string) {
-    
-}
-
-if (chatClk(owner())) {
-    hideChat(1)
-    
-    if (owner():lastSaid()[1] == "!") {
-        parseInput(owner():lastSaid():sub(2))
-    }
-}
-
-if(httpClk()) {
-    Tbl = jsonDecode("{\"test\":55}")
-    
-    printTable(Tbl:add(table("one",15)))
-    
-    T = jsonDecode(httpData())
-}
-
-
-</code></pre>
-      </div>
+    <section id="tool">
       <div>
         <h1 class="text-3xl">Exploring the tool</h1>
-
+      </div>
+    </section>
+    <section id="spawnmenu">
+      <div>
+        <h2>In the spawnmenu</h2>
         <p>Open up the spawnmenu with Q, and have a look at the Wire tab. Under
           <strong>Chips, Gates</strong> you'll find Expression 2.
         </p>
+
+        <p>After selecting the tool, close the spawnmenu and right click to open the editor. Optionally,
+          you can click "Open Editor" from the spawn menu.</p>
       </div>
 
       <div>
         <figure>
-          <img class="rounded-md" src="img/e2/spawnmenu.png" alt="">
+          <img src="img/e2/spawnmenu.png" alt="">
           <figcaption>You can change size and model of the chip, and open and create files and folders
           </figcaption>
         </figure>
@@ -386,16 +381,13 @@ if(httpClk()) {
       </div>
 
       <div>
-        <p>You can create, open, copy, rename and delete files. Folders are different, you can create them
-          but
-          <strong>not</strong> rename, nor delete them.
-          <a href="https://github.com/wiremod/wire/issues/1598">Issue on Github</a>
+        <p>You can create, open, copy, rename and delete files. You can create and rename folders.
         </p>
       </div>
 
       <div>
         <figure>
-          <img class="rounded-md" src="img/e2/fileoption.png" alt="">
+          <img src="img/e2/fileoption.png" alt="">
           <figcaption>
             Right clicking a folder vs. right clicking a file
           </figcaption>
@@ -403,15 +395,54 @@ if(httpClk()) {
       </div>
     </section>
 
-    <section id="overview" class="grid grid-cols-1 xl:grid-cols-section gap-4 my-10">
+    <section id="overview">
       <div>
         <h2>Editor overview</h2>
 
-        <p>When you select the tool, close the spawnmenu and right click to open the editor. Optionally,
-          you can click the button
-          on the bottom of the tool's spawnmenu and open the editor there, but I have personally never
-          used that button.
-        </p>
+        <div class="grid grid-cols-4 items-center justify-center">
+          <img src="img/e2/editorbutton0.png" alt="">
+          <span class="col-span-3">Shows any errors in the code. Click to jump to the error</span>
+
+          <img src="img/e2/editorbutton1.png" alt="">
+          <span class="col-span-3">Update the contents of the file explorer</span>
+
+          <img src="img/e2/editorbutton2.png" alt="">
+          <span class="col-span-3">Expand or retract file explorer</span>
+
+          <img src="img/e2/editorbutton3.png" alt="">
+          <span class="col-span-3">Save currently open file</span>
+
+          <img src="img/e2/editorbutton4.png" alt="">
+          <span class="col-span-3">Open new tab</span>
+
+          <img src="img/e2/editorbutton5.png" alt="">
+          <span class="col-span-3">Close current tab</span>
+
+          <img src="img/e2/editorbutton6.png" alt="">
+          <span class="col-span-3">Refresh current file - this button is only ever used if you work on the Expression 2
+            files outside of Garry's mod</span>
+
+          <img src="img/e2/editorbutton7.png" alt="">
+          <span class="col-span-3">Browse the sound files from Garry's Mod or mounted games</span>
+
+          <img src="img/e2/editorbutton8.png" alt="">
+          <span class="col-span-3">Browse all loaded Expression 2 functions</span>
+
+          <img src="img/e2/editorbutton9.png" alt="">
+          <span class="col-span-3">Save current file as</span>
+
+          <img src="img/e2/editorbutton10.png" alt="">
+          <span class="col-span-3">Save current file and exit the editor</span>
+
+          <img src="img/e2/editorbutton11.png" alt="">
+          <span class="col-span-3">Open editor settings</span>
+
+          <img src="img/e2/editorbutton12.png" alt="">
+          <span class="col-span-3">Show credits</span>
+
+          <img src="img/e2/editorbutton13.png" alt="">
+          <span class="col-span-3">Close editor</span>
+        </div>
       </div>
 
       <div>
@@ -422,126 +453,19 @@ if(httpClk()) {
       </div>
     </section>
 
-    <section id="buttons" class="grid grid-cols-1 xl:grid-cols-section gap-4 my-10">
-      <div>
-        <h2>Button legend</h2>
-
-        <table>
-          <thead>
-            <tr>
-              <td>Icon</td>
-              <td>Explanation</td>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>
-                <img src="img/e2/editorbutton0.png" alt="">
-              </td>
-              <td>Debug bar - Green when there are no errors. Turns red and shows an error if there
-                are any</td>
-            </tr>
-            <tr>
-              <td>
-                <img src="img/e2/editorbutton1.png" alt="">
-              </td>
-              <td>Update the contents of the file explorer</td>
-            </tr>
-            <tr>
-              <td>
-                <img src="img/e2/editorbutton2.png" alt="">
-              </td>
-              <td>Expand or retract file explorer</td>
-            </tr>
-            <tr>
-              <td>
-                <img src="img/e2/editorbutton3.png" alt="">
-              </td>
-              <td>Save currently open file</td>
-            </tr>
-            <tr>
-              <td>
-                <img src="img/e2/editorbutton4.png" alt="">
-              </td>
-              <td>Open new tab</td>
-            </tr>
-            <tr>
-              <td>
-                <img src="img/e2/editorbutton5.png" alt="">
-              </td>
-              <td>Close current tab</td>
-            </tr>
-            <tr>
-              <td>
-                <img src="img/e2/editorbutton6.png" alt="">
-              </td>
-              <td>Refresh current file - this button is only ever used if you work on the Expression 2
-                files outside of Garry's mod
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <img src="img/e2/editorbutton7.png" alt="">
-              </td>
-              <td>Browse the available sounds from Garry's Mod or other mounted games</td>
-            </tr>
-            <tr>
-              <td>
-                <img src="img/e2/editorbutton8.png" alt="">
-              </td>
-              <td>Browse all available Expression 2 functions</td>
-            </tr>
-            <tr>
-              <td>
-                <img src="img/e2/editorbutton9.png" alt="">
-              </td>
-              <td>Save current file as</td>
-            </tr>
-            <tr>
-              <td>
-                <img src="img/e2/editorbutton10.png" alt="">
-              </td>
-              <td>Save current file and exit the editor</td>
-            </tr>
-            <tr>
-              <td>
-                <img src="img/e2/editorbutton11.png" alt="">
-              </td>
-              <td>Open editor settings</td>
-            </tr>
-            <tr>
-              <td>
-                <img src="img/e2/editorbutton12.png" alt="">
-              </td>
-              <td>Show credits</td>
-            </tr>
-            <tr>
-              <td>
-                <img src="img/e2/editorbutton13.png" alt="">
-              </td>
-              <td>Close editor</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </section>
-
-    <section id="settings-editor" class="grid grid-cols-1 xl:grid-cols-section gap-4 my-10">
+    <section id="settings-editor">
       <div>
 
         <h2>Editor settings</h2>
-        <p>Hit that <img class="inline-block" src="img/e2/editorbutton11.png" alt=""> button and edit along. We'll first
-          take a look at syntax coloring. Syntax coloring is coloring of the text you write in the editor. Instead of
-          going over every colorable element, what I'll instead do is come with cool color scheme recommendations.</p>
-
-        <p>&lt;insert color scheme recommendations here sometime in the future&gt;</p>
+        <p>Hit that <img class="inline-block" src="img/e2/editorbutton11.png" alt=""> button and edit along. We're going
+          to go over a couple of settings so that the programming experience will be better. We'll first take a look at
+          the settings in the editor tab.</p>
       </div>
 
       <div></div>
 
       <div>
-        <h2>Auto completion</h2>
-        <p>I recommend:</p>
+        <p><b>Auto completion</b></p>
         <div class="grid grid-cols-3">
           <p class="col-span-2">Auto completion</p>
           <p>ON</p>
@@ -565,8 +489,7 @@ if(httpClk()) {
         </figure>
       </div>
       <div>
-        <h2>Other options</h2>
-        <p>I recommend:</p>
+        <p><b>Other options</b></p>
         <div class="grid grid-cols-3">
           <p class="col-span-2">New tab on open</p>
           <p>ON</p>
@@ -596,11 +519,10 @@ if(httpClk()) {
       </div>
     </section>
 
-    <section id="settings-e2" class="grid grid-cols-1 xl:grid-cols-section gap-4 my-10">
+    <section id="settings-e2">
       <div>
         <h2>Expression 2 settings</h2>
         <p>Now you need to navigate to the second tab of the settings page.</p>
-        <p>I recommend:</p>
         <div class="grid grid-cols-3">
           <p class="col-span-2">Auto indentation</p>
           <p>ON</p>
@@ -631,10 +553,10 @@ if(httpClk()) {
       </div>
     </section>
 
-    <section id="settings-remote" class="grid grid-cols-1 xl:grid-cols-section gap-4 my-10">
+    <section id="settings-remote">
       <div>
 
-        <h2>Remote uploader settings</h2>
+        <h2>Remote updater settings</h2>
         <p>In this menu, you can manage your expressions remotely. The feature is very useful if, for example, your
           expression is far away from you or deep within a contraption and you want to edit it.</p>
         <p>The menu benefits server admins too, as not all expressions are coded with good intents. Some people who code
@@ -650,150 +572,258 @@ if(httpClk()) {
       </div>
     </section>
 
-    <section id="helloworld" class="grid grid-cols-1 xl:grid-cols-section gap-4 my-10">
+    <section id="helloworld">
       <div>
 
         <h1>Our first program</h1>
 
-        <p>Finally we are going to start learning Expression 2! Let's start </p>
+        <p>
+          Finally we are going to start learning Expression 2! Let's start with opening the editor. The first thing we
+          see is this program. This program has two distinct parts, on the top you can see words preceded by @ called
+          <em>directives</em>, and on the bottom is text inside a pair of <code>#[ ]#</code> called a <em>comment</em>.
+        </p>
+        <p>
+          Note that you can click the clipboard icon 📋 to copy the code segment
+        </p>
+      </div>
+      <div>
+        <pre><code>@name 
+@inputs 
+@outputs 
+@persist 
+@trigger 
+
+#[
+    Documentation and examples are available at:
+    https://github.com/wiremod/wire/wiki/Expression-2
+
+    Discord is available at https://discord.gg/H8UKY3Y
+    Reddit is available at https://www.reddit.com/r/wiremod
+    Report any bugs you find here https://github.com/wiremod/wire/issues
+]#</code></pre>
+      </div>
+    </section>
+    <section id="printing">
+      <div>
+
+        <h2>Printing to chat</h2>
 
         <p>
-          <code>"Hello World!"</code> is a string.
-          <code>"#123"</code> is a string. Why? Because the characters are
-          <em>delimited by</em>, or contained within, a set of quotation marks. But there is a catch, which is
-          why there
-          is an asterisk.
-          I'll come back to that later.
+          Follow my lead. Let's remove the comment, and instead write the code <code>print("Hello World!")</code>. Now
+          when you place a
+          new expression, you will see the text "Hello World!" in the chat. No other players on the server can see these
+          prints.
         </p>
-
-        <p>Now we just need the final piece in our "Hello World!"-formula, namely the
-          <code>print()</code> function (don't worry, I'll explain functions
-          later). It
-          now looks like this:
-        </p>
-
-        <pre><code>print("Hello World!")</code></pre>
-
-        <p>And we got ourselves a salutation to mother earth. Beautiful.</p>
-        <img src="img/e2/helloworld.png" alt="" class="responsive-img">
-
-
-
-        <p>Let's do some more printing. You can print numbers:</p>
-
-        <pre><code>print(12345)</code></pre>
-
-        <p>You can do math inside print:</p>
-
-        <pre><code>print( 10 * (50 - 40) )</code></pre>
-
-        <p>You can print other functions (we will get to how it works after a while):</p>
-
-        <pre><code>print( random() )</code></pre>
-
-        <p>In the code above, we have a new function,
-          <code>random()</code>. It is a function that
-          <em>returns</em> a random number between 0.0 and 1.0. The word return is an important one, I want
-          you to
-          remember this
-          word, as it is a word we are going to use about functions a lot.
-        </p>
-
-        <p>But where does
-          <code>print()</code> and
-          <code>random()</code> come from? Throughout this whole Expression 2
-          course, we
-          are going to cover a LOT of functions. You can find the
-          functions under the
-          <img src="img/e2/editorbutton8.png">, located in the top right section of the editor.
+        <p>
+          We can see that <code>"Hello World!"</code> is surrounded with quotation marks. In the same way we can make a
+          comment by surrounding text with <code>#[ ]#</code>, we can surround text with quotation marks to make a
+          <em>string</em>.
         </p>
       </div>
-    </section>
-
-    <section id="numbers" class="grid grid-cols-1 xl:grid-cols-section gap-4 my-10">
       <div>
-
-        <p>Expression 2 uses the same arithmetic operators as everyone after 2000 B.C. (first written records of
-          their use)
-          has known and loved.
-          We got addition, subtraction, multiplication and division.
-        </p>
-        <pre><code>10 + 10
-10 - 10
-10 * 10
-10 / 10</code></pre>
-        <p>Follow my lead. Open the Expression 2 editor, and click somewhere in the open file.
-          Press <strong>Ctrl + A</strong> to select everything, then delete the selection.</p>
-        <p>In order to print the result of a calculation in chat, just enclose it in <code>print()</code></p>
-
-        <pre><code>print(10 + 10) #prints 20
-print(20 * (15 - 10)) #prints 100
-print(-450) #prints -450</code></pre>
-      </div>
-    </section>
-
-    <section id="directives" class="grid grid-cols-1 xl:grid-cols-section gap-4 my-10">
-      <div>
-
-        <h2>Overview</h2>
-
-        <pre><code>@name Name of the Expression
-#[ Sets the name of the Expression chip ]#
-
+        <pre><code>@name 
 @inputs 
-#[ Sets the inputs of the Expression chip ]#
-
 @outputs 
-#[ Sets the outputs of the Expression chip ]#
-
 @persist 
-#[ Variables that should be kept between cycles ]#
-
 @trigger 
-#[ Sets which inputs triggers an
-execution of the chip, or none ]#
 
-@model "path/to/model"
-#[ Set the model of the expression ]#
+print("Hello World!")
+</code></pre>
+      </div>
+      <div>
+        <p>We're not limited to printing strings, we can also print numbers and calculation of numbers.</p>
+        <p>In this code snippet, we use a new function, <code>random()</code>. It is a function that <em>returns</em> a
+          random number between 0.0 and 1.0.
+        </p>
 
-@autoupdate
-#[ By having this directive in your expression,
-you enable it to be updated ]#</code></pre>
+        <p>But where do functions like
+          <code>print()</code> and
+          <code>random()</code> come from? If you click the <img class="inline-block" src="img/e2/editorbutton8.png">
+          button in the top right of the editor, you can see a list of available functions.
+        </p>
+      </div>
+      <div>
+        <pre><code>print("Hello World!")
 
+print(1 + 2)
+
+print(4^3)
+
+print(random())
+
+print(owner():name())</code></pre>
       </div>
     </section>
 
-    <section id="name" class="grid grid-cols-1 xl:grid-cols-section gap-4 my-10">
+    <section id="conditionals">
+      <div>
+        <h2>Conditional logic</h2>
+        <p>Let's expand on the printing with some logic. With the <code>if</code>, <code>elseif</code> and
+          <code>else</code>
+          keywords, we can perform checks so that only some parts of the code will run.
+        </p>
+      </div>
+      <div></div>
+      <div>
+        <p>In the first case, we have a single <code>if</code>. If the condition inside the parentheses is true, then
+          all the code inside the curly brackets <code>{ }</code> will be run. Code inside curly brackets are called
+          <em>blocks</em>
+        </p>
+      </div>
+      <div>
+        <pre><code>if (5 < 10) {
+    print("5 is less than 10")
+}</code></pre>
+      </div>
+      <div>
+        <p>In the second case, we have an <code>if</code> and an <code>else</code> block. If the condition in the
+          parentheses is true, the code in the <code>if</code> block will be run. Otherwise, the code in the
+          <code>else</code> block will be run. We never put parentheses and a condition after <code>else</code>, because
+          it's supposed to catch all the false cases.
+        </p>
+      </div>
+      <div>
+        <pre><code>if (10 == 10) {
+    print("They're equal!")
+}
+else {
+    print("Somehow they're not equal...")
+}</code></pre>
+      </div>
+      <div>
+
+        <p>In the third case, we have an <code>if</code>, followed by several <code>elseif</code>, and an
+          <code>else</code> at the end. The flow goes like this:
+        </p>
+        <p>Step 1 - Evaluate <code>"Dave" == "David"</code>. If it's true, execute the block then <b>jump to step 6</b>.
+          If it's false, check next condition.</p>
+        <p>Step 2 - Evaluate <code>pi() < 3.14</code>. If it's true, execute the block then <b>jump to step 6</b>.
+          If it's false, check next condition.</p>
+        <p>Step 3 - Evaluate <code>!owner():isAlive()</code>. If it's true, execute the block then <b>jump to step
+            6</b>.
+          If it's false, check next condition.</p>
+        <p>Step 4 - Evaluate <code>"A" != "A"</code>. If it's true, execute the block then <b>jump to step 6</b>.
+          If it's false, go to the else block.</p>
+        <p>Step 5 - Execute the else block</p>
+        <p>Step 6 - Finished executing</p>
+      </div>
+      <div>
+        <pre><code>if ("Dave" == "David") {
+    # ...
+}
+elseif (pi() < 3.14) {
+    # ...
+}
+elseif (!owner():isAlive()) {
+    # ...
+}
+elseif ("A" != "A") {
+    # ...
+}
+else {
+    print("None of them are true")
+}</code></pre>
+      </div>
+    </section>
+
+    <section id="operators">
+      <div>
+        <h2>Boolean and relational operators</h2>
+        <p>Both boolean operators and relational operators always evaluate to true or false. Let's look at all of them.</p>
+      </div>
+
+      <div>
+        <pre><code></code></pre>
+      </div>
+    </section>
+
+    <section id="variables">
+      <div>
+        <h2>Variables</h2>
+        <p>Sometimes you need to store a value for later use. Variables act like small boxes you can put data in, which
+          you can retrieve later. If you start a word with a capital letter, like <code>Score</code>, a variable with
+          name "Score" is created.</p>
+      </div>
+      <div>
+        <pre><code>Age = 20
+Name = "Dave"
+
+print("My name is " + Name)
+print("I am " + Age + " years old")</code></pre>
+      </div>
+      <div>
+        <p>Let's combine our knowledge of variables with conditional logic. Note how on the first line, we use a single
+          equal sign <code>Score = 74</code>, but we use double equals <code>Score == 100</code> on the condition.
+          That's because with a single equal sign, we are putting the value <code>74</code> into <code>Score</code>.
+          However, with a double
+          equals, we are checking whether Score is equal to 100.</p>
+      </div>
+      <div>
+        <pre><code>Score = 74
+
+if (Score == 100) {
+    print("Perfect score!!!")
+}
+elseif (Score > 90) {
+    print("That's great!")
+}
+elseif (Score > 70) {
+    print("You're getting quite good")
+}
+elseif (Score > 40) {
+    print("Not bad")
+}
+else {
+    print("Just keep trying")
+}</code></pre>
+      </div>
+      <div>
+        <p>If you try to do single equal in the condition, you will get the error message "Assignment operator (=) must
+          not be part of equation"</p>
+      </div>
+      <div>
+        <pre><code>if (Score = 100) {
+    print("Perfect score!!!")
+}</code></pre>
+      </div>
+    </section>
+
+    <section id="directives">
+      <div>
+        <h1>Directives</h1>
+      </div>
+    </section>
+
+    <section id="name">
       <div>
 
         <h2>@name</h2>
-        <p>The @name directive sets the name of the expression 2 chip. The name is viewed in two places, one
-          when hovering
-          your mouse over the expression and the other when looking inside the remote uploader. There is a
-          method
-          <code>entity:getName()</code> which is solely used for getting
-          any
-          expression's name.
+        <p>This directive sets the name of the expression 2 chip. The name is viewed in two places, one when
+          hovering your mouse over the expression and the other when looking inside the remote updater. You can also get
+          the name of your expression in code by using <code>entity():getName()</code>.
         </p>
+      </div>
+      <div>
 
         <img src="img/e2/e2-name.png" alt="">
         <pre><code>@name Expression name
-
+        
 #prints "Expression name"
 print(entity():getName())</code></pre>
       </div>
     </section>
 
-    <section id="inputs" class="grid grid-cols-1 xl:grid-cols-section gap-4 my-10">
+    <section id="inputs">
       <div>
 
         <h2>@inputs</h2>
-        <p>The @inputs directive sets the expression's inputs. It is used to wire between your chip and
+        <p>This directive sets the expression's inputs. It is used to wire between your chip and
           other
           wire-compatible
           tools.
         </p>
-
+      </div>
+      <div>
         <img src="img/e2/e2-input.png" alt="">
         <pre><code>@inputs Button
 
@@ -809,14 +839,16 @@ if(->Button) {
       </div>
     </section>
 
-    <section id="outputs" class="grid grid-cols-1 xl:grid-cols-section gap-4 my-10">
+    <section id="outputs">
       <div>
 
         <h2>@outputs</h2>
-        <p>The @outputs directive sets the expression's outputs. What differs input and output is that input
+        <p>This directive sets the expression's outputs. What differs input and output is that input
           takes in data
           from outputs, while output pushes data to other inputs.</p>
 
+      </div>
+      <div>
         <img src="img/e2/e2-output.png" alt="">
         <pre><code>@outputs Screen
 
@@ -824,11 +856,11 @@ Screen = 5</code></pre>
       </div>
     </section>
 
-    <section id="persist" class="grid grid-cols-1 xl:grid-cols-section gap-4 my-10">
+    <section id="persist">
       <div>
 
         <h2>@persist</h2>
-        <p>The @persist directive exists because of how Expression 2 variables work. When a variable is
+        <p>This directive exists because of how Expression 2 variables work. When a variable is
           declared
           in the
           code, it is removed when the code is finished executing. To prevent this, we need to persist the
@@ -838,6 +870,8 @@ Screen = 5</code></pre>
           removing
           the #.
         </p>
+      </div>
+      <div>
         <pre><code>#@persist Number
 #interval() tells Expression 2 to run the code
 #once every x milliseconds (1 second in this example)
@@ -855,12 +889,13 @@ print(Number)</code></pre>
       </div>
     </section>
 
-    <section id="trigger" class="grid grid-cols-1 xl:grid-cols-section gap-4 my-10">
+    <section id="trigger">
       <div>
 
         <h2>@trigger</h2>
-        <p>The @trigger directive sets what inputs should trigger an execution.</p>
-
+        <p>This directive sets which inputs should trigger an execution.</p>
+      </div>
+      <div>
         <pre><code>#sets the expression to not execute from any inputs
 @trigger none
 
@@ -873,17 +908,18 @@ print(Number)</code></pre>
       </div>
     </section>
 
-    <section id="model" class="grid grid-cols-1 xl:grid-cols-section gap-4 my-10">
+    <section id="model">
       <div>
 
         <h2>@model</h2>
-        <p>The @model directive sets what model the expression should be. The easiest way to get a model
+        <p>This directive sets what model the expression should be. The easiest way to get a model
           name is
           to simply
           open the spawnmenu > find the model you want the expression to be > right click > copy to
           clipboard
         </p>
-
+      </div>
+      <div>
         <img src="img/e2/e2-model.png" alt="">
         <br>
         <img src="img/e2/e2-model2.png" alt="">
@@ -891,33 +927,47 @@ print(Number)</code></pre>
       </div>
     </section>
 
-    <section id="autoupdate" class="grid grid-cols-1 xl:grid-cols-section gap-4 my-10">
+    <section id="autoupdate">
       <div>
 
         <h2>@autoupdate</h2>
-        <p>The @autoupdate directive is useful if you have a contraption that you save as a duplicate. When
+        <p>This directive is useful if you have a contraption that you save as a duplicate. When
           an
           expression
           with the @autoupdate directive is loaded, it automatically checks for any newer version of the
           same
           expression.
           Note that @autoupdate only works with saved expressions. Let's take an example.</p>
+      </div>
+      <div></div>
+      <div>
         <p>The first thing you do is make an expression that looks like this, and
-          <em>save it</em>:
+          <em>save it</em>
         </p>
+      </div>
+      <div>
         <pre><code>@autoupdate
 
 if(first()) {
   print("I am old")
 }</code></pre>
+      </div>
+      <div>
+
         <p>Then you open the code (not on the expression you placed!) and update the code with this, then
           save:
         </p>
+      </div>
+      <div>
+
         <pre><code>@autoupdate
 
 if(first()) {
   print("I am new!")
 }</code></pre>
+      </div>
+      <div>
+
         <p>Now, the expression you placed on the ground has the old code. The new code is saved in the SAME
           FILE
           as the
@@ -930,7 +980,7 @@ if(first()) {
       </div>
     </section>
 
-    <section id="info" class="grid grid-cols-1 xl:grid-cols-section gap-4 my-10">
+    <section id="info">
       <div>
 
         <h2>Good to know</h2>
@@ -939,6 +989,9 @@ if(first()) {
         <p>2. You can have several directives of the same kind, with the exception of @name, @trigger and
           @model. It is
           possible to have more than one @autoupdate, but that is pointless.</p>
+      </div>
+      <div>
+
         <pre><code>@inputs  A B C
 @inputs  D E F
 @inputs  G H I
@@ -947,10 +1000,16 @@ if(first()) {
 @outputs P Q R
 @persist S T U
 @persist V W X</code></pre>
+      </div>
+      <div>
+
         <p>3. You can group variables together to define their type. Since you can define more than one
           @inputs,
           @outputs
-          and @persist, the two properties combined makes a clean look on the top of your code</p>
+          and @persist, the two properties combined makes a clean look at the top of your code</p>
+      </div>
+      <div>
+
         <pre><code>@persist [A B C D]:string [E F G]:vector
 
 @persist [A B C D E F G]:string
@@ -958,7 +1017,7 @@ if(first()) {
       </div>
     </section>
 
-    <section id="quiz-directives" class="grid grid-cols-1 xl:grid-cols-section gap-4 my-10">
+    <section id="quiz-directives">
       <div>
 
         <h1 class="center">It's QUIZ TIME</h1>
@@ -1015,13 +1074,70 @@ if(first()) {
           the @trigger directive only the set inputs
           makes the expression execute
         </p>
-        <p class="correct">
-          <a target="_blank" href="https://www.youtube.com/watch?v=h6DtVHqyYts">You're
-            winner</a>
-        </p>
       </div>
     </section>
 
+    <section id="put-all-together">
+      <div>
+        <h1>Putting it all together</h1>
+        <p>You've learned a whole bunch. In this section, we will recreate rock-paper-scissors, and go into detail how
+          to start thinking about projects like these.</p>
+      </div>
+    </section>
+
+    <section id="rps">
+      <div>
+        <h2>Analyzing the finished code</h2>
+        <p>analyze</p>
+      </div>
+      <div>
+        <pre><code>@name Rock Paper Scissors
+          
+function string randomChoice() {
+    RNG = randint(3)
+    
+    if (RNG == 1) {
+        Choice = "rock"
+    }
+    elseif (RNG == 2) {
+        Choice = "paper"
+    }
+    else {
+        Choice = "scissors"
+    }
+    
+    return Choice
+}
+
+Player = "paper"
+Computer = randomChoice()
+
+print(" ")
+print("You chose: " + Player)
+print("Computer chose: " + Computer)
+
+if (Player == Computer) {
+    print("Draw")
+}
+elseif (Player == "rock" && Computer == "paper") {
+    print("You lost")
+}
+elseif (Player == "rock" && Computer == "scissors") {
+    print("You won!")
+}
+elseif (Player == "paper" && Computer == "rock") {
+    print("You won!")
+}
+elseif (Player == "paper" && Computer == "scissors") {
+    print("You lost")
+}
+elseif (Player == "scissors" && Computer == "rock") {
+    print("You lost")
+}
+elseif (Player == "scissors" && Computer == "paper") {
+    print("You won!")
+}</code></pre>
+      </div>
     </section>
 
     <section>

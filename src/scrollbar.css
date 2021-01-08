@@ -39,3 +39,7 @@
 ::-webkit-scrollbar-corner {
   background: transparent;
 }
+
+#navMain::-webkit-scrollbar {
+  width: 0;
+}

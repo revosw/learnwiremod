@@ -23,6 +23,10 @@
   color: rgb(240, 240, 160);
 }
 
+.hljs-udf {
+  color: rgb(102, 122, 102)
+}
+
 .hljs-comment {
   color: rgb(128, 128, 128);
 }
@@ -48,5 +52,5 @@
 }
 
 .hljs-function {
-	color: rgb(160,160,240);
+	color: rgb(160, 160, 240);
 }
