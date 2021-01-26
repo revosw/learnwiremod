@@ -100,7 +100,7 @@
             <a class="navlink" href="#conditionals">Conditional logic</a>
           </li>
           <li>
-            <a class="navlink" href="#conditionals">Boolean and relational operators</a>
+            <a class="navlink" href="#bool-rel-operators">Boolean and relational operators</a>
           </li>
           <li>
             <a class="navlink" href="#variables">Variables</a>
@@ -156,6 +156,10 @@
           </div>
         </div> -->
 
+        <lw-quizlet>
+          
+        </lw-quizlet>
+
         <p>
           Expression 2 is a programmable chip used to interact with the environment on a server. These are
           some of the things you can build with Expression 2.
@@ -202,7 +206,7 @@
           editor.
         </p>
 
-        <p>But let's face it, there comes a time where you're just stuck - things that might be out of
+        <p>When you try to make something with expression 2 on your own, you might at some point get completely stuckBut let's face it, there comes a time where you're just stuck - things that might be out of
           your comprehension. It
           happens to everyone. The Wiremod discord server and Wiremod subreddit are
           <em>the</em> places to talk about everything wiremod related, whether you need help or just
@@ -726,14 +730,40 @@ else {
       </div>
     </section>
 
-    <section id="operators">
+    <section id="bool-rel-operators">
       <div>
         <h2>Boolean and relational operators</h2>
         <p>Both boolean operators and relational operators always evaluate to true or false. Let's look at all of them.</p>
       </div>
 
       <div>
-        <pre><code></code></pre>
+        <pre><code>if (10 == 10) {
+    # Equals
+}
+if (10 != 10) {
+    # Not equals
+}
+if (10 > 10) {
+    # Greater than
+}
+if (10 < 10) {
+    # Less than
+}
+if (10 >= 10) {
+    # Greater than or equal
+}
+if (10 <= 10) {
+    # Less than or equal
+}
+if (owner():isAlive() & entity():isFrozen()) {
+    # And
+}
+if (2 < 3 | owner():lastSaid() == "hello") {
+    # Or
+}
+if (!isSinglePlayer()) {
+  # Not
+}</code></pre>
       </div>
     </section>
 

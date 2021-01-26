@@ -5,11 +5,7 @@
 	your mouse to get that blue background color of the selected text.
 */
 
-
-
-/* .hljs {
-  @apply bg-darkgray rounded-md text-base p-1;
-} */
+/* EXPRESSION 2 */
 
 .hljs-ppcommand {
   color: rgb(240, 96, 240);
@@ -53,4 +49,31 @@
 
 .hljs-function {
 	color: rgb(160, 160, 240);
+}
+
+/* ZASM */
+
+.hljs-zasmppcommand {
+  color: rgb(137, 137, 255);
+}
+
+.hljs-operation {
+  color: rgb(255, 137, 0);
+}
+
+.hljs-zasmvariable,
+.hljs-zasmnumber {
+  color: rgb(233, 233, 0);
+}
+
+.hljs-zasmstring {
+  color: rgb(255, 137, 137);
+}
+
+.hljs-label {
+  color: rgb(255, 255, 177);
+}
+
+.zasm {
+  color: rgb(255, 255, 137);
 }

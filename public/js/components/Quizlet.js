@@ -3,9 +3,9 @@ import { hashCode } from "../lib/hash.js";
 const template = document.createElement("template");
 template.innerHTML = `
     <div class="flex flex-col w-full my-4 shadow-md">
-        <link rel="stylesheet" href="css/styles.css">
-        <div class="bg-gray-700 text-gray-100 p-4 rounded-t-md"><h2 id="question"></h2></div>
+        <div class="bg-gray-700 p-4 rounded-t-md"><h2 id="question"></h2></div>
         <div class="bg-darkgray">
+            <pre><slot name="code"></slot></pre>
             <form id="form" class="flex flex-col m-5"></form>
         </div>
         <div id="bottom" class="bg-darkgray rounded-b-md flex justify-between items-center p-4">
@@ -18,36 +18,33 @@ template.innerHTML = `
 class Quizlet extends HTMLElement {
     constructor() {
         super();
+        this.appendChild(template.cloneNode(true));
 
-        this.attachShadow({ mode: "open" });
-        this.shadowRoot.appendChild(template.cloneNode(true));
+        console.log(this.querySelector("div"));
 
-        console.log(this.shadowRoot);
-        console.log(this.shadowRoot.querySelector("div"));
+        this.querySelector("#question").textContent = this.getAttribute("question");
 
-        this.shadowRoot.querySelector("*").textContent = this.getAttribute("question");
+        const alternatives = this.getAttribute("alternatives").split(";");
+        this.correctAnswersAmount = alternatives.filter(s => s.startsWith("O")).length
+        if (this.correctAnswersAmount === 0) throw `There are no right answers`;
 
-        const type = this.getAttribute("type");
-        if (type === "code") {
-            this.constructCodeQuizlet();
-        }
-        else if (type === "multiplechoice") {
+        if (correctAnswersAmount > 1) {
             this.constructMultipleChoiceQuizlet();
-            this.shadowRoot.getElementById("submit").onclick = validate;
+            this.getElementById("submit").onclick = validate;
         }
-        else if (type === "singlechoice") {
+        else if (correctAnswersAmount === 1) {
             this.constructSingleChoiceQuizlet();
-            this.shadowRoot.getElementById("submit").onclick = validate;
-            this.shadowRoot.querySelector("input").checked = true;
+            this.getElementById("submit").onclick = validate;
+            this.querySelector("input").checked = true;
         } else {
             throw `the type attribute of the quizlet has to be either code, multiplechoice or singlechoice`;
         }
     }
 
     validate() {
-        const messageElement = this.shadowRoot.querySelector("#message");
-        const checkedIncorrectAnswers = this.shadowRoot.querySelector(":not([data-answer]):checked") !== null
-        const notCheckedCorrectAnswers = this.shadowRoot.querySelector("[data-answer]:not(:checked)") !== null
+        const messageElement = this.querySelector("#message");
+        const checkedIncorrectAnswers = this.querySelector(":not([data-answer]):checked") !== null
+        const notCheckedCorrectAnswers = this.querySelector("[data-answer]:not(:checked)") !== null
 
         if (checkedIncorrectAnswers || notCheckedCorrectAnswers) {
             messageElement.innerText = this.getAttribute("incorrect");
@@ -62,12 +59,12 @@ class Quizlet extends HTMLElement {
     }
 
     connectedCallback() {
-        this.shadowRoot.querySelector("#submit").addEventListener("click", validate);
+        this.querySelector("#submit").addEventListener("click", validate);
     }
 
     constructCodeQuizlet() {
-        const parent = this.shadowRoot.querySelector("form").parentElement;
-        const bottom = this.shadowRoot.querySelector("#bottom");
+        const parent = this.querySelector("form").parentElement;
+        const bottom = this.querySelector("#bottom");
         parent.innerHTML = `
             <pre><code>adfdhddgfdgsefsgfd</code></pre>
             <pre><code>htdgsetdfgdfhdrg</code></pre>
@@ -80,11 +77,6 @@ class Quizlet extends HTMLElement {
     }
 
     constructSingleChoiceQuizlet() {
-        const alternatives = this.getAttribute("alternatives").split(";");
-        const correctAnswersAmount = alternatives.filter(s => s.startsWith("O")).length
-
-        if (correctAnswersAmount > 1) throw "There is more than one correct answer in this single choice quizlet"
-        else if (correctAnswersAmount === 0) throw "There are no correct answers in this quizlet"
 
         for (let alt of alternatives) {
             if (alt[0] !== "O" && alt[0] !== "X") {
@@ -93,7 +85,7 @@ class Quizlet extends HTMLElement {
             const isAnswer = alt[0] == "O";
             const hash = hashCode(alt);
 
-            this.shadowRoot.querySelector("form").insertAdjacentHTML("beforeend", `
+            this.querySelector("form").insertAdjacentHTML("beforeend", `
                 <p>
                     <input type="radio" name="radio" id="${hash}" ${isAnswer ? 'data-answer' : ''} />
                     <label for="${hash}">${alt.substring(1)}</label>
@@ -109,7 +101,7 @@ class Quizlet extends HTMLElement {
             const isAnswer = alt[0] == "O";
             const hash = hashCode(alt);
 
-            this.shadowRoot.querySelector("form").insertAdjacentHTML("beforeend", `
+            this.querySelector("form").insertAdjacentHTML("beforeend", `
                 <p>
                     <input type="checkbox" id="${hash}" ${isAnswer ? 'data-answer' : ''} />
                     <label for="${hash}">${alt.substring(1)}</label>

@@ -6,11 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CPU - Learn Wiremod</title>
   <link rel="stylesheet" href="css/styles.css">
-  <script src="js/app.js"></script>
-  <script src="js/highlight.pack.js"></script>
-  <script>
-    hljs.initHighlightingOnLoad();
-  </script>
+  <script type="module" src="js/app.js"></script>
 </head>
 
 <body class="md:grid grid-cols-main-layout gap-x-24 bg-gray-800 text-gray-100">
@@ -112,74 +108,27 @@
           neque aliquid veritatis ex officiis. Consectetur fuga harum, aut reiciendis doloribus quos dolorum quae
           ratione natus.
         </p>
-          <pre class="codeblock"><code class="gmod_wire_e2 hljs">@name Sudoku
-@outputs CharX CharY Char CharParam Clk
-@persist Board:array CharQueue:string CharXQueue:array CharYQueue:array
-#include "inc/sudoku"
+          <pre><code>jmp _code;
+message:
+  db 'Hello World!',0;
+WriteString: //ESI - String pointer, EDX - Param
+  mov eax,65536;
+  AWriteLoop:
+    cmp #esi,0; //Terminate on char 0
+    je AEnd;
+    mov #eax,#esi; //Output char
+    inc eax;
+    mov #eax,edx; //Output char param
+    inc eax;
+    inc esi;
+  jmp AWriteLoop;
+  AEnd:
+ret //Return from call
 
-function writeToScreen(X, Y, InputChar:string) {
-    print("X is " + X)
-    print("Y is " + Y)
-    print("InputChar is " + InputChar)
-    print("CharQueue is " + CharQueue)
-    print("CharXQueue is" + CharXQueue:concat())
-    print("CharYQueue is" + CharYQueue:concat())
-    CharQueue += InputChar
-    CharXQueue:pushNumber(X)
-    CharYQueue:pushNumber(Y)
-}
-
-if (first()) {
-    runOnHTTP(1)
-    runOnChat(1)
-    
-    if (!httpCanRequest()) {
-        error("HTTP is disabled - cannot fetch sudoku board")
-    }
-    
-    writeToScreen(0,2,"1")
-    writeToScreen(2,0,"1")
-    writeToScreen(0,3,"2")
-    writeToScreen(3,0,"2")
-    writeToScreen(0,4,"3")
-    writeToScreen(4,0,"3")
-}
-elseif(clk("nextChar")) {
-    if (CharQueue != "") {
-        #Copy-by-value or copy-by-reference?
-        Char = toByte(CharQueue[1])
-        CharQueue = CharQueue:replaceRE("^%w", "")
-    }
-}
-
-function place(X, Y, C:string) {
-    writeToScreen(X, Y, C)    
-}
-
-function drawBoard() {
-    # Position numbers in column and row
-    writeToScreen(0,0,"+")
-}
-
-function parseInput(Input:string) {
-    
-}
-
-if (chatClk(owner())) {
-    hideChat(1)
-    
-    if (owner():lastSaid()[1] == "!") {
-        parseInput(owner():lastSaid():sub(2))
-    }
-}
-
-if(httpClk()) {
-    Tbl = jsonDecode("{\"test\":55}")
-    
-    printTable(Tbl:add(table("one",15)))
-    
-    T = jsonDecode(httpData())
-}</code></pre>
+_code:
+  mov esi,message;
+  mov edx,000999; //White foreground on black background
+  call WriteString;</code></pre>
       </div>
       <div class="flex flex-col xl:flex-row mb-5">
         <p style="width: 400px" class="mr-5">
