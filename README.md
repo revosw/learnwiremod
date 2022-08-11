@@ -1,3 +1,5 @@
+![Deploy Pages](https://github.com/revosw/learnwiremod/actions/workflows/deploy.yml/badge.svg)
+
 # learnwiremod
 A website for learning Wiremod
 
