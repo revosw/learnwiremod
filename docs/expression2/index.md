@@ -1,10 +1,5 @@
 ![Expression 2 header image](../img/e2/header.png)
 
-<script>
-import Comp from "../components/Comp.vue"
-</script>
-<Comp />
-
 # Introduction
 Expression 2 is a programmable chip used to interact with the environment on a server. These are some of the things you can build with Expression 2. **This course is** linear, you are supposed to go from first page to last page in chronological order. *Even if you aren't new*, I do recommend that you skim through from the beginning. You never know, maybe you learn something new?
 
