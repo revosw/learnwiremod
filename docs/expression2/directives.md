@@ -148,47 +148,14 @@ and @persist, the two properties combined makes a clean look at the top of your 
 alternatives="XA;OB;XC;OD;XE;"></lw-quizlet> -->
 
 
-<h5 class="center">Which of the inputs will trigger an execution?</h5>
-`@inputs A B C D E F G H
+### Which of the inputs will trigger an execution?
+```
+@inputs A B C D E F G H
 @trigger B D G H
-`
+```
 
-<input name="q1" type="checkbox" />
-<label for="1">A</label>
+::: details
+The right answer is B
 
-
-
-<input name="q1" type="checkbox" />
-<label for="3">C</label>
-
-
-
-<input name="q1" type="checkbox" />
-<label for="5">E</label>
-
-
-<input name="q1" type="checkbox" data-answer />
-<label for="7">G</label>
-
-
-<input name="q1" type="checkbox" data-answer />
-<label for="2">B</label>
-
-
-<input name="q1" type="checkbox" data-answer />
-<label for="4">D</label>
-
-
-
-<input name="q1" type="checkbox" />
-<label for="6">F</label>
-
-
-<input name="q1" type="checkbox" data-answer />
-<label for="8">H</label>
-
-
-<button class="btn" type="submit">1st place</button>
-
-<p class="wrong">
 Remember that even though default behavior is that all inputs are triggered, with the @trigger directive only the set inputs makes the expression execute
+:::
