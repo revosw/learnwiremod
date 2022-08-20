@@ -5,14 +5,14 @@ title: Expression 2 - the tool
 ## In the spawnmenu
 Open up the spawnmenu with Q, and have a look at the Wire tab. Under **Chips, Gates** you'll find Expression 2. After selecting the tool, close the spawnmenu and right click to open the editor. Optionally, you can click "Open Editor" from the spawn menu.
 
-![spawn menu](img/e2/spawnmenu.png)
+![spawn menu](../img/e2/spawnmenu.png)
 You can change size and model of the chip, and open and create files and folders
 
-![chip models](img/e2/chips.png)
+![chip models](../img/e2/chips.png)
 The sizes and models of the Expression 2 chip
 
 You can create, open, copy, rename and delete files. You can create and rename folders.
-![file option](img/e2/fileoption.png)
+![file option](../img/e2/fileoption.png)
 
 Right clicking a folder vs. right clicking a file
 

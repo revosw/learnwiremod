@@ -45,8 +45,7 @@ We're not limited to printing strings, we can also print numbers and calculation
 In this code snippet, we use a new function, `random()`. It is a function that *returns* a
 random number between 0.0 and 1.0.
 
-But where do functions like `print()` and `random()` come from? If you click the <img class="inline-block" src="img/e2/editorbutton8.png">
-button in the top right of the editor, you can see a list of available functions.
+But where do functions like `print()` and `random()` come from? If you click the ![](../img/e2/editorbutton8.png) button in the top right of the editor, you can see a list of available functions.
 
 ```
 print("Hello World!")
