@@ -5,23 +5,23 @@ title: nice
       <!-- LINK TO WIREMOD REDDIT https://www.reddit.com/r/wiremod/ -->
       <!-- LINK TO WIREMOD GITHUB DISCUSSIONS https://github.com/wiremod/wire/discussions -->
       <!-- DROP DOWN MENU: EXP2, GATES, CPU, SPU, GPU, TOOLS -->
-![header](img/root/header.png)
+![header](../img/root/header.png)
 # Topics
 Wiremod is an addon for the sandbox gamemode in Garry's Mod. This addon lets you create complex contraptions.
 
 ## Expression 2
 With expression 2, we can interact with the world in interesting ways. In this full-fleged tutorial we'll make a graphics-based game, flying dragons, hot rod cars and more. We'll explore the Expression 2 language and the libraries available for use.
-![e2](img/e2/header.png) 
+![e2](../img/e2/header.png) 
 [Start](expression2/)
 
 ## Gates
 With gates, we can make all sorts of mechanical contraptions. There are gates for math, logic, memory, time, data transfer and more, enabling us to make things like auto turrets, airships, and vending machine games. We'll explore the abundance of gates.
-![gates](img/gates/header.png)
+![gates](../img/gates/header.png)
 [Start](gates)
 
 ## CPU
 The CPU is an advanced processor used for general purpose computing and I/O. In this tutorial series we will master this engineering marvel.
-![cpu](img/cpu/header.png)
+![cpu](../img/cpu/header.png)
 [Start](cpu)
 
 ## SPU
@@ -31,7 +31,7 @@ The SPU is a sound processor which lets you synthesize and play sounds. With kno
 
 ## GPU
 The GPU is a video processor which lets you output graphics
-![gpu](img/gpu/header.png)
+![gpu](../img/gpu/header.png)
 [Start](gpu)
 
 ## Tools
@@ -59,7 +59,7 @@ Mac and Linux users - I have no idea how your automation systems work.
 Press the windows key + R, then enter **taskschd.msc**.
 
 Create a basic task
-![task scheduler](img/root/taskschd.png)
+![task scheduler](../img/root/taskschd.png)
 
 Name the task **Update wire**, then click next
 **When I log on**, next
@@ -70,10 +70,10 @@ Write **"C:\Program Files\Git\git-cmd.exe"** in the **Program/script** box. INCL
 Fill the **Add arguments** box with: **git pull && exit**
 
 Fill the **Start in** box with the wire folder: **&lt;directory to steam&gt;\steamapps\common\GarrysMod\garrysmod\addons\wire**
-![task scheduler](img/root/taskschd2.png)
+![task scheduler](../img/root/taskschd2.png)
 
 Finish up by pressing next, then finish. We need to test our task. Click on Task Scheduler Library, and scroll down the list to find your task. If it's not there, hit F5 to refresh. Right click the task, and press Run.
-![task scheduler](img/root/taskschd3.png)
+![task scheduler](../img/root/taskschd3.png)
 You should see a cmd window in a split second. If so, **CONGRATULATIONS!** You'll never need to think of updating the wire repository on your computer.
 
 

@@ -3,7 +3,7 @@
 ## @name
 This directive sets the name of the expression 2 chip. The name is viewed in two places, one when hovering your mouse over the expression and the other when looking inside the remote updater. You can   get the name of your expression in code by using `entity():getName()`.
 
-![](img/e2/e2-name.png)
+![](../img/e2/e2-name.png)
 
 ```
 @name Expression name
@@ -15,7 +15,7 @@ print(entity():getName())
 ## @inputs
 This directive sets the expression's inputs. It is used to wire between your chip and other wire-compatible tools.
 
-![](img/e2/e2-input.png)
+![](../img/e2/e2-input.png)
 
 ```
 @inputs Button
@@ -34,7 +34,7 @@ if(->Button) {
 ## @outputs
 This directive sets the expression's outputs. What differs input and output is that input takes in data from outputs, while output pushes data to other inputs.
 
-![](img/e2/e2-output.png)
+![](../img/e2/e2-output.png)
 
 ```
 @outputs Screen
@@ -82,9 +82,9 @@ This directive sets which inputs should trigger an execution.
 ## @model
 This directive sets what model the expression should be. The easiest way to get a model name is to simply open the spawnmenu > find the model you want the expression to be > right click > copy to clipboard
 
-![](img/e2/e2-model.png)
+![](../img/e2/e2-model.png)
 
-![](img/e2/e2-model2.png)
+![](../img/e2/e2-model2.png)
 
 ```
 @model models/props_c17/oildrum001_explosive.mdl
