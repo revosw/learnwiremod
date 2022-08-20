@@ -1,5 +1,3 @@
-title: Expression 2 - the tool
----
 # Exploring the tool
 
 ## In the spawnmenu

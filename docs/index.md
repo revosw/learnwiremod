@@ -1,10 +1,3 @@
-title: nice
----
-      <!-- LINK TO DISCORD https://discord.gg/H8UKY3Y -->
-      <!-- LINK TO WIREMOD WIKI https://github.com/wiremod/wire/wiki -->
-      <!-- LINK TO WIREMOD REDDIT https://www.reddit.com/r/wiremod/ -->
-      <!-- LINK TO WIREMOD GITHUB DISCUSSIONS https://github.com/wiremod/wire/discussions -->
-      <!-- DROP DOWN MENU: EXP2, GATES, CPU, SPU, GPU, TOOLS -->
 ![header](img/root/header.png)
 # Topics
 Wiremod is an addon for the sandbox gamemode in Garry's Mod. This addon lets you create complex contraptions.

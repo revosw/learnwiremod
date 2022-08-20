@@ -1,6 +1,3 @@
-title: CPU - Learn Wiremod
----
-
 # Introduction
 
 ```
