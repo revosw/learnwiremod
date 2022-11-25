@@ -1,5 +1,7 @@
 ![Deploy Pages](https://github.com/revosw/learnwiremod/actions/workflows/deploy.yml/badge.svg)
 
+⚠️ I've lost interest in the project. Not sure what implications archiving the repo has, so I'll just leave it in this state.
+
 # learnwiremod
 A website for learning Wiremod
 
